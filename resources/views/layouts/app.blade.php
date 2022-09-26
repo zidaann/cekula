@@ -12,9 +12,8 @@
   <body>
     
     <div id="main">
-        <div>
-            <x-navbar></x-navbar>
-        </div>
+      @yield('navbar')
+      @yield('content')
     </div>
 
 
