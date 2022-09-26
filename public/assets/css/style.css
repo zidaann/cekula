@@ -24,23 +24,40 @@ nav ul li a{
     font-size: 24px;
 }
 
-nav ul .login{
+nav ul .nav-login{
     border-radius: 30px;
     padding: 0 20px;
     background-color: #D2D4DA;
 }
 
-nav ul .login a{
+nav ul .nav-login a{
     color: #fbfbfb;
     font-family: 'Noto Sans', sans-serif !important;
     font-weight: 400 !important;
 }
 
-nav ul .login:hover{
+nav ul .nav-login:hover{
     background: rgb(159,195,249);
     background: linear-gradient(171deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
 }
 
-nav ul .login a:hover{
+nav ul .nav-login a:hover{
     color: #fbfbfb;
+}
+
+
+#login{
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.logo-login img{
+    margin-top: 10rem;
+    margin-bottom: 80px;
+}
+
+#login input[type="email"],
+#login input[type="password"]{
+    border-color: #9FC3F9;
+    padding: 8px 20px;
 }
