@@ -61,3 +61,13 @@ nav ul .nav-login a:hover{
     border-color: #9FC3F9;
     padding: 8px 20px;
 }
+
+#login form .btn-login{
+    background-color: #D2D4DA;
+    color: white;
+}
+
+#login form .btn-login:hover{
+    background: rgb(159,195,249);
+    background: linear-gradient(171deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+}

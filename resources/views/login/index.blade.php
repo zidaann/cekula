@@ -16,7 +16,7 @@
                       <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                     <div class="d-flex justify-content-center mt-5">
-                        <button type="submit" class="btn w-50 ">Masuk</button>
+                        <button type="submit" class="btn w-50 btn-login">Masuk</button>
                     </div>
                 </form>
             </div>
