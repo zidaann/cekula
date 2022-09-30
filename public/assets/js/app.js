@@ -26,14 +26,14 @@ showHide.addEventListener('click', () => {
 
 // ALERT PASSWORD
 const passAlert = document.querySelector('.passAlert');
-const textAlert =  '';
+
 passAlert.addEventListener('click', function(){
     Swal.fire({
         title: 'Lupa Kata Sandi?',
         text: 'Silahkan Hubungi Administrator Sekolah Untuk \n Mengakses Aplikasi',
-        imageUrl: '<img src="/assets/img/password_alert.png">',
-        imageWidth: 400,
-        imageHeight: 200,
+        imageUrl: "/assets/img/password_alert.png",
+        imageWidth: 100,
+        imageHeight: 100,
         imageAlt: 'Custom image',
       });
 });
