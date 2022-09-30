@@ -1,17 +1,17 @@
 body{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.hero {
-    height: 100vh;
-    /* border: 1px solid black; */
-}
 
 nav{
     box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
     -webkit-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
+    z-index: 99;
+    position: absolute;
 }
 
 nav ul li{
@@ -46,20 +46,93 @@ nav ul .nav-login a:hover{
 }
 
 
+.hero {
+    height: 100vh;
+}
+
+.hero .row {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .col-md{
+    height: 50%;
+    padding: 10px 40px;
+}
+
+.hero .hero-login{
+    padding: 8px 75px;
+    background-color: #D2D4DA;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+.hero .hero-login:hover{
+    background: rgb(159,195,249);
+    background: linear-gradient(171deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+}
+
+
+.hero-image{
+    height: 100vh;
+    background: url(/assets/img/ilustrasi_home.png);
+    background-size: 50% 100vh;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: absolute;
+    z-index: -999;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.hero h2:nth-child(1){
+    font-family: 'Noto Sans', sans-serif !important;
+    color: #5F7595;
+    font-weight: 400;
+    font-size: 48px;
+}
+
+.hero h2:nth-child(2){
+    font-family: 'Rubik', sans-serif !important;
+    color: #83DBE0;
+    font-weight: 600;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+
 #login{
     height: 100vh;
     overflow-x: hidden;
+    background: url(/assets/img/ilustrasi_login.png) no-repeat;
+    background-position: bottom;
+    background-size: 60% 30vh;
+
 }
 
 .logo-login img{
-    margin-top: 10rem;
-    margin-bottom: 80px;
+    margin-top: 7rem;
+    margin-bottom: 60px;
 }
 
 #login input[type="email"],
 #login input[type="password"]{
     border-color: #9FC3F9;
     padding: 8px 20px;
+}
+
+#login form span{
+    background-color: unset;
+    border: none;
+    width: 40px;
+    padding:7px;
+    margin-top: -41px;
+    float: right;
+    z-index: 1;
 }
 
 #login form .btn-login{
@@ -71,3 +144,8 @@ nav ul .nav-login a:hover{
     background: rgb(159,195,249);
     background: linear-gradient(171deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
 }
+
+#login small{
+    cursor: pointer;
+}
+

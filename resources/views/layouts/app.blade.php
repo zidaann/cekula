@@ -13,16 +13,25 @@
     <!-- Link CSS-->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+
+    {{-- link icon bootstrap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    {{-- link sweet alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
   </head>
   <body>
     
     <div id="main">
       @yield('navbar')
+      @yield('hero')
       @yield('content')
     </div>
 
 
-
+    <script src="/assets/js/app.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
