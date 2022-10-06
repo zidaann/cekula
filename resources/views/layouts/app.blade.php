@@ -26,7 +26,6 @@
     
     <div id="main">
       @yield('navbar')
-      @yield('hero')
       @yield('content')
     </div>
 
