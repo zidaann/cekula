@@ -5,20 +5,10 @@ body {
     overflow: hidden;
 }
 
-<<<<<<< HEAD
-
 nav{
     box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
     -webkit-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
-=======
-nav {
-    box-shadow: 0px 10px 14px -7px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 10px 14px -7px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 10px 14px -7px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-    position: absolute;
->>>>>>> 35c7b06bd9b3d25ea38821e11d3d7f6ac4ea8a7d
 }
 
 nav ul li {
@@ -37,7 +27,6 @@ nav ul .nav-login {
     background-color: #d2d4da;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 600px){
     nav{
         position: relative;
@@ -58,9 +47,6 @@ nav ul .nav-login {
 
 
 nav ul .nav-login a{
-=======
-nav ul .nav-login a {
->>>>>>> 35c7b06bd9b3d25ea38821e11d3d7f6ac4ea8a7d
     color: #fbfbfb;
     font-family: "Noto Sans", sans-serif !important;
     font-weight: 400 !important;
@@ -89,16 +75,9 @@ nav ul .nav-login a:hover {
     align-items: center;
 }
 
-<<<<<<< HEAD
 .hero .col-md{
     height: 100vh;
     padding: 120px 50px;
-    /* border: 1px solid; */
-=======
-.hero .col-md {
-    height: 50%;
-    padding: 10px 40px;
->>>>>>> 35c7b06bd9b3d25ea38821e11d3d7f6ac4ea8a7d
 }
 
 .hero .hero-login {
