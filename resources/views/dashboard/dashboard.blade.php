@@ -1,6 +1,5 @@
-@include('dashboard.main')
-
-@section('contents')
-    <h1>Hello</h1>
+@extends('dashboard.main')
+@section('content')
+    <h1>Hello Tjuy :D</h1>
 @endsection
 

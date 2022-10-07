@@ -149,10 +149,11 @@
           </div>
         </nav>
         <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          @yield('contents')
+          @yield('content')
         </div>
       </div>
     </div>
+
 
 
     <script src="/assets/js/sidebars.js"></script>
