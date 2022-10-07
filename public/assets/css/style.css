@@ -229,3 +229,30 @@ nav ul .nav-login a:hover {
 #login small {
     cursor: pointer;
 }
+
+.btn-toggle-nav li {
+    padding: 0 0 0 0;
+}
+.btn-toggle-nav li a {
+    padding: 0.1875rem 0.5rem;
+    margin-top: 0.125rem;
+    margin-left: 1.25rem;
+    font-family: "Noto Sans", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px;
+}
+.btn-toggle-nav li a:hover,
+.btn-toggle-nav li a:focus {
+    background-color: #d2f4ea;
+}
+
+/* content dashboard */
+.box-title {
+    background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.bg-color-content {
+    background: #edf1f7;
+}
