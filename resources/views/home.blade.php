@@ -17,4 +17,5 @@
        <div class="hero-image-responsive"></div>
     </div>
  </div>
+  
 @endsection
