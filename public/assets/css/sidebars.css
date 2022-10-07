@@ -50,26 +50,20 @@
     -webkit-overflow-scrolling: touch;
 }
 
-/* body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-} */
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
 
 html {
     height: -webkit-fill-available;
 }
 
-main {
+#main {
     height: 100vh;
     height: -webkit-fill-available;
     max-height: 100vh;
     overflow-x: auto;
-}
-
-/* Sidebar */
-.feather {
-    width: 16px;
-    height: 16px;
 }
 
 /*
@@ -86,7 +80,7 @@ main {
     /* rtl:remove */
     left: 0;
     z-index: 100; /* Behind the navbar */
-    padding: 48px 20px 0; /* Height of navbar */
+    padding: 48px 5px 0; /* Height of navbar */
     background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
@@ -100,7 +94,7 @@ main {
 .sidebar-sticky {
     height: calc(100vh - 48px);
     overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    overflow-y: auto; /*Scrollable contents if viewport is shorter than content. */
 }
 
 .sidebar .nav-link {
@@ -108,9 +102,9 @@ main {
     color: #333;
 }
 
-.sidebar .nav-link .feather {
+.sidebar .nav-link i .bi {
     margin-right: 4px;
-    color: #727272;
+    color: #202a44;
 }
 
 .sidebar .nav-link.active {
@@ -188,4 +182,8 @@ main {
 
 .color-user {
     color: #f7f9fc;
+}
+
+.bg-color {
+    background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
 }
