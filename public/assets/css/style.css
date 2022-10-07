@@ -10,8 +10,6 @@ nav{
     box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
     -webkit-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.15);
-    z-index: 99;
-    position: absolute;
 }
 
 nav ul li{
@@ -29,6 +27,25 @@ nav ul .nav-login{
     padding: 0 20px;
     background-color: #D2D4DA;
 }
+
+@media screen and (max-width: 600px){
+    nav{
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero{
+        position: relative;
+    }
+    nav ul {
+        padding-top: 20px;
+    }
+    nav ul .nav-login{
+        margin-top: 2px;
+        text-align: center;
+    }
+}
+
 
 nav ul .nav-login a{
     color: #fbfbfb;
@@ -57,8 +74,9 @@ nav ul .nav-login a:hover{
 }
 
 .hero .col-md{
-    height: 50%;
-    padding: 10px 40px;
+    height: 100vh;
+    padding: 120px 50px;
+    /* border: 1px solid; */
 }
 
 .hero .hero-login{
@@ -79,7 +97,7 @@ nav ul .nav-login a:hover{
 .hero-image{
     height: 100vh;
     background: url(/assets/img/ilustrasi_home.png);
-    background-size: 50% 100vh;
+    background-size: 48% 100vh;
     background-repeat: no-repeat;
     background-position: right;
     position: absolute;
@@ -87,6 +105,63 @@ nav ul .nav-login a:hover{
     top: 0;
     left: 0;
     right: 0;
+}
+@media screen and (max-width:768px) and (max-width:992px){
+    .hero-image{
+        height: 100vh;
+        background: url(/assets/img/ilustrasi_home.png);
+        background-size: 80% 100vh;
+        background-repeat: no-repeat;
+        background-position: right;
+        position: absolute;
+        z-index: -999;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .hero .col-md h2{
+        font-size: 40px !important;
+    }
+
+    nav ul {
+        padding-top: 20px;
+    }
+    nav ul .nav-login{
+        /* width: 80px; */
+        margin-top: 2px;
+        text-align: center;
+    }
+}
+@media screen and (max-width:600px) {
+
+    .hero-image{
+        display: none;
+    }
+
+    .hero-image-responsive{
+        height: 100vh;
+        background: url(/assets/img/home_mobile.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        position: absolute;
+        z-index: -999;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: -100px;
+    }
+
+    .hero .col-md{
+        padding-top: 100px;
+        padding-right:0 ;
+        padding-left: 0;
+        height: 100vh; 
+    }
+    .hero .col-md h2{
+        font-size: 35px !important;
+    }
 }
 
 .hero h2:nth-child(1){
