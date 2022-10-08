@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/sidebars.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/dashboard/app.css">
 
     {{-- link icon bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -44,7 +45,7 @@
             </div>
             <ul class="nav flex-column">
               <li class="nav-item w-100">
-                <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="#">
+                <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="{{ route('dashboard') }}">
                   <i class="bi bi-layout-text-sidebar-reverse"></i>
                   <div class="d-flex w-100 ps-2">
                     <h6 class="pt-2 fs-6 font-rubik">Dashboard</h6>
@@ -60,7 +61,7 @@
                 </button>
                 <div class="collapse" id="akademik-collapse">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Sekolah</a></li>
+                    <li><a href="{{ route('jadwal_sekolah.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Sekolah</a></li>
                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Kelas</a></li>
                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Raport Murid</a></li>
                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penilaian Pembelajaran</a></li>
@@ -151,7 +152,7 @@
               </li>
           </div>
         </nav>
-        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 min-h-100">
           @yield('content')
         </div>
       </div>

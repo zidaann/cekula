@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JadwalSekolahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,7 @@ Route::get('/login', function(){
 Route::get('/dashboard', function(){
     return view('dashboard.dashboard');
 })->name('dashboard');
+
+Route::prefix('akademik')->group(function(){
+    Route::get('jadwal-sekolah', [JadwalSekolahController::class, 'index'])->name('jadwal_sekolah.index');
+});

@@ -37,3 +37,26 @@ passAlert.addEventListener('click', function(){
         imageAlt: 'Custom image',
       });
 });
+
+
+// ALERT POSTING JADWAL
+btnPost = document.querySelector('.btn-post');
+btnPost.addEventListener('click', function(){
+    Swal.fire({
+        title: 'Posting Jadwal Berhasil',
+        text: 'Silahkan kembali ke halaman jadwal sekolah',
+        imageUrl: '/img/alert_posting_jadwal.png',
+        imageWidth: 120,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        showCloseButton: true,
+        showConfirmButton: false,
+      });
+});
+
+
+// ALERT DELETE JADWAL
+btnDelete = document.querySelector('.delete_jadwal');
+btnDelete.addEventListener('click', function(){
+    alert('hai');
+});
