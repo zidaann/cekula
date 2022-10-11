@@ -9,4 +9,8 @@ class JadwalSekolahController extends Controller
     public function index (){
        return view('dashboard.akademik.jadwal_sekolah.index'); 
     }
+
+    public function create (){
+       return view('dashboard.akademik.jadwal_sekolah.create');
+    }
 }

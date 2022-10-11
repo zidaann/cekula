@@ -142,7 +142,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item mt-3 w-100">
+              <li class="nav-item w-100">
                 <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="#">
                   <i class="bi bi-box-arrow-left fs-5 font-rubik"></i>
                   <div class="d-flex w-100 ps-2">

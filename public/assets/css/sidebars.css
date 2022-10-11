@@ -71,7 +71,10 @@ html {
  */
 
 .sidebar {
+    height: 100vh;
+    width: 250px;
     position: fixed;
+    overflow-y: scroll;
     top: 0;
     /* rtl:raw:
   right: 0;
@@ -80,22 +83,22 @@ html {
     /* rtl:remove */
     left: 0;
     z-index: 100; /* Behind the navbar */
-    padding: 48px 5px 0; /* Height of navbar */
+    padding: 30px 5px ; /* Height of navbar */
     background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 767.98px) {
-    /* .sidebar {
-    top: 5rem;
-  } */
+    .sidebar {
+    width: 100%;
+  }
 }
 
-.sidebar-sticky {
+/* .sidebar-sticky {
     height: calc(100vh - 48px);
     overflow-x: hidden;
-    overflow-y: hidden; /*Scrollable contents if viewport is shorter than content. */
-}
+    overflow-y: hidden; 
+} */
 
 .sidebar .nav-link {
     font-weight: 500;

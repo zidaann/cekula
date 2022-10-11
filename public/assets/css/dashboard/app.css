@@ -3,7 +3,7 @@
     background: linear-gradient(180deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
     border-radius: 15px;
     padding: 10px 0;
-    width: 100%;
+    width: 90%;
     margin: 25px auto;
 }
 
@@ -88,4 +88,49 @@
         right: 0;
         margin-right: 40px;
     }
+}
+
+form .img-preview input{
+    display: none;
+ }
+ 
+ form label{
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 600;
+     margin-bottom: 8px;
+ }
+ 
+ form textarea{
+     resize: none;
+ }
+
+ .img-preview{
+    height: 20vh;
+    background: rgb(159,195,249);
+    background: linear-gradient(76deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+    padding: 10px;
+}
+
+ .img-preview label{
+     padding: 10px 15px;
+     background-color: #69AFB3;
+     border-radius: 50% ;
+     color: white;
+     float: right;
+     margin-top: 65px;   
+ }
+ 
+ form .btn-post{
+     background: rgb(159,195,249);
+     background: linear-gradient(180deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+     color: white !important;
+     font-family: 'Noto Sans', sans-serif !important;
+     font-weight: 600 !important;
+     font-size: 16px;
+ }
+
+ #content-jadwal form input[type="text"],
+#content-jadwal form textarea{
+    background-color: #EDF1F7;
+    border: none;
 }

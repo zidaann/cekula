@@ -28,4 +28,5 @@ Route::get('/dashboard', function(){
 
 Route::prefix('akademik')->group(function(){
     Route::get('jadwal-sekolah', [JadwalSekolahController::class, 'index'])->name('jadwal_sekolah.index');
+    Route::get('create-jadwal-sekolah', [JadwalSekolahController::class, 'create'])->name('jadwal_sekolah.create');
 });
