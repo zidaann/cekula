@@ -196,7 +196,7 @@ nav ul .nav-login a:hover {
     margin-bottom: 60px;
 }
 
-#login input[type="email"],
+#login input[type="text"],
 #login input[type="password"] {
     border-color: #9fc3f9;
     padding: 8px 20px;
