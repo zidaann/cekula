@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cekula</title>
+  <title>Cekula</title>
 
     {{-- Link Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
             </div>
             <ul class="nav flex-column">
               <li class="nav-item w-100">
-                <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="{{ route('dashboard') }}">
+                <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="">
                   <i class="bi bi-layout-text-sidebar-reverse"></i>
                   <div class="d-flex w-100 ps-2">
                     <h6 class="pt-2 fs-6 font-rubik">Dashboard</h6>

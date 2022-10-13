@@ -3,7 +3,7 @@
 @section('content')
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
-        <a href="{{ route('jadwal_sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
+        <a href="" class="text-white "><i class="bi bi-arrow-left"></i></a>
         <span class="text-white mx-auto">Buat Jadwal Sekolah</span>
     </div>
   </div>

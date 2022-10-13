@@ -5,7 +5,7 @@
             <div class="col-md ">
                <h2>SELAMAT DATANG DI </h2>
                <h2>CEKULA</h2>
-               <a href="{{ route('login') }}" class="hero-login">Login</a>
+               <a href="" class="hero-login">Login</a>
             </div>
          </div>
       </div>

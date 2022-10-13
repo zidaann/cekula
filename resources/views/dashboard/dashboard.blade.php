@@ -15,7 +15,7 @@
                     <div class="col-12 col-md-5 mb-3 bg-color-content rounded-4 shadow">
                         <div class="card w-100 bg-transparent border-0">
                             <div class="d-flex justify-content-center">
-                                <img src="/assets/img/dashboard/img1.png" class="card-img-top w-75" alt="...">
+                                <img src="/assets/img/dashboard/img1.png" class="card-img-top w-75" >
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title font-noto fw-semibold">Kegiatan Tengah Semester</h5>

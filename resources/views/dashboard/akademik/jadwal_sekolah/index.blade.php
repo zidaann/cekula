@@ -76,7 +76,7 @@
       </div>
 
       <div class="btn-add">
-        <a href="{{ route('jadwal_sekolah.create') }}">
+        <a href="">
           <img src="/assets/img/dashboard/jadwal_sekolah/btn_add.png" class="img-fluid">
         </a>
       </div>
