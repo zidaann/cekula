@@ -35,4 +35,8 @@ Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/detail', function() {
+    return view('dashboard.jadwalKelas.detailJadwal');
+});
+
 require __DIR__.'/auth.php';
