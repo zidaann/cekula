@@ -4,12 +4,12 @@
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
         <a href="{{ route('jadwal_sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
-        <span class="text-white mx-auto">Buat Jadwal Sekolah</span>
+        <span class="text-white mx-auto">Edit Jadwal Sekolah</span>
     </div>
   </div>
   
   <main >
-      <div id="content-jadwal">
+      <div id="content-jadwal" >
         <div class="container py-4">
           <div class="row justify-content-center ">
               <div class="col-md-10">
@@ -18,10 +18,10 @@
                           <label for ="image"><i class="bi bi-camera"></i></label>
                           <input type ="file" name="image" id="image" onchange="previewImage()">
                       </div> --}}
-                      <div class="mb-3 image-wrapper " >
+                      <div class="mb-3 image-wrapper" >
                         <label for ="image" class="label-image"><i class="bi bi-camera"></i></label>
-                        <img class="img-preview img-fluid text-center rounded " >
-                        <input type="file" class="form-control d-none @error('image') is-invalid @enderror" id="image" placeholder="Enter your image" name="image" onchange="previewImage()">
+                        <img class="img-preview img-fluid  rounded " >
+                        <input type="file" class="form-control d-none @error('image') is-invalid @enderror" id="image" placeholder="Enter your image" name="image" onchange="previewImage()" >
                         @error('image')
                             <div class="text-danger mt-2"> {{ $message }}</div>
                         @enderror
