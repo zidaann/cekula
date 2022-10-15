@@ -36,7 +36,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/detail', function() {
-    return view('dashboard.jadwalKelas.detailJadwal');
+    return view('dashboard.akademik.jadwal_kelas.detailJadwal');
 });
 
 require __DIR__.'/auth.php';
