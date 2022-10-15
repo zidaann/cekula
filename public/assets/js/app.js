@@ -55,15 +55,14 @@ btnPost.addEventListener('click', function(){
 });
 
 
-// ALERT DELETE JADWAL
-btnDelete = document.querySelector('.delete_jadwal');
-btnDelete.addEventListener('click', function(){
-    alert('hai');
-});
+
+// Show/Hide Jadwal Sekolah
 
 
+// preview Image
 function previewImage(){
     const image= document.querySelector('#image');
+    const imageWrapper= document.querySelector('.image-wrapper');
     const imgPreview = document.querySelector('.img-preview')
 
     imgPreview.style.display = 'block';
@@ -72,7 +71,9 @@ function previewImage(){
       oFReader.readAsDataURL(image.files[0]);
 
       oFReader.onload = function(oFREvent){
+        imageWrapper.style.background = 'transparent';
+        imageWrapper.style.border = '1px solid #eee'
         imgPreview.src = oFREvent.target.result;
       }
 
-  }
+}

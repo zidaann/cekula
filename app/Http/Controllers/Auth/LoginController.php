@@ -27,6 +27,7 @@ class LoginController extends Controller
         }
 
         throw ValidationException::withMessages([
+            // 'username' => '*Username anda salah, silahkan masukkan username yang benar',
             'password' => '*Kata sandi salah silahkan masukkan kata sandi
             yang benar'
         ]);

@@ -19,9 +19,9 @@
                     </div>
                     <div class="mb-2">
                       <input type="password" class="form-control" id="password" placeholder="Password" name="password" > 
-                      {{-- <span class="input-group-text" id="showHide">
+                      <span class="input-group-text" id="showHide">
                         <i class="bi bi-eye"></i>
-                      </span> --}}
+                      </span>
                       @error('password')
                           <div class="text-danger mt-2">
                             {{ $message }}

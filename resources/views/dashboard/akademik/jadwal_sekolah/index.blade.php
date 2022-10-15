@@ -17,7 +17,7 @@
               <p>15 Oktober - 23 Oktober 2022</p>
             </div>
             <div class="card-action d-flex align-items-center float-end">
-              <a href="#" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
+              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
               <form action="#" method="post" class="delete_jadwal">
                 @csrf
                   <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
@@ -33,7 +33,7 @@
               <p>21 Desember - 28 Oktober 2022</p>
             </div>
             <div class="card-action d-flex align-items-center float-end">
-              <a href="#" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
+              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
               <form action="#" method="post" class="delete_jadwal">
                 @csrf
                   <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
@@ -49,7 +49,7 @@
               <p>12 Januari - 19 Januari 2023</p>
             </div>
             <div class="card-action d-flex align-items-center float-end">
-              <a href="#" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
+              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
               <form action="#" method="post" class="delete_jadwal">
                 @csrf
                   <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
@@ -65,7 +65,7 @@
               <p>12 Januari - 19 Januari 2023</p>
             </div>
             <div class="card-action d-flex align-items-center float-end">
-              <a href="#" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
+              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
               <form action="#" method="post" class="delete_jadwal">
                 @csrf
                   <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
@@ -76,8 +76,8 @@
       </div>
 
       <div class="btn-add">
-        <a href="">
-          <img src="/assets/img/dashboard/jadwal_sekolah/btn_add.png" class="img-fluid">
+        <a href="{{ route('jadwal_sekolah.create') }}">
+          <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
         </a>
       </div>
     </div>
