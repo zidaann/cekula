@@ -3,7 +3,7 @@
     <div class="justify-content-center d-flex mb-4 p-2">
         <div class="bg-color d-flex shadow-lg rounded-4 px-3 px-md-5 align-content-center pt-2 w-100">
             <div>
-                <a href="#"><i class="bi bi-arrow-left text-white"></i></a>
+                <a href="{{ route('jadwal_kelas.index') }}"><i class="bi bi-arrow-left text-white"></i></a>
             </div>
             <div class="d-flex justify-content-center w-100">
                 <div>

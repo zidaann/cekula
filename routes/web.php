@@ -23,11 +23,17 @@ Route::prefix('akademik')->group(function(){
     Route::prefix('jadwal-sekolah')->group(function(){
         Route::get('', [JadwalSekolahController::class, 'index'])->name('jadwal_sekolah.index');
         Route::get('create', [JadwalSekolahController::class, 'create'])->name('jadwal_sekolah.create');
+        // Route::get('create', [JadwalSekolahController::class, 'store'])->name('jadwal_sekolah.store');
         Route::get('edit', [JadwalSekolahController::class, 'edit'])->name('jadwal_sekolah.edit');
     });
 
     Route::prefix('jadwal-kelas')->group(function(){
         Route::get('', [JadwalKelasController::class, 'index'])->name('jadwal_kelas.index');
+        Route::get('create', [JadwalKelasController::class, 'create'])->name('jadwal_kelas.create');
+        // Route::get('create', [JadwalKelasController::class, 'store'])->name('jadwal_kelas.store');
+        Route::get('edit', [JadwalKelasController::class, 'edit'])->name('jadwal_kelas.edit');
+        // Route::put('edit', [JadwalKelasController::class, 'update']);
+        Route::get('detail-jadwal', [JadwalKelasController::class, 'show'])->name('jadwal_kelas.show');
     });
 });
 

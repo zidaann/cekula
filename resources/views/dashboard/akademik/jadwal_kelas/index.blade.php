@@ -105,7 +105,7 @@
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-9">
                     <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
+                      <a href="{{ route('jadwal_kelas.show') }}" class="d-flex justify-content-between text-decoration-none text-dark">
                         <span>Kelas 9 A</span>
                         <span><i class="bi bi-chevron-right"></i></span>
                       </a>
@@ -136,7 +136,7 @@
             </div>
         </div>
         <div class="btn-add">
-          <a href="">
+          <a href="{{ route('jadwal_kelas.create') }}">
             <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
           </a>
         </div>

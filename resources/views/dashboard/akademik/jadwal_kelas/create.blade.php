@@ -1,26 +1,23 @@
 @extends('dashboard.main')
-
 @section('content')
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
-        <a href="{{ route('jadwal_sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
-        <span class="text-white mx-auto">Edit Jadwal Sekolah</span>
+        <a href="{{ route('jadwal_kelas.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
+        <span class="text-white mx-auto">Buat Jadwal Kelas</span>
     </div>
   </div>
-  
-  <main >
-      <div id="content-jadwal" >
+<main>
+    <div id="content-jadwal">
         <div class="container py-4">
           <div class="row justify-content-center ">
-              <div class="col-md-10">
+              <div class="col-md-9">
                   <form action="#" method="" enctype="multipart/form-data">
                     @csrf
-                    @method("PUT")
-                    @include('dashboard.akademik.jadwal_sekolah._form.form')
+                      @include('dashboard.akademik.jadwal_kelas._form.form')
                   </form>
               </div>
           </div>
       </div>
-      </div>
-  </main>
+    </div>
+</main>
 @endsection
