@@ -262,3 +262,24 @@ nav ul .nav-login a:hover {
 .bg-color-white {
     background: #FBFBFB;
 }
+
+.bg-form {
+    height: 100vh;
+    background-image: url('/assets/img/ilustrasi_login.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 60% 30vh;
+}
+
+.btn-blue {
+    background-color: #d2d4da;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: rgb(159, 195, 249);
+    background: linear-gradient(171deg,
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
+    color: white;
+}
