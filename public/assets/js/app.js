@@ -1,7 +1,7 @@
 const password = document.getElementById('password'); // id dari input password
 const showHide = document.getElementById('showHide'); // id span showHide dalam input group password
 
-password.type = 'password'; // set type input password menjadi password
+password.type = "password"; // set type input password menjadi password
 password.style.padding = "8px 20px";
 password.style.borderColor = "#9FC3F9";
 showHide.innerHTML = '<i class="bi bi-eye"></i>'; // masukan icon eye dalam icon bootstrap 5
@@ -74,3 +74,4 @@ function previewImage(){
       }
 
 }
+

@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\JadwalKelasController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\PresensiPegawaiController;
+use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
-
+use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
+use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
 Route::get('/', function () {
     return view('home');
@@ -46,8 +47,14 @@ Route::prefix('presensi')->group(function(){
     Route::prefix('pegawai')->group(function(){
         Route::get('', [PresensiPegawaiController::class, 'index'])->name('presensi.pegawai.index');
         Route::get('create', [PresensiPegawaiController::class, 'create'])->name('presensi.pegawai.create');
-        // Route::post('create', [PresensiPegawaiController::class, 'store'])->name('presensi.store');
+        // Route::post('create', [PresensiPegawaiController::class, 'store'])->name('presensi.pegawai.store');
         Route::get('edit', [PresensiPegawaiController::class, 'edit'])->name('presensi.pegawai.edit');
+    });
+    Route::prefix('murid')->group(function(){
+        Route::get('', [PresensiMuridController::class, 'index'])->name('presensi.murid.index');
+        Route::get('create', [PresensiMuridController::class, 'create'])->name('presensi.murid.create');
+        // Route::post('create', [PresensiMuridController::class, 'store'])->name('presensi.murid.store');
+        Route::get('edit', [PresensiMuridController::class, 'edit'])->name('presensi.murid.edit');
     });
 });
 

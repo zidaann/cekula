@@ -50,7 +50,7 @@
           <div class="collapse" id="presensi-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
               <li><a href="{{ route('presensi.pegawai.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Presensi Pegawai</a></li>
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Presensi Murid</a></li>
+              <li><a href="{{ route('presensi.murid.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Presensi Murid</a></li>
             </ul>
           </div>
         </li>
