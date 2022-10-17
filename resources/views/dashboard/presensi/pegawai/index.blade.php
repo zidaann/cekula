@@ -17,12 +17,15 @@
                             <h6 class="font-noto">04/11/2022</h6>
                         </div>
                         <div class="d-flex justify-content-between w-100">
-                            <div>
+                            <div class="mt-3">
                                 <h6 class="font-noto text-primary">201987111</h6>
                             </div>
-                            <div class="d-flex">
-                                <h6 class="mx-2"><i class="bi bi-pencil"></i></h6>
-                                <h6 class="mx-3"><i class="bi bi-trash3"></i></h6>
+                            <div class="d-flex align-items-center">
+                                <a href="{{ route('presensi.pegawai.edit') }}" class="mx-2 text-dark"><i class="bi bi-pencil"></i></a>
+                                <form action="" method="">
+                                    @csrf
+                                    <button class="btn"><i class="bi bi-trash3"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -38,12 +41,15 @@
                             <h6 class="font-noto">04/11/2022</h6>
                         </div>
                         <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <h6 class="font-noto text-primary">202089239</h6>
+                            <div class="mt-3">
+                                <h6 class="font-noto text-primary">201987111</h6>
                             </div>
-                            <div class="d-flex">
-                                <h6 class="mx-2"><i class="bi bi-pencil"></i></h6>
-                                <h6 class="mx-3"><i class="bi bi-trash3"></i></h6>
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="mx-2 text-dark"><i class="bi bi-pencil"></i></a>
+                                <form action="" method="">
+                                    @csrf
+                                    <button class="btn"><i class="bi bi-trash3"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -59,33 +65,15 @@
                             <h6 class="font-noto">04/11/2022</h6>
                         </div>
                         <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <h6 class="font-noto text-primary">201889237</h6>
+                            <div class="mt-3">
+                                <h6 class="font-noto text-primary">201987111</h6>
                             </div>
-                            <div class="d-flex">
-                                <h6 class="mx-2"><i class="bi bi-pencil"></i></h6>
-                                <h6 class="mx-3"><i class="bi bi-trash3"></i></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-3 px-2">
-                <div>
-                    <div class="border-bottom pt-3">
-                        <h5 class="font-noto fw-bold">
-                            Amanda Manopo
-                        </h5>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-noto">04/11/2022</h6>
-                        </div>
-                        <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <h6 class="font-noto text-primary">201989238</h6>
-                            </div>
-                            <div class="d-flex">
-                                <h6 class="mx-2"><i class="bi bi-pencil"></i></h6>
-                                <h6 class="mx-3"><i class="bi bi-trash3"></i></h6>
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="mx-2 text-dark"><i class="bi bi-pencil"></i></a>
+                                <form action="" method="">
+                                    @csrf
+                                    <button class="btn"><i class="bi bi-trash3"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -95,18 +83,21 @@
                 <div>
                     <div class="border-bottom pt-3">
                         <h5 class="font-noto fw-bold">
-                            Ghufran Fathur Rahman
+                            Zein Muhammad
                         </h5>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-noto">04/11/2022</h6>
                         </div>
                         <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <h6 class="font-noto text-primary">202089239</h6>
+                            <div class="mt-3">
+                                <h6 class="font-noto text-primary">201987111</h6>
                             </div>
-                            <div class="d-flex">
-                                <h6 class="mx-2"><i class="bi bi-pencil"></i></h6>
-                                <h6 class="mx-3"><i class="bi bi-trash3"></i></h6>
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="mx-2 text-dark"><i class="bi bi-pencil"></i></a>
+                                <form action="" method="">
+                                    @csrf
+                                    <button class="btn"><i class="bi bi-trash3"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -114,4 +105,9 @@
             </div>
         </div>
     </div>
+    <div class="btn-add">
+        <a href="{{ route('presensi.pegawai.create') }}">
+          <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
+        </a>
+      </div>
 @endsection

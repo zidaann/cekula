@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,8 @@ class LoginController extends Controller
 
         $validateData = $request->validate($rules);
         if(Auth::attempt($validateData)){
-            return to_route('dashboard');
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');
         }
 
         throw ValidationException::withMessages([
@@ -32,5 +34,12 @@ class LoginController extends Controller
             yang benar'
         ]);
 
+    }
+
+    public function logout (Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return to_route('home');
     }
 }

@@ -4,20 +4,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\JadwalKelasController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Dashboard\PresensiPegawaiController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home')->middleware('guest');
 
 
 
-Route::get('register', [RegisterController::class, 'create'])->name('register');
+Route::get('register', [RegisterController::class, 'create'])->name('register')->middleware('guest');
 Route::post('register', [RegisterController::class, 'store']);
 
-Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('login', [LoginController::class, 'store']);
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
 
 Route::prefix('akademik')->group(function(){
     Route::prefix('jadwal-sekolah')->group(function(){
@@ -37,12 +41,19 @@ Route::prefix('akademik')->group(function(){
     });
 });
 
+
+Route::prefix('presensi')->group(function(){
+    Route::prefix('pegawai')->group(function(){
+        Route::get('', [PresensiPegawaiController::class, 'index'])->name('presensi.pegawai.index');
+        Route::get('create', [PresensiPegawaiController::class, 'create'])->name('presensi.pegawai.create');
+        // Route::post('create', [PresensiPegawaiController::class, 'store'])->name('presensi.store');
+        Route::get('edit', [PresensiPegawaiController::class, 'edit'])->name('presensi.pegawai.edit');
+    });
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/detail', function() {
-    return view('dashboard.presensi.edit');
-});
 
 require __DIR__.'/auth.php';

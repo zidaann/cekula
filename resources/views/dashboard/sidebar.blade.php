@@ -49,7 +49,7 @@
           </button>
           <div class="collapse" id="presensi-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Presensi Pegawai</a></li>
+              <li><a href="{{ route('presensi.pegawai.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Presensi Pegawai</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Presensi Murid</a></li>
             </ul>
           </div>
@@ -114,12 +114,19 @@
           </div>
         </li>
         <li class="nav-item w-100">
-          <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="#">
-            <i class="bi bi-box-arrow-left fs-5 font-rubik"></i>
-            <div class="d-flex w-100 ps-2">
-              <h6 class="pt-2 fs-6 font-rubik">Log Out</h6>
-            </div>
-          </a>
+          {{-- <form action="{{ route('logout') }}" method="post" class="d-flex">
+            @csrf 
+            <button type="submit" class="nav-link px-3 bg-transparent border-0 "><i class="bi bi-box-arrow-left fs-5 font-rubik"></i> Logout <span data-feather="log-out"></span></button>
+          </form> --}}
+          <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="{{ route('logout') }}">
+              <i class="bi bi-box-arrow-left fs-5 font-rubik"></i>
+              <div class="d-flex w-100 ps-2">
+                <h6 class="pt-2 fs-6 font-rubik">Log Out</h6>
+              </div>
+            </a>
+          </form>
         </li>
     </div>
   </nav>
