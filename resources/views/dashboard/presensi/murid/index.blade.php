@@ -9,7 +9,7 @@
 <main id="presensi-murid" class=" py-4">
     <div class="container">
         <div class="row  mx-3">
-            <div class="col-md-4 mb-3 px-3"  data-bs-toggle="collapse" href="#detail_kelas-7" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="kelas">
+            <div class="col-md-4 mb-3 px-3 toggle-kelas "  data-bs-toggle="collapse" href="#detail_kelas-7" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="hideIlustration()">
                 <div class="card border-0 py-3 bg-white">
                     <img src="/assets/img/dashboard/jadwal_kelas/kelas7.png" class="card-img-top img-fluid" width="50">
                     <div class="card-body">
@@ -22,7 +22,7 @@
                   </div>
                   
             </div>
-            <div class="col-md-4 mb-3 px-3" data-bs-toggle="collapse" href="#detail_kelas-8" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+            <div class="col-md-4 mb-3 px-3 toggle-kelas" data-bs-toggle="collapse" href="#detail_kelas-8" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
                 <div class="card border-0 py-3 bg-white">
                     <img src="/assets/img/dashboard/jadwal_kelas/kelas8.png" class="card-img-top img-fluid" width="50">
                     <div class="card-body">
@@ -34,7 +34,7 @@
                     </div>
                   </div>
             </div>
-            <div class="col-md-4 mb-3 px-3" data-bs-toggle="collapse" href="#detail_kelas-9" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
+            <div class="col-md-4 mb-3 px-3 toggle-kelas" data-bs-toggle="collapse" href="#detail_kelas-9" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
                 <div class="card border-0 py-3 bg-white">
                     <img src="/assets/img/dashboard/jadwal_kelas/kelas9.png" class="card-img-top img-fluid" width="50">
                     <div class="card-body">
@@ -142,11 +142,14 @@
         </div>
     </div>
 </main>
-@push('script')
+{{-- @push('script')
    <script>
-     $('#kelas').click(function(){
-        $('#ilustrasi').toggle('hide');
-    });
+
+     $(document).ready(() => {
+        $('#kelas').click(function(){
+          $('#ilustrasi').toggle('hide');
+      });
+     });
    </script>
-@endpush
+@endpush --}}
 @endsection

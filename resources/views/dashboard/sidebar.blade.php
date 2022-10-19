@@ -16,7 +16,7 @@
       </div>
       <ul class="nav flex-column">
         <li class="nav-item w-100">
-          <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="">
+          <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="{{ route('home') }}">
             <i class="bi bi-layout-text-sidebar-reverse"></i>
             <div class="d-flex w-100 ps-2">
               <h6 class="pt-2 fs-6 font-rubik">Dashboard</h6>
@@ -63,7 +63,7 @@
           </button>
           <div class="collapse" id="berita-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Berita Sekolah</a></li>
+              <li><a href="{{ route('berita.sekolah.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Berita Sekolah</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Berita Kelas</a></li>
             </ul>
           </div>
@@ -93,8 +93,8 @@
           <div class="collapse" id="fasilitas-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Perpustakaan</a></li>
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Peminjaman Fasilitas</a></li>
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kantin</a></li>
+              <li><a href="{{ route('fasilitas.peminjaman.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Peminjaman Fasilitas</a></li>
+              <li><a href="" class="link-dark d-inline-flex text-decoration-none rounded">Kantin</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Koperasi</a></li>
             </ul>
           </div>
