@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\PresensiPegawaiController;
 use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
+use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
@@ -12,7 +13,9 @@ use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasControll
 Route::get('/', function () {
     return view('home');
 })->name('home')->middleware('guest');
-
+Route::get('/beritasekolah', function () {
+    return view('dashboard.berita.berita_sekolah.index');
+});
 
 
 Route::get('register', [RegisterController::class, 'create'])->name('register')->middleware('guest');
@@ -55,6 +58,17 @@ Route::prefix('presensi')->group(function(){
         Route::get('create', [PresensiMuridController::class, 'create'])->name('presensi.murid.create');
         // Route::post('create', [PresensiMuridController::class, 'store'])->name('presensi.murid.store');
         Route::get('edit', [PresensiMuridController::class, 'edit'])->name('presensi.murid.edit');
+        Route::get('show', [PresensiMuridController::class, 'show'])->name('presensi.murid.show');
+    });
+});
+
+Route::prefix('berita')->group(function(){
+    Route::prefix('sekolah')->group(function(){
+        Route::get('', [BeritaSekolahController::class, 'index'])->name('berita.sekolah.index');
+        Route::get('create', [BeritaSekolahController::class, 'create'])->name('berita.sekolah.create');
+        Route::get('edit', [BeritaSekolahController::class, 'edit'])->name('berita.sekolah.edit');
+        Route::get('show', [BeritaSekolahController::class, 'show'])->name('berita.sekolah.show');
+        // Route::get('sekolah', [BeritaSekolahController::class, 'index'])->name('berita.sekolah.index');
     });
 });
 
