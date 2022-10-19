@@ -224,4 +224,8 @@ form .img-preview input{
     font-weight: 600;
     font-size: 16px;
 } 
+
+#presensi-murid .is-active{
+    display: none;
+}
 /* ======================================== End Jadwal kelas ============================*/ 

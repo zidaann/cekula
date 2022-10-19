@@ -1,3 +1,46 @@
+/* component CSS */
+.font-rubik {
+    font-family: "Rubik";
+    /* font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #202a44; */
+}
+.font-20{
+    font-size: 20px;
+}
+.font-10{
+    font-size: 10px;
+}
+.font-16{
+    font-size: 16px;
+}
+.font-noto {
+    font-family: "Noto Sans";
+}
+
+.input-bg{
+    background-color: #EDF1F7;
+    border: none;
+}
+.color-user {
+    color: #f7f9fc;
+}
+
+.bg-color {
+    background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
+}
+.color-blue{
+    color: #69AFB3;
+}
+.text-grey-600{
+    color: #4D5569;
+}
+
+/* end component */
+
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -124,18 +167,6 @@ html {
     font-size: 0.75rem;
 }
 
-.font-rubik {
-    font-family: "Rubik";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: #202a44;
-}
-
-.font-noto {
-    font-family: "Noto Sans";
-}
 
 /* Sidebar 2 */
 
@@ -183,10 +214,4 @@ html {
     overflow-y: auto;
 }
 
-.color-user {
-    color: #f7f9fc;
-}
 
-.bg-color {
-    background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
-}
