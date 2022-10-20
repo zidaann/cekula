@@ -23,6 +23,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   </head>
   <body>
     <div id="main" class="container-fluid">
@@ -36,6 +37,7 @@
 
     @stack('script')
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="/assets/js/sidebars.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>

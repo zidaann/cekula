@@ -1,51 +1,55 @@
-.header-schedule{
-    background: rgb(159,195,249);
-    background: linear-gradient(180deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+.header-schedule {
+    background: rgb(159, 195, 249);
+    background: linear-gradient(
+        180deg,
+        rgba(159, 195, 249, 1) 0%,
+        rgba(131, 219, 224, 1) 100%
+    );
     border-radius: 15px;
     padding: 10px 0;
     width: 90%;
     margin: 25px auto;
 }
 
-@media screen and (max-width: 600px){
-    .header-schedule{
+@media screen and (max-width: 600px) {
+    .header-schedule {
         margin-top: -5px;
         width: 400px;
     }
 }
 
-.header-schedule a{
+.header-schedule a {
     font-size: 20px;
 }
 
-.header-schedule span{
+.header-schedule span {
     font-size: 20px;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
     font-weight: 600;
 }
 
-.card{
-    background-color: #EDF1F7;
+.card {
+    background-color: #edf1f7;
 }
-.card img{
+.card img {
     margin: 0 auto;
     width: 300px;
 }
 
-.card-title{
-    color: #4D5569;
-    font-family: 'Noto Sans', sans-serif;
+.card-title {
+    color: #4d5569;
+    font-family: "Noto Sans", sans-serif;
     font-weight: 600;
     font-size: 20px;
 }
 
-.card-body p{
-    font-family: 'Noto Sans', sans-serif;
+.card-body p {
+    font-family: "Noto Sans", sans-serif;
     margin-top: -8px;
     font-size: 12px;
-    color: #4D5569;
+    color: #4d5569;
 }
-.card .card-action{
+.card .card-action {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -53,34 +57,38 @@
 }
 
 .card-action button,
-.card i{
+.card i {
     font-size: 18px;
-    color: #4D5569;
+    color: #4d5569;
 }
 
-.btn-add{
+.btn-add {
     position: fixed;
     bottom: 50px;
     right: 75px;
     z-index: 99;
 }
-.btn-add img{
+.btn-add img {
     width: 20px;
     height: 20px;
 }
 
-.btn-add a{
+.btn-add a {
     width: 40px;
     height: 40px;
-    background: rgb(159,195,249);
-    background: linear-gradient(180deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+    background: rgb(159, 195, 249);
+    background: linear-gradient(
+        180deg,
+        rgba(159, 195, 249, 1) 0%,
+        rgba(131, 219, 224, 1) 100%
+    );
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     .btn-add {
         z-index: 1;
         margin-top: -520px;
@@ -90,32 +98,36 @@
     }
 }
 
-form .img-preview input{
+form .img-preview input {
     display: none;
- }
- 
- form label{
-     font-family: 'Noto Sans', sans-serif;
-     font-weight: 600;
-     margin-bottom: 8px;
- }
- 
- form textarea{
-     resize: none;
- }
+}
 
- .image-wrapper{
+form label {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+form textarea {
+    resize: none;
+}
+
+.image-wrapper {
     height: 25vh;
     width: 100%;
     /* border: 1px solid red; */
-    background: rgb(159,195,249);
-    background: linear-gradient(76deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
+    background: rgb(159, 195, 249);
+    background: linear-gradient(
+        76deg,
+        rgba(159, 195, 249, 1) 0%,
+        rgba(131, 219, 224, 1) 100%
+    );
     padding: 10px;
     /* border: 1px solid #eee; */
     border-radius: 5px;
 }
 
-.img-preview{
+.img-preview {
     /* padding: 10px; */
     height: 25vh;
     /* height: 25vh;
@@ -125,32 +137,33 @@ form .img-preview input{
     /* text-align: center; */
 }
 
- form .label-image{
-     padding: 7px 22px;
-     background-color: #69AFB3;
-     border-radius: 25px ;
-     color: #4D5569;
-     float: right;
-     margin-top: 100px;
- }
- 
- form .btn-post{
-     background: rgb(159,195,249);
-     background: linear-gradient(180deg, rgba(159,195,249,1) 0%, rgba(131,219,224,1) 100%);
-     color: white !important;
-     font-family: 'Noto Sans', sans-serif !important;
-     font-weight: 600 !important;
-     font-size: 16px;
- }
-
-#content-jadwal form input[type="text"],
-#content-jadwal form textarea{
-    background-color: #EDF1F7;
-    border: none;
+form .label-image {
+    padding: 7px 22px;
+    background-color: #69afb3;
+    border-radius: 25px;
+    color: #4d5569;
+    float: right;
+    margin-top: 100px;
 }
 
+form .btn-post {
+    background: rgb(159, 195, 249);
+    background: linear-gradient(
+        180deg,
+        rgba(159, 195, 249, 1) 0%,
+        rgba(131, 219, 224, 1) 100%
+    );
+    color: white !important;
+    font-family: "Noto Sans", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px;
+}
 
-
+#content-jadwal form input[type="text"],
+#content-jadwal form textarea {
+    background-color: #edf1f7;
+    border: none;
+}
 
 /* ======================================== Jadwal kelas ============================*/
 /* #jadwal_kelas{
@@ -160,72 +173,117 @@ form .img-preview input{
 } */
 
 #jadwal_kelas .card,
-#presensi-murid .card{
-    -webkit-box-shadow: 0px 0px 17px 2px rgba(211,229,244,1);
-    -moz-box-shadow: 0px 0px 17px 2px rgba(211,229,244,1);
-    box-shadow: 0px 0px 17px 2px rgba(211,229,244,1);
+#presensi-murid .card {
+    -webkit-box-shadow: 0px 0px 17px 2px rgba(211, 229, 244, 1);
+    -moz-box-shadow: 0px 0px 17px 2px rgba(211, 229, 244, 1);
+    box-shadow: 0px 0px 17px 2px rgba(211, 229, 244, 1);
 }
 
 #jadwal_kelas .card:hover,
-#presensi-murid .card:hover{
+#presensi-murid .card:hover {
     transform: scale(1.02);
     transition: all 300ms;
 }
 
 #jadwal_kelas .card img,
-#presensi-murid .card img{
+#presensi-murid .card img {
     margin: 0 auto;
     width: 200px;
 }
 
 #jadwal_kelas .card-title,
-#presensi-murid .card-title{
-    font-family: 'Rubik', sans-serif;
+#presensi-murid .card-title {
+    font-family: "Rubik", sans-serif;
 }
 
 #jadwal_kelas .card-description,
-#presensi-murid .card-description{
+#presensi-murid .card-description {
     margin-top: -20px;
 }
 
 #jadwal_kelas .card-description i,
-#presensi-murid .card-description i{
-    color: #9FC3F9;
+#presensi-murid .card-description i {
+    color: #9fc3f9;
 }
 #jadwal_kelas .card-description span,
-#presensi-murid .card-description span{
-    color: #4D5569;
-    font-family: 'Noto Sans', sans-serif;
+#presensi-murid .card-description span {
+    color: #4d5569;
+    font-family: "Noto Sans", sans-serif;
     font-weight: 400;
     font-size: 12px;
 }
 
 #jadwal_kelas .row h6,
-#presensi-murid .row h6{
-    font-family: 'Noto Sans', sans-serif;
+#presensi-murid .row h6 {
+    font-family: "Noto Sans", sans-serif;
     font-weight: 600;
     font-size: 20px;
 }
 
-#jadwal_kelas .btn-kelas{
+#jadwal_kelas .btn-kelas {
     cursor: pointer;
 }
 
 #jadwal_kelas .card-kelas,
-#presensi-murid .card-kelas{
-    -webkit-box-shadow: 0px 5px 16px -2px rgba(230,223,223,1);
-    -moz-box-shadow: 0px 5px 16px -2px rgba(230,223,223,1);
-    box-shadow: 0px 5px 16px -2px rgba(230,223,223,1);
+#presensi-murid .card-kelas {
+    -webkit-box-shadow: 0px 5px 16px -2px rgba(230, 223, 223, 1);
+    -moz-box-shadow: 0px 5px 16px -2px rgba(230, 223, 223, 1);
+    box-shadow: 0px 5px 16px -2px rgba(230, 223, 223, 1);
     border-radius: 15px;
 }
 #jadwal_kelas .card-kelas a span,
-#presensi-murid .card-kelas a span{
-    font-family: 'Noto Sans', sans-serif;
+#presensi-murid .card-kelas a span {
+    font-family: "Noto Sans", sans-serif;
     font-weight: 600;
     font-size: 16px;
-} 
+}
 
-#presensi-murid .is-active{
+#presensi-murid .is-active {
     display: none;
 }
-/* ======================================== End Jadwal kelas ============================*/ 
+/* ======================================== End Jadwal kelas ============================*/
+
+/* ======================================== Fasilitas Peminjaman ====================== */
+
+.fasilitas-head {
+    display: flex;
+    align-items: stretch;
+}
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+.fasilitas-search {
+    margin: 30px 0;
+}
+.fasilitas-toggle {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    overflow-x: hidden !important;
+}
+.fasilitas-toggle.is-active {
+    background-color: #fff;
+    border-bottom: 4px solid #69afb3;
+}
+.fasilitas-content {
+    padding: 30px;
+    display: none;
+}
+.fasilitas-content.is-active {
+    display: block;
+}
+.fasilitas-title {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.fasilitas .bi-search {
+    margin-left: -40px;
+}
