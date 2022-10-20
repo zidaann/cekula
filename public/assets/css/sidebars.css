@@ -29,7 +29,7 @@
 }
 
 .input-bg {
-    background-color: #EDF1F7;
+    background-color: #edf1f7;
     border: none;
 }
 
@@ -42,15 +42,20 @@
 }
 
 .color-blue {
-    color: #69AFB3;
+    color: #90d1ec;
 }
 
 .text-grey-600 {
-    color: #4D5569;
+    color: #4d5569;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(202, 184, 184, 0.25);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(202, 184, 184, 0.25);
+    box-shadow: 0px 2px 5px 0px rgba(202, 184, 184, 0.25);
 }
 
 /* end component */
-
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -179,7 +184,6 @@ html {
 .sidebar-heading {
     font-size: 0.75rem;
 }
-
 
 /* Sidebar 2 */
 

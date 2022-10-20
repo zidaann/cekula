@@ -19,7 +19,7 @@
 
   <div class="mb-3">
     <label for ="nama_hari" class="form-label"> Nama Hari </label>
-    <input type ="text" name="nama_hari" id="nama_hari" class="form-control" placeholder="Masukkan jadwal hari">
+    <input type ="text" name="nama_hari" id="nama_hari" class="form-control" placeholder="Masukkan jadwal hari" >
   </div>
   <div class="mb-3">
     <label for ="mata_pelajaran" class="form-label"> Nama Mata Pelajaran </label>

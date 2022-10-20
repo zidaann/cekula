@@ -1,10 +1,10 @@
 <div class="mb-3">
     <label for ="no_id" class="form-label "> No. Identitas Murid </label>
-    <input type ="text" name="no_id" id="no_id" class="form-control input-bg-grey" placeholder="Masukkan nomor identitas murid">
+    <input type ="text" name="no_id" id="no_id" class="form-control input-bg" placeholder="Masukkan nomor identitas murid">
 </div>
 <div class="mb-3">
     <label for ="name" class="form-label"> Nama Murid </label>
-    <input type ="text" name="name" id="name" class="form-control input-bg-grey" placeholder="Masukkan nama murid">
+    <input type ="text" name="name" id="name" class="form-control input-bg" placeholder="Masukkan nama murid">
 </div>
 <div class="mb-3">
     <p class="font-noto fw-bold">Tingkat Kelas</p>
@@ -27,11 +27,11 @@
 
 <div class="mb-3">
     <label for ="tgl_kehadiran" class="form-label "> Tanggal Kehadiran </label>
-    <input type ="text" name="tgl_kehadiran" id="datepicker" class="form-control input-bg-grey">
+    <input type ="text" name="tgl_kehadiran" id="datepicker" class="form-control input-bg">
 </div>
 <div class="mb-3">
     <label for ="kd_kehadiran" class="form-label"> Kode Kehadiran </label>
-    <input type ="text" name="kd_kehadiran" id="kd_kehadiran" class="form-control input-bg-grey">
+    <input type ="text" name="kd_kehadiran" id="kd_kehadiran" class="form-control input-bg" onclick="date()">
 </div>
 <div class="mb-3">
     <div class="row">

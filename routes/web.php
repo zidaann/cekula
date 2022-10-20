@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\PresensiPegawaiController;
 use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
 use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
+use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
@@ -114,6 +115,18 @@ Route::prefix("berita")->group(function () {
             "berita.sekolah.show"
         );
         // Route::get('sekolah', [BeritaSekolahController::class, 'index'])->name('berita.sekolah.index');
+    });
+});
+
+Route::prefix("fasilitas")->group(function () {
+    Route::prefix("peminjaman-fasilitas")->group(function () {
+        Route::get("", [PeminjamanFasilitasController::class, "index"])->name(
+            "fasilitas.peminjaman.index"
+        );
+        Route::get("create", [
+            PeminjamanFasilitasController::class,
+            "create",
+        ])->name("fasilitas.peminjaman.create");
     });
 });
 
