@@ -21,7 +21,7 @@ Route::get("/beritasekolah", function () {
 });
 
 Route::get("/coba", function () {
-    return view("dashboard.akademik.penilaian_pembelajaran.create");
+    return view("dashboard.berita.berita_kelas.edit");
 });
 
 Route::get("register", [RegisterController::class, "create"])
