@@ -7,15 +7,23 @@
     line-height: 19px;
     color: #202a44; */
 }
+
+.font-24 {
+    font-size: 24px;
+}
+
 .font-20 {
     font-size: 20px;
 }
+
 .font-10 {
     font-size: 10px;
 }
+
 .font-16 {
     font-size: 16px;
 }
+
 .font-noto {
     font-family: "Noto Sans";
 }
@@ -24,6 +32,7 @@
     background-color: #edf1f7;
     border: none;
 }
+
 .color-user {
     color: #f7f9fc;
 }
@@ -31,9 +40,11 @@
 .bg-color {
     background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
 }
+
 .color-blue {
     color: #90d1ec;
 }
+
 .text-grey-600 {
     color: #4d5569;
 }
@@ -43,6 +54,7 @@
     -moz-box-shadow: 0px 2px 5px 0px rgba(202, 184, 184, 0.25);
     box-shadow: 0px 2px 5px 0px rgba(202, 184, 184, 0.25);
 }
+
 /* end component */
 
 .bd-placeholder-img {
@@ -129,8 +141,10 @@ html {
     bottom: 0;
     /* rtl:remove */
     left: 0;
-    z-index: 100; /* Behind the navbar */
-    padding: 30px 5px; /* Height of navbar */
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 30px 5px;
+    /* Height of navbar */
     background: linear-gradient(180deg, #9fc3f9 -46.62%, #83dbe0 125.68%);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
@@ -181,6 +195,7 @@ html {
     padding: 0.25rem 0.5rem;
     background-color: transparent;
 }
+
 .btn-toggle:hover,
 .btn-toggle:focus {
     color: rgba(0, 0, 0, 0.85);
@@ -199,6 +214,7 @@ html {
 .btn-toggle[aria-expanded="true"] {
     color: rgba(0, 0, 0, 0.85);
 }
+
 .btn-toggle[aria-expanded="true"]::after {
     transform: rotate(-90deg);
 }
@@ -208,6 +224,7 @@ html {
     margin-top: 0.125rem;
     margin-left: 1.25rem;
 }
+
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
     background-color: #d2f4ea;
