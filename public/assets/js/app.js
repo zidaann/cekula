@@ -112,3 +112,17 @@ fasilitas.forEach((tab, index) => {
         fasilitas[index].classList.add("is-active");
     });
 });
+
+// =======================  Select2 =======================
+
+$(document).ready(function () {
+    $(".select2").select2({
+        placeholder: "Pilihan",
+        cache: false,
+    });
+});
+
+// =======================  Trix Editor =======================
+document.addEventListener("trix-file-accept", function (e) {
+    e.preventDefault();
+});

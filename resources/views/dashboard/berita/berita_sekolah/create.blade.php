@@ -6,7 +6,7 @@
         <a href="{{ route('berita.sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
         <span class="text-white mx-auto">Buat Berita Sekolah</span>
     </div>
-  </div>
+</div>
   
   <main class="mb-4">
       <div id="content-jadwal">

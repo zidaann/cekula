@@ -21,6 +21,8 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/trix.css">
+    <script type="text/javascript" src="/assets/js/trix.js"></script>
   </head>
   <body>
     

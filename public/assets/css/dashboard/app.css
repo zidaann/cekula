@@ -1,3 +1,12 @@
+/* trix editor =========================  Hide File Upload ===================*/
+trix-toolbar [data-trix-button-group="file-tools"] {
+    display: none !important;
+}
+
+/* trix-toolbar {
+    background-color: #69afb3;
+} */
+
 .header-schedule {
     background: rgb(159, 195, 249);
     background: linear-gradient(
@@ -269,7 +278,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .fasilitas-toggle.is-active {
     background-color: #fff;
-    border-bottom: 4px solid #69afb3;
+    border-bottom: 4px solid #83dbe0;
 }
 .fasilitas-content {
     padding: 30px;
@@ -287,3 +296,11 @@ input[type="search"]::-webkit-search-cancel-button {
 .fasilitas .bi-search {
     margin-left: -40px;
 }
+.select2 {
+    width: 100% !important;
+    border: none;
+}
+/* .select2-search {
+    background-color: #edf1f7 !important;
+    padding-bottom: 7px;
+} */
