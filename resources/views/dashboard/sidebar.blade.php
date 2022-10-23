@@ -139,13 +139,13 @@
           </div>
         </li>
         <li class="mb-1">
-          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#non_akademik-collapse" aria-expanded="false">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#laporan-collapse" aria-expanded="false">
             <i class="bi bi-file-earmark-bar-graph-fill"></i>
             <div class="d-flex w-100 px-2 ps-md-0 ps-lg-2">
               <h6 class="pt-2">Laporan</h6>
             </div>
           </button>
-          <div class="collapse" id="non_akademik-collapse">
+          <div class="collapse" id="laporan-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Presensi Pegawai</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Presensi Murid</a></li>
