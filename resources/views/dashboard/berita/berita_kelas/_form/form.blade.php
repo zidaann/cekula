@@ -20,9 +20,10 @@
   </div>
 
   <div class="mb-3">
-      <label for ="deskripsi_pelaksanaan"> Deskripsi Berita </label>
-      <textarea class="form-control mt-2" placeholder="Masukkan deskripsi jadwal" id="deskripsi_pelaksanaan" name="deskripsi_pelaksanaan"></textarea>
-  </div>
+    <label for ="deskripsi_berita"> Deskripsi Berita </label>
+    <input type="hidden" name="deskripsi_berita" id="deskripsi_berita">
+    <trix-editor input="deskripsi_berita"></trix-editor>
+</div>
   <div class="d-grid gap-2 col-6 mx-auto">
       <button class="btn-post border-0 btn" type="button">Posting jadwal</button>
 </div>

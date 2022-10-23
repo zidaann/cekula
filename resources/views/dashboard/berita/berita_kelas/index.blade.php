@@ -44,7 +44,7 @@
       </div>
 
       <div class="btn-add">
-        <a href="{{ route('berita.sekolah.create') }}">
+        <a href="{{ route('berita.kelas.create') }}">
           <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
         </a>
       </div>

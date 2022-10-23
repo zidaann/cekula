@@ -15,6 +15,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Service</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">PPDB</a>
+          </li>
           <li class="nav-item nav-login">
             <a class="nav-link " aria-current="page" href="{{ route('login') }}">Login</a>
           </li>

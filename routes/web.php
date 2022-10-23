@@ -4,11 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\PresensiPegawaiController;
+use App\Http\Controllers\Dashboard\Admin\BeritaKelasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
 use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
-use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
+use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
 Route::get("/", function () {
@@ -75,9 +76,7 @@ Route::prefix("presensi")->group(function () {
             "presensi.pegawai.index"
         );
         Route::get("create", [
-            PresensiPegawaiController::class,
-            "create",
-        ])->name("presensi.pegawai.create");
+            PresensiPegawaiController::class,"create",])->name("presensi.pegawai.create");
         // Route::post('create', [PresensiPegawaiController::class, 'store'])->name('presensi.pegawai.store');
         Route::get("edit", [PresensiPegawaiController::class, "edit"])->name(
             "presensi.pegawai.edit"
@@ -116,6 +115,11 @@ Route::prefix("berita")->group(function () {
         );
         // Route::get('sekolah', [BeritaSekolahController::class, 'index'])->name('berita.sekolah.index');
     });
+    Route::prefix('kelas')->group(function(){
+        Route::get('', [BeritaKelasController::class, 'index'])->name('berita.kelas.index');
+        Route::get('create', [BeritaKelasController::class, 'create'])->name('berita.kelas.create');
+        Route::get('edit', [BeritaKelasController::class, 'edit'])->name('berita.kelas.edit');
+    });
 });
 
 Route::prefix("fasilitas")->group(function () {
@@ -123,10 +127,8 @@ Route::prefix("fasilitas")->group(function () {
         Route::get("", [PeminjamanFasilitasController::class, "index"])->name(
             "fasilitas.peminjaman.index"
         );
-        Route::get("create", [
-            PeminjamanFasilitasController::class,
-            "create",
-        ])->name("fasilitas.peminjaman.create");
+        Route::get("create", [PeminjamanFasilitasController::class,"create",])->name("fasilitas.peminjaman.create");
+        Route::get("edit", [PeminjamanFasilitasController::class,"edit",])->name("fasilitas.peminjaman.edit");
     });
 });
 
