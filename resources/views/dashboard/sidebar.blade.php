@@ -58,7 +58,7 @@
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
               <li><a href="{{ route('jadwal_sekolah.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Sekolah</a></li>
               <li><a href="{{ route('jadwal_kelas.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Kelas</a></li>
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Raport Murid</a></li>
+              <li><a href="{{ route('rapor.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Raport Murid</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penilaian Pembelajaran</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kartu Pelajar Digital</a></li>
             </ul>
@@ -117,7 +117,7 @@
           </button>
           <div class="collapse" id="fasilitas-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-              <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Perpustakaan</a></li>
+              <li><a href="{{ route('perpustakaan.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Perpustakaan</a></li>
               <li><a href="{{ route('fasilitas.peminjaman.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Peminjaman Fasilitas</a></li>
               <li><a href="" class="link-dark d-inline-flex text-decoration-none rounded">Kantin</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Koperasi</a></li>
