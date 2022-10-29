@@ -4,12 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\PresensiPegawaiController;
+use App\Http\Controllers\Dashboard\Admin\RaporMuridController;
 use App\Http\Controllers\Dashboard\Admin\BeritaKelasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
+use App\Http\Controllers\Dashboard\Admin\PerpustakaanController;
 use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
+use App\Http\Controllers\Dashboard\Admin\PeminjamanPerpustakaanController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
 Route::get("/", function () {
@@ -67,6 +70,11 @@ Route::prefix("akademik")->group(function () {
             JadwalKelasController::class,
             "show",
         ])->name("jadwal_kelas.show");
+    });
+
+    Route::prefix('raport-murid')->group(function(){
+        Route::get('', [RaporMuridController::class,'index'])->name('rapor.index');
+        Route::get('detail-rapor', [RaporMuridController::class,'detailRapor'])->name('rapor.detailRapor');
     });
 });
 
@@ -129,6 +137,13 @@ Route::prefix("fasilitas")->group(function () {
         );
         Route::get("create", [PeminjamanFasilitasController::class,"create",])->name("fasilitas.peminjaman.create");
         Route::get("edit", [PeminjamanFasilitasController::class,"edit",])->name("fasilitas.peminjaman.edit");
+    });
+
+    Route::prefix('perpustakaan')->group(function(){
+        Route::get('', [PerpustakaanController::class,'index'])->name('perpustakaan.index');
+        Route::prefix('peminjaman')->group(function(){
+            Route::get('create', [PeminjamanPerpustakaanController::class, 'create'])->name('perpustakaan.pinjam.create');
+        });
     });
 });
 

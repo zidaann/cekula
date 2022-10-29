@@ -301,6 +301,17 @@ input[type="search"]::-webkit-search-cancel-button {
     border: none;
 }
 /* .select2-search {
-    background-color: #edf1f7 !important;
-    padding-bottom: 7px;
+    padding: 10px 0;
 } */
+.select2-selection{
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+    background-color: #edf1f7 !important;
+    border: unset !important;
+    border-radius: 0;
+    color: #555555;
+    font-size: 16px;
+    outline: 0;
+    min-height: 50px;
+    text-align: left;
+}
