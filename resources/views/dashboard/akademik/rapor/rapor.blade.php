@@ -108,10 +108,6 @@
             <th style="width: 10%">Dalam Mapel</th>
             <th style="width: 26%">Antar Mapel</th>
           </tr>
-          <tr class="text-start">
-            <td colspan="6" class="fw-semibold">Kelompok A</td>
-            <td colspan="2"></td>
-          </tr>
           <tr class="text-center">
             <td style="width: 5%;">1</td>
             <td class="text-start"><p>Pendidikan Agama dan Budi Pekerti</p></td>
@@ -176,9 +172,6 @@
             <td>B</td>
             <td>SB</td>
           </tr>
-          <tr class="text-start">
-            <td colspan="7" class="fw-semibold">Kelompok B</td>
-          </tr>
           <tr class="text-center">
             <td style="width: 5%;">1</td>
             <td class="text-start"><p>Seni Budaya</p></td>
@@ -207,25 +200,25 @@
             <td>SB</td>
           </tr>
         </table>
-        <table style="width: 100%" class="capaian-rapot mb-4 font-noto">
+        <table style="width: 50%" class="capaian-rapot mb-4 font-noto">
           <tr class="text-center">
-            <th style="width: 40%" colspan="2">Kegiatan Ekstrakulikuler</th>
-            <th style="width: 60%">Keterangan</th>
+            <th style="width: 75%" colspan="2">Kegiatan Ekstrakulikuler</th>
+            <th style="width: 25%">Nilai</th>
           </tr>
           <tr class="text-start">
             <td style="width: 5%" class="text-center">1</td>
             <td>Praja Muda Karana (Pramuka)</td>
-            <td>Memuaskan, Aktif dalam perkemahan dan latihan mingguan</td>
+            <td class="text-center">A</td>
           </tr>
           <tr class="text-start">
             <td style="width: 5%" class="text-center">2</td>
             <td>Palang Merah Remaja (PMR)</td>
-            <td>Memuaskan, Aktif dalam perkemahan Wirakarya dan Raimuna Cabang Jakarta Selatan</td>
+            <td class="text-center">A</td>
           </tr>
           <tr class="text-start">
             <td style="width: 5%" class="text-center">3</td>
             <td>Bola Kaki</td>
-            <td>Memuaskan, Aktif dalam latihan, pertandingan LPI Cup</td>
+            <td class="text-center">A</td>
           </tr>
         </table>
         <table style="width: 50%; border: 1px solid black" class="mb-4 font-noto">
