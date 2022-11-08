@@ -4,7 +4,7 @@
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
         <a href="#" class="text-white "><i class="bi bi-arrow-left"></i></a>
-        <span class="text-white mx-auto">Data Murid</span>
+        <span class="text-white mx-auto">Data Mutasi Murid</span>
     </div>
   </div>
   
@@ -15,7 +15,7 @@
               <div class="col-md-10">
                   <form action="#" method="" enctype="multipart/form-data">
                     @csrf
-                      @include('dashboard.administrasi.data_murid._form.form_2')
+                      @include('dashboard.administrasi.mutasi_murid._form.form')
                   </form>
               </div>
           </div>

@@ -15,7 +15,7 @@
               <div class="col-md-10">
                   <form action="#" method="" enctype="multipart/form-data">
                     @csrf
-                      @include('dashboard.administrasi._form.form_1')
+                      @include('dashboard.administrasi.data_murid._form.form_1')
                   </form>
               </div>
           </div>

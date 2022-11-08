@@ -2,7 +2,7 @@
 @section('content')
   <div class="header-schedule shadow-1">
       <div class="d-flex align-items-center px-4">
-        <span class="text-white mx-auto">Data Murid</span>
+        <span class="text-white mx-auto">Data Mutasi Murid</span>
       </div>
     </div>
     <div id="main" class="mx-3 px-4">
@@ -31,12 +31,7 @@
             </th>
             <th class="border-0">
               <div class="bg-color-content rounded py-2 shadow-1">
-                NIS
-              </div>
-            </th>
-            <th class="border-0">
-              <div class="bg-color-content rounded py-2 shadow-1">
-                JENIS KELAMIN
+                NISN
               </div>
             </th>
             <th class="border-0">
@@ -50,8 +45,23 @@
             <td class="text-center border-0 shadow-1">
               <div class="rounded py-2 shadow-1">201989238</div>
             </td>
+            <td class="text-center border-0">
+              <div class="rounded d-flex justify-content-around py-2 shadow-1">
+                <a href="#" class="text-black">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                <a href="#" class="text-black">
+                    <i class="bi bi-trash"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-0">
+              <div class="rounded py-2 shadow-1 ps-2">Ahmad Jourji Zaidan</div>
+            </td>
             <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
+              <div class="rounded py-2 shadow-1">201989238</div>
             </td>
             <td class="text-center border-0">
               <div class="rounded d-flex justify-content-around py-2 shadow-1">
@@ -71,8 +81,23 @@
             <td class="text-center border-0 shadow-1">
               <div class="rounded py-2 shadow-1">201989238</div>
             </td>
+            <td class="text-center border-0">
+              <div class="rounded d-flex justify-content-around py-2 shadow-1">
+                <a href="#" class="text-black">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                <a href="#" class="text-black">
+                    <i class="bi bi-trash"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-0">
+              <div class="rounded py-2 shadow-1 ps-2">Ahmad Jourji Zaidan</div>
+            </td>
             <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
+              <div class="rounded py-2 shadow-1">201989238</div>
             </td>
             <td class="text-center border-0">
               <div class="rounded d-flex justify-content-around py-2 shadow-1">
@@ -92,9 +117,6 @@
             <td class="text-center border-0 shadow-1">
               <div class="rounded py-2 shadow-1">201989238</div>
             </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
-            </td>
             <td class="text-center border-0">
               <div class="rounded d-flex justify-content-around py-2 shadow-1">
                 <a href="#" class="text-black">
@@ -106,91 +128,6 @@
               </div>
             </td>
           </tr>
-          <tr>
-            <td class="border-0">
-              <div class="rounded py-2 shadow-1 ps-2">Ahmad Jourji Zaidan</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">201989238</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
-            </td>
-            <td class="text-center border-0">
-              <div class="rounded d-flex justify-content-around py-2 shadow-1">
-                <a href="#" class="text-black">
-                    <i class="bi bi-pencil-square"></i>
-                </a>
-                <a href="#" class="text-black">
-                    <i class="bi bi-trash"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-0">
-              <div class="rounded py-2 shadow-1 ps-2">Ahmad Jourji Zaidan</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">201989238</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
-            </td>
-            <td class="text-center border-0">
-              <div class="rounded d-flex justify-content-around py-2 shadow-1">
-                <a href="#" class="text-black">
-                    <i class="bi bi-pencil-square"></i>
-                </a>
-                <a href="#" class="text-black">
-                    <i class="bi bi-trash"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-0">
-              <div class="rounded py-2 shadow-1 ps-2">Ahmad Jourji Zaidan</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">201989238</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
-            </td>
-            <td class="text-center border-0">
-              <div class="rounded d-flex justify-content-around py-2 shadow-1">
-                <a href="#" class="text-black">
-                    <i class="bi bi-pencil-square"></i>
-                </a>
-                <a href="#" class="text-black">
-                    <i class="bi bi-trash"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-0">
-              <div class="rounded py-2 shadow-1 ps-2">Ahmad Jourji Zaidan</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">201989238</div>
-            </td>
-            <td class="text-center border-0 shadow-1">
-              <div class="rounded py-2 shadow-1">Perempuan</div>
-            </td>
-            <td class="text-center border-0">
-              <div class="rounded d-flex justify-content-around py-2 shadow-1">
-                <a href="#" class="text-black">
-                    <i class="bi bi-pencil-square"></i>
-                </a>
-                <a href="#" class="text-black">
-                    <i class="bi bi-trash"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-
         </table>
       </div>
     </div>
