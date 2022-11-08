@@ -9,70 +9,29 @@
   <main>
     <div class="container">
       <div class="row p-4 ">
+        @foreach ($jadwals as $jadwal)
         <div class="col-md-6 mb-3">
-          <div class="card border-0 py-3">
-            <img src="/assets/img/dashboard/jadwal_sekolah/ilustrasi.png" class="card-img-top img-fluid" >
-            <div class="card-body">
-              <div class="card-title fw-bold fs-5">Kegiatan Tengah Semester</div>
-              <p>15 Oktober - 23 Oktober 2022</p>
+         <a href="{{ route('jadwal_sekolah.show') }}" class="text-decoration-none">
+            <div class="card border-0 py-3">
+              <div class="text-center">
+                <img src="{{ asset('storage/'.$jadwal->pamflet) }}" class="card-img-top img-fluid mx-auto" >
+              </div>
+              <div class="card-body">
+                <div class="card-title fw-bold fs-5">{{ $jadwal->judul }}</div>
+                <p>{{ date('d F Y', strtotime($jadwal->tanggal_pelaksanaan)) }} - {{ date('d F Y', strtotime($jadwal->tanggal_selesai_pelaksanaan)) }} </p>
+              </div>
+              <div class="card-action d-flex align-items-center float-end">
+                <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
+                <form action="#" method="post" class="delete_jadwal">
+                  @csrf
+                    <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
+                </form>
+              </div>
             </div>
-            <div class="card-action d-flex align-items-center float-end">
-              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
-              <form action="#" method="post" class="delete_jadwal">
-                @csrf
-                  <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
-              </form>
-            </div>
-          </div>
+         </a>
         </div>
-        <div class="col-md-6 mb-3">
-          <div class="card border-0 py-3">
-            <img src="/assets/img/dashboard/jadwal_sekolah/ilustrasi.png" class="card-img-top img-fluid" >
-            <div class="card-body">
-              <div class="card-title fw-bold fs-5">Dies Natalis Sekolah</div>
-              <p>21 Desember - 28 Oktober 2022</p>
-            </div>
-            <div class="card-action d-flex align-items-center float-end">
-              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
-              <form action="#" method="post" class="delete_jadwal">
-                @csrf
-                  <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mb-3">
-          <div class="card border-0 py-3">
-            <img src="/assets/img/dashboard/jadwal_sekolah/ilustrasi.png" class="card-img-top img-fluid" >
-            <div class="card-body">
-              <div class="card-title fw-bold fs-5">Kegiatan Akhir Semester</div>
-              <p>12 Januari - 19 Januari 2023</p>
-            </div>
-            <div class="card-action d-flex align-items-center float-end">
-              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
-              <form action="#" method="post" class="delete_jadwal">
-                @csrf
-                  <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
-              </form>
-            </div>
-          </div>
-        </div> 
-        <div class="col-md-6 mb-3">
-          <div class="card border-0 py-3">
-            <img src="/assets/img/dashboard/jadwal_sekolah/ilustrasi.png" class="card-img-top img-fluid" >
-            <div class="card-body">
-              <div class="card-title fw-bold fs-5">Kegiatan Akhir Semester</div>
-              <p>12 Januari - 19 Januari 2023</p>
-            </div>
-            <div class="card-action d-flex align-items-center float-end">
-              <a href="{{ route('jadwal_sekolah.edit') }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
-              <form action="#" method="post" class="delete_jadwal">
-                @csrf
-                  <button type="submit" class="border-0"><i class="bi bi-trash"></i></button>
-              </form>
-            </div>
-          </div>
-        </div> 
+        @endforeach
+        
       </div>
 
       <div class="btn-add">

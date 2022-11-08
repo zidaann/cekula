@@ -48,9 +48,14 @@ Route::prefix("akademik")->group(function () {
         Route::get("create", [JadwalSekolahController::class, "create"])->name(
             "jadwal_sekolah.create"
         );
-        // Route::get('create', [JadwalSekolahController::class, 'store'])->name('jadwal_sekolah.store');
+        Route::post("create", [JadwalSekolahController::class, "store"])->name(
+            "jadwal_sekolah.create"
+        );
         Route::get("edit", [JadwalSekolahController::class, "edit"])->name(
             "jadwal_sekolah.edit"
+        );
+        Route::get("{id}/show", [JadwalSekolahController::class, "show"])->name(
+            "jadwal_sekolah.show"
         );
     });
 
