@@ -12,7 +12,7 @@ class JadwalSekolahAPIController extends Controller
         return response()->json([
             'message' => 'Data Berhasil',
             'data' => JadwalSekolah::get()
-        ]);
+        ],200);
      }
      public function edit (){
         return view('dashboard.akademik.jadwal_sekolah.edit');

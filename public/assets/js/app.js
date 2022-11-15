@@ -1,39 +1,36 @@
-// const password = document.getElementById('password'); // id dari input password
-// const showHide = document.getElementById('showHide'); // id span showHide dalam input group password
+const password = document.getElementById('password'); // id dari input password
+const showHide = document.getElementById('showHide'); // id span showHide dalam input group password
 
-// password.type = "password"; // set type input password menjadi password
-// password.style.padding = "8px 20px";
-// password.style.borderColor = "#9FC3F9";
-// showHide.innerHTML = '<i class="bi bi-eye"></i>'; // masukan icon eye dalam icon bootstrap 5
-// showHide.style.cursor = 'pointer'; // ubah cursor menjadi pointer
+password.type = "password"; // set type input password menjadi password
+password.style.padding = "8px 20px";
+password.style.borderColor = "#9FC3F9";
+showHide.innerHTML = '<i class="bi bi-eye"></i>'; // masukan icon eye dalam icon bootstrap 5
+showHide.style.cursor = 'pointer'; // ubah cursor menjadi pointer
 // // jadi ketika span di hover maka cursornya berubah pointer
 
-// showHide.addEventListener('click', () => {
-// // ketika span diclick
-//     if (password.type === 'password') {
-//         // jika type inputnya password
-//         password.type = 'text'; // ubah type menjadi text
-//         showHide.innerHTML = '<i class="bi bi-eye-slash"></i>'; // ubah icon menjadi eye slash
-//     } else {
-//         // jika type bukan password (text)
-//         showHide.innerHTML = '<i class="bi bi-eye"></i>'; // ubah icon menjadi eye
-//         password.type = 'password'; // ubah type menjadi password
-//     }
-// });
+showHide.addEventListener('click', () => {
+// ketika span diclick
+    if (password.type === 'password') {
+        // jika type inputnya password
+        password.type = 'text'; // ubah type menjadi text
+        showHide.innerHTML = '<i class="bi bi-eye-slash"></i>'; // ubah icon menjadi eye slash
+    } else {
+        // jika type bukan password (text)
+        showHide.innerHTML = '<i class="bi bi-eye"></i>'; // ubah icon menjadi eye
+        password.type = 'password'; // ubah type menjadi password
+    }
+});
 
 // ALERT PASSWORD
-const passAlert = document.querySelector(".passAlert");
-
+// const passAlert = document.querySelector(".passAlert");
 function passwordAlert() {
-    passAlert.addEventListener("click", function () {
-        Swal.fire({
-            title: "Lupa Kata Sandi?",
-            text: "Silahkan Hubungi Administrator Sekolah Untuk \n Mengakses Aplikasi",
-            imageUrl: "/assets/img/password_alert.png",
-            imageWidth: 100,
-            imageHeight: 100,
-            imageAlt: "Custom image",
-        });
+    Swal.fire({
+        title: "Lupa Kata Sandi?",
+        text: "Silahkan Hubungi Administrator Sekolah Untuk \n Mengakses Aplikasi",
+        imageUrl: "/assets/img/password_alert.png",
+        imageWidth: 100,
+        imageHeight: 100,
+        imageAlt: "Custom image",
     });
 }
 
@@ -51,6 +48,27 @@ function passwordAlert() {
 //         showConfirmButton: false,
 //       });
 // });
+
+// alert hapus 
+$('.delete').click(() => {
+    swal({
+        title: "Yakin Ingin Menghapus?",
+        imageUrl: '/img/alert_posting_jadwal.png',
+        imageWidth: 120,
+        imageHeight: 200,
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Berhasil Dihapus!", {
+            icon: "success",
+          });
+        } else {
+          swal("Gagal Dihapus!");
+        }
+      });
+});
 
 // Show/Hide Jadwal Sekolah
 
@@ -89,12 +107,12 @@ $(".toggle-kelas").click(function (e) {
 });
 
 // =======================  FORM INPUT DATEPICKER =======================
-$(function () {
-    $(".datepicker").datepicker({
-        changeMonth: true,
-        changeYear: true,
-    });
-});
+// $(document).ready(function(){
+//     $(".datepicker").datepicker({
+//         changeMonth: true,
+//         changeYear: true,
+//     });
+// })
 
 // =======================  Tab Bar Fasilitas =======================
 let fasilitas = document.querySelectorAll(".fasilitas-toggle"),

@@ -1,5 +1,4 @@
 @extends('dashboard.main')
-
 @section('content')
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
