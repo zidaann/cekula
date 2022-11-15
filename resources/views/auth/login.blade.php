@@ -29,8 +29,7 @@
                       @enderror
                     </div>
                     <div class="text-end">
-                     <small class="passAlert
-                        passAlert" onclick="passAlert()">Lupa password ?</small>
+                     <small class="passAlert" onclick="passwordAlert()">Lupa password ?</small>
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">

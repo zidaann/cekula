@@ -13,7 +13,7 @@
         <div class="container py-4">
           <div class="row justify-content-center ">
               <div class="col-md-10">
-                  <form action="#" method="" enctype="multipart/form-data">
+                  <form action="{{ route('jadwal_sekolah.edit', $jadwalSekolah) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("PUT")
                     @include('dashboard.akademik.jadwal_sekolah._form.form')

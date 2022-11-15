@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cekula</title>
+    {{-- Jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="/assets/js/jquery.min.js"></script>
 
+    {{-- datepicker --}}
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+    <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+    {{-- sweet alert js --}}
+    <script type="text/javascript" src="/assets/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/assets/js/sweetalert2.js"></script>
     {{-- Link Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,16 +25,10 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/dashboard/app.css">
     {{-- Select2 --}}
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="/assets/css/select2.min.css">
     {{-- link icon bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    {{-- link sweet alert --}}
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    {{-- Jquery --}}
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" type="text/css" href="/assets/css/trix.css">
     <script type="text/javascript" src="/assets/js/trix.js"></script>
     @yield('styles')
@@ -41,12 +44,12 @@
     </div>
 
     {{-- select2 --}}
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="/assets/js/select2.min.js"></script>
     <script src="/assets/js/sidebars.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    {{-- sweet alert --}}
+    @include('sweetalert::alert')
     @stack('script')
   </body>
 </html>

@@ -1,5 +1,4 @@
 @extends('dashboard.main')
-
 @section('content')
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
@@ -13,7 +12,7 @@
         <div class="container py-4">
           <div class="row justify-content-center ">
               <div class="col-md-10">
-                  <form action="#" method="" enctype="multipart/form-data">
+                  <form action="{{ route('jadwal_sekolah.create') }}" method="post" enctype="multipart/form-data">
                     @csrf
                       {{-- <div class="img-preview mb-3 rounded">
                           <label for ="image"><i class="bi bi-camera"></i></label>

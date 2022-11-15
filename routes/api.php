@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\JadwalSekolahAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+    
+// });
+// Route::middleware('auth:sanctum')->group(function(){
+//     Route::post('show', [JadwalSekolahAPIController::class, 'show']);
+//     Route::post('create', [JadwalSekolahAPIController::class, 'create']);
+// }) ;
+Route::get('jadwal-sekolah', [JadwalSekolahAPIController::class, 'index']);
+    
+    
