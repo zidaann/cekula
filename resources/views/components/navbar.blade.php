@@ -7,19 +7,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item ">
-            <a class="nav-link " aria-current="page" href="">Home</a>
+            <a class="nav-link " aria-current="page" href="#beranda">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">About</a>
+            <a class="nav-link" aria-current="page" href="#tentang">Tentang</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Service</a>
+            <a class="nav-link" aria-current="page" href="#berita_beranda">Berita</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">PPDB</a>
           </li>
           <li class="nav-item nav-login">
-            <a class="nav-link " aria-current="page" href="{{ route('login') }}">Login</a>
+            <a class="nav-link" aria-current="page" href="{{ route('login') }}">Masuk</a>
           </li>
         </ul>
       </div>
