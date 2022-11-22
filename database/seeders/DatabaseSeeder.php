@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Carbon\Carbon;
+use App\Models\Kelas;
+use App\Models\Mapel;
+use App\Models\Pegawai;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,5 +26,17 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password' => bcrypt('password')
         ]);
+       $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class ]);
+        
+
+        
+
+        
+        
+        
+
+            
     }
+
+        
 }

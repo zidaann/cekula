@@ -21,6 +21,14 @@
       @enderror
   </div>
   <div class="mb-3">
+      <label for ="status_id"> Status </label>
+      <input type="checkbox" name="status_id" id="status" value="1" checked> Calon Murid
+      <input type="checkbox" name="status_id" id="status" value="2"> Murid
+      @error('judul')
+        <div class="text-danger mb-5"> {{ $message }}</div>
+      @enderror
+  </div>
+  <div class="mb-3">
       <label for ="tanggal_pelaksanaan"> Tanggal pelaksanaan </label>
       <input type ="date" name="tanggal_pelaksanaan" id="tanggal_pelaksanaan" class="form-control  @error('tanggal_pelaksanaan') is-invalid @enderror" placeholder="HH/BB/TT" value="{{ old('tanggal_pelaksanaan', $jadwalSekolah->tanggal_pelaksanaan) }}">
       @error('tanggal_pelaksanaan')

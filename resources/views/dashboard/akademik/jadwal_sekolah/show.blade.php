@@ -1,19 +1,20 @@
 @extends('dashboard.main')
 @section('content')
 <div class="header-schedule">
-    <div class="d-flex align-items-center justify-content-center">
-      <span class="text-white">Jadwal Sekolah</span>
+    <div class="d-flex align-items-center px-4">
+        <a href="{{ route('jadwal_sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
+        <span class="text-white mx-auto">Jadwal Sekolah</span>
     </div>
   </div>
   <main>
-    <div class="mx-5 px-5">
+    <div class="mx-5 px-5 pb-5">
         {{-- judul --}}
         <div>
             <p class="font-rubik font-20">{{ $jadwalSekolah->judul }}</p>
         </div>
         {{-- image --}}
         <div>
-            <img src="{{ asset('storage/'.$jadwalSekolah->pamflet) }}" alt="#">
+            <img src="{{ asset('storage/'.$jadwalSekolah->pamflet) }}" alt="#" class="img-fluid " width="400">
         </div>
         {{-- tanggal --}}
         <div class="d-flex align-items-center">
@@ -29,7 +30,7 @@
         </div>
         <div class="font-noto font-16">
             <div>
-                {{ $jadwalSekolah->deskripsi }}
+                {!! $jadwalSekolah->deskripsi !!}
             </div>
         </div>
     </div>

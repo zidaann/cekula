@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kelas;
+use Yajra\DataTables\DataTables;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class JadwalSekolah extends Model
 {
@@ -14,4 +16,11 @@ class JadwalSekolah extends Model
     public function getRouteKeyName (){
         return 'slug';
     }
+
+    public function status (){
+        return $this->hasOne(Status::class);
+    }
+
+    
+
 }
