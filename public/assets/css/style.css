@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 nav {
@@ -80,16 +80,14 @@ nav ul .nav-login a:hover {
     padding: 120px 50px;
 }
 
-.hero .hero-login {
+.hero-login {
     padding: 8px 75px;
     background-color: #d2d4da;
-    text-decoration: none;
     color: white;
     border-radius: 5px;
-    font-family: "Noto Sans", sans-serif !important;
 }
 
-.hero .hero-login:hover {
+.hero-login:hover {
     background: rgb(159, 195, 249);
     background: linear-gradient(171deg,
             rgba(159, 195, 249, 1) 0%,
@@ -289,8 +287,8 @@ nav ul .nav-login a:hover {
     border: 3px solid;
     border-color: rgb(118, 144, 182);
     border-color: linear-gradient(171deg,
-    rgba(159, 195, 249, 1) 0%,
-    rgba(131, 219, 224, 1) 100%);
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
 }
 
 .btn-blue:focus {
@@ -301,4 +299,101 @@ nav ul .nav-login a:hover {
     color: white;
     border: 3px solid;
     border-color: black;
+}
+
+/* landing page */
+#beranda {
+    height: 100vh;
+    max-height: 100vh;
+    background-image: url(/assets/svg/ilustrasi_home.svg);
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right;
+}
+
+#tulisan_beranda {
+    margin-top: -10%;
+    font-size: 48px;
+}
+
+@media screen and (max-width:992px) {
+    #beranda {
+        height: 100vh;
+        max-height: 100vh;
+        background-image: url(/assets/img/home_mobile.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom;
+    }
+
+    #tulisan_beranda {
+        margin-top: -40%;
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #beranda {
+        width: 100%;
+        max-width: 100%;
+        background-image: url(/assets/img/home_mobile.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom;
+    }
+
+    #tulisan_beranda {
+        margin-top: -75%;
+        font-size: 38px;
+    }
+}
+
+#tentang {
+    height: 100vh;
+    max-height: 100vh;
+}
+
+#wave {
+    width: 100vw;
+    background-image: url(/assets/svg/wave.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: -100;
+}
+
+#berita_beranda {
+    height: 100vh;
+    max-height: 100vh;
+}
+
+#footer_landingPage {
+    background: linear-gradient(180deg, #9FC3F9 -46.62%, #83DBE0 125.68%);
+}
+
+#wave2 {
+    width: 100vw;
+    background-image: url(/assets/svg/wave2.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -100;
+}
+
+.btn-capsule {
+    background-color: #d2d4da;
+    color: #fbfbfb;
+    border: none;
+    border-radius: 3rem;
+}
+
+.btn-capsule:hover,
+.btn-capsule:focus {
+    background: rgb(159, 195, 249);
+    background: linear-gradient(171deg,
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
 }
