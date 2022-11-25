@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Dashboard\Admin;
 
-use App\Traits\Notif;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\JadwalSekolah;
 use App\Http\Controllers\Controller;
-use App\Models\Status;
+use App\Http\Requests\JadwalSekolahRequest;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class JadwalSekolahController extends Controller
 {
-    use Notif;
     /**
      * Display a listing of the resource.
      *
@@ -42,17 +40,8 @@ class JadwalSekolahController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JadwalSekolahRequest $request)
     {
-        
-        // dd($request->all());
-       $request->validate([
-        'pamflet' => 'required|image|file|max:1024|mimes:jpg,jpeg,png',
-        'judul' => 'required',
-        'tanggal_pelaksanaan' => 'required',
-        'tanggal_selesai_pelaksanaan' => 'required',
-        'deskripsi' => 'required'
-      ]);
 
     //   if($request->file('pamflet')){
     //     $validateData['pamflet'] = $request->file('pamflet')->store('pamflets');
@@ -71,8 +60,9 @@ class JadwalSekolahController extends Controller
         'tanggal_selesai_pelaksanaan' => $request->tanggal_selesai_pelaksanaan,
         'deskripsi' => $request->deskripsi
       ]);
-        $this->alertCreate('Posting Jadwal', 'jadwal sekolah');
-        return redirect(route('jadwal_sekolah.index'));
+        Alert::image('Posting Jadwal Berhasil', 'Silahkan kembali ke halaman jadwal sekolah' ,'/assets/img/alert/alert_berhasil.png', '120px','200px');
+        return redirect()->route('jadwal_sekolah.index');
+        // return redirect()->route('jadwal_sekolah.index')->withSuccessMessage('success_message');
     }
 
     /**
@@ -109,7 +99,7 @@ class JadwalSekolahController extends Controller
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'pamflet' => 'image|file|max:1024|mimes:jpg,jpeg,png',
+            'pamflet' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
             'judul' => 'required',
             'tanggal_pelaksanaan' => 'required',
             'tanggal_selesai_pelaksanaan' => 'required',
@@ -121,11 +111,11 @@ class JadwalSekolahController extends Controller
             }
             $validatedData['pamflet'] = $request->file('pamflet')->store('pamflets');
         }
-        $valida['slug'] = Str::slug($request->judul, '-');
+        $validatedData['slug'] = Str::slug($request->judul, '-');
         $jadwalSekolah->update($validatedData);
-        $this->alertUpdate('Jadwal Sekolah', 'jadwal sekolah'); // base ada di trait notif
-        // return redirect(route('jadwal_sekolah.index'));
-        return redirect()->to(route('jadwal_sekolah.index'));
+        Alert::image('Jadwal Sekolah Berhasil Diubah', 'Silahkan kembali ke halaman jadwal sekolah' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );
+        return redirect(route('jadwal_sekolah.index'));
+
 
     }
 
@@ -138,7 +128,6 @@ class JadwalSekolahController extends Controller
     public function destroy($id)
     {
         JadwalSekolah::find($id)->delete();
-        // return response()->json(['status' => 'Jadwal Sekolah Berhasil Dihapus!']);
         return back();
     }
 }

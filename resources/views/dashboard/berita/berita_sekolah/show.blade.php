@@ -2,23 +2,22 @@
 @section('content')
 <div class="header-schedule">
     <div class="d-flex align-items-center px-4">
-        <a href="{{ route('berita.sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
+        <a href="{{ route('berita_sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
         <span class="text-white mx-auto">Berita Sekolah</span>
     </div>
 </div>
   
   <main>
     <div class="container">
-      <div class="row p-4 justify-content-center">
+      <div class="row p-4 justify-content-center pb-5">
         <div class="col-md-10">
-            <div class="font-rubik text-grey-600 font-20">Penghargaan Kelas Terbersih</div>
-            <div class="text-small text-grey-600">Berita kelas<i class="bi bi-dot color-blue "></i> 21 Desember - 28 Desember 2022</div>
+            <div class="font-rubik text-grey-600 font-20 mb-2">{{ $beritaSekolah->judul }}</div>
+            <div class="text-small text-grey-600 mb-3">Berita kelas<i class="bi bi-dot color-blue "></i> {{ date('d F Y', strtotime($beritaSekolah->tgl_mulai)) }} - {{ date('d F Y', strtotime($beritaSekolah->tgl_selesai)) }}</div>
             <div class="col-12 col-md-10">
-                <img src="/assets/img/dashboard/berita_sekolah/berita_sekolah.png" alt="" class="img-fluid " width="300">
+                <img src="{{ asset('storage/'.$beritaSekolah->pamflet) }}" class="img-fluid " width="400">
             </div>
-            <div class="text-grey-600 font-noto">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci minima corporis saepe quas quaerat modi, tenetur consequatur! Iusto alias vel nemo. Quaerat, blanditiis odio. Recusandae, nisi asperiores! Fuga ut molestiae, dignissimos officiis eligendi similique. Quidem id, temporibus laboriosam distinctio similique facilis unde quaerat corrupti error? Reiciendis modi aliquid deleniti temporibus.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci minima corporis saepe quas quaerat modi, tenetur consequatur! Iusto alias vel nemo. Quaerat, blanditiis odio. Recusandae, nisi asperiores! Fuga ut molestiae, dignissimos officiis eligendi similique. Quidem id, temporibus laboriosam distinctio similique facilis unde quaerat corrupti error? Reiciendis modi aliquid deleniti temporibus.</p>
+            <div class="text-grey-600 font-noto py-4">
+              {!! $beritaSekolah->deskripsi !!}
             </div>
         </div>
       </div>

@@ -155,18 +155,22 @@ Route::prefix("presensi")->group(function () {
 Route::prefix("berita")->group(function () {
     Route::prefix("sekolah")->group(function () {
         Route::get("", [BeritaSekolahController::class, "index"])->name(
-            "berita.sekolah.index"
+            "berita_sekolah.index"
         );
         Route::get("create", [BeritaSekolahController::class, "create"])->name(
-            "berita.sekolah.create"
+            "berita_sekolah.create"
         );
-        Route::get("edit", [BeritaSekolahController::class, "edit"])->name(
-            "berita.sekolah.edit"
+        Route::post("create", [BeritaSekolahController::class, "store"]);
+        Route::get("{beritaSekolah}/edit", [BeritaSekolahController::class, "edit"])->name(
+            "berita_sekolah.edit"
         );
-        Route::get("show", [BeritaSekolahController::class, "show"])->name(
-            "berita.sekolah.show"
+        Route::put("{beritaSekolah}/edit", [BeritaSekolahController::class, "update"]);
+        Route::get("{beritaSekolah}/show", [BeritaSekolahController::class, "show"])->name(
+            "berita_sekolah.show"
         );
-        // Route::get('sekolah', [BeritaSekolahController::class, 'index'])->name('berita.sekolah.index');
+        Route::delete("{beritaSekolah}", [BeritaSekolahController::class, "destroy"])->name(
+            "berita_sekolah.delete"
+        );
     });
     Route::prefix('kelas')->group(function(){
         Route::get('', [BeritaKelasController::class, 'index'])->name('berita.kelas.index');

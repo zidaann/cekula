@@ -7,7 +7,7 @@
     <link rel="preload" as="image" href="/assets/img/home_mobile.png">   
 @endsection
 @section('content')
-<div id="beranda" class="d-flex align-items-center">
+<div id="beranda" class="d-flex align-items-center border">
    <!-- tulisan -->
    <div class="container row ps-0 ms-0 ps-lg-5 ms-lg-5 justify-content-center justify-content-md-start" id="tulisan_beranda">
      <div class="font-noto text-uppercase text-center text-sm-start text-md-start col-12 col-sm-12 col-md-8 w-100">SELAMAT DATANG DI</div>
@@ -22,19 +22,19 @@
      <div class="d-flex col-12 justify-content-center">
        <img src="/assets/svg/cekula.svg" alt="Cekula" loading="lazy" />
      </div>
-     <p class="d-flex col-11 font-noto font-24 container justify-content-center text-center">
+     <p class="d-flex col-11 font-noto font-20 container justify-content-center text-center">
        Cekula merupakan sebuah aplikasi berbasis mobile dan website yang di tujukan untuk sekolah tingkat SMP/MTs/sederajat untuk memudahkan manajemen sarana dan prasarana sekolah.
      </p>
    </div>
    <div style="height: 70%" class="overflow-scroll" id="wave">
-     <div class="font-40 font-rubik text-center text-uppercase py-3">Visi & Misi</div>
+     <div class="font-30 font-rubik text-center text-uppercase py-3">Visi & Misi</div>
      <div class="row justify-content-around mx-5">
        <div class="col-12 col-md-5">
-         <div class="text-center font-rubik" style="font-size: 2rem">Visi</div>
+         <div class="text-center font-rubik font-20" >Visi</div>
          <p class="font-noto text-center text-md-start font-20">Menjadi perusahaan IT yang unggul dan terpercaya dalam menyediakan layanan dan solusi IT yang kreatif, inovatif, dan terbaik bagi customer</p>
        </div>
        <div class="col-12 col-md-5">
-         <div class="text-center font-rubik" style="font-size: 2rem">Misi</div>
+         <div class="text-center font-rubik font-20" >Misi</div>
          <p class="font-noto text-center text-md-start font-20">
            Memberikan layanan dan solusi berbasis teknologi informasi yang inovatif dan berkualitas, mengembangkan aplikasi yang sesuai kebutuhan dan keinginan pelanggan, selalu menjaga amanah yang diberikan klien agar dapat saling
            menguntungkan dan mencapai tujuan masing-masing, serta menerapkan budaya kerja yang profesional, produktif, kompeten, dan terintegritas

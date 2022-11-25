@@ -2,8 +2,9 @@
 @push('script')
     <script type="text/javascript" src="/assets/js/sweetalert2.js"></script>
     <script>
+      
       $(document).ready( function () {
-          $('#myTable').DataTable();
+        $('#myTable').DataTable();
       } );
       // alert hapus 
       function confirmDelete(id)
@@ -71,46 +72,42 @@
         @endforeach --}}
         <div class="justify-content-center ">
           <div class="col-12 col-md-12 p-2 justify-content-center ">
-            <form action="" method="">
-              @csrf
-              @method("PUT")
-              <table class="table table-striped table-bordered" id="myTable">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Pamflet</th>
-                        <th>Judul</th>
-                        <th>Tanggal Pelaksanaan</th>
-                        <th>Tanggal Selesai Pelaksanaan</th>
-                        <th>Action</th>
-                    </tr>
-                    <tbody>
-                      @foreach ($jadwals as $index => $jadwal)
-                          <tr>
-                            <td> <img src="{{ asset('storage/'.$jadwal->pamflet) }}" class="card-img-top img-fluid mx-auto" style="width: 100px;"></td>
-                            <td>{{ $jadwal->judul }}</td>
-                            <td>{{ date('d F Y', strtotime($jadwal->tanggal_pelaksanaan)) }}</td>
-                            <td>{{ date('d F Y', strtotime($jadwal->tanggal_selesai_pelaksanaan)) }}</td>
-                            <td>
-                              <div class="d-flex">
-                                <a href="{{ route('jadwal_sekolah.show', $jadwal) }}" class="btn btn-sm btn-primary me-2"> <i class="bi bi-eye"></i></a>
-                                <a href="{{ route('jadwal_sekolah.edit', $jadwal) }}" class="btn btn-sm btn-warning me-2"> <i class="bi bi-pencil-square"></i></a>
-                                <form id="jadwal-{{ $jadwal->id }}" action="{{ route('jadwal_sekolah.delete', $jadwal->id) }}" method="post">
-                                  @csrf
-                                  @method("DELETE")
-                                </form>
-                                  <button onclick="confirmDelete( {{ $jadwal->id }} )" class="border-0 bg-danger text-white btn btn-sm"><i class="bi bi-trash"></i>
-                                  </button>
-                              </div>
-                            </td>
-                          </tr>
-                          
-                      @endforeach
-                    </tbody>
-                </thead>
-            </table>
-            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-            </form>
+            <table class="table table-striped table-bordered" id="myTable">
+              <thead>
+                  <tr>
+                      <th>No</th>
+                      <th>Pamflet</th>
+                      <th>Judul</th>
+                      <th>Tanggal Pelaksanaan</th>
+                      <th>Tanggal Selesai Pelaksanaan</th>
+                      <th>Action</th>
+                  </tr>
+                  <tbody>
+                    @foreach ($jadwals as $index => $jadwal)
+                        <tr>
+                          <td>{{ $index +1 }}</td>
+                          <td> <img src="{{ asset('storage/'.$jadwal->pamflet) }}" class="card-img-top img-fluid mx-auto" style="width: 100px;"></td>
+                          <td>{{ $jadwal->judul }}</td>
+                          <td>{{ date('d F Y', strtotime($jadwal->tanggal_pelaksanaan)) }}</td>
+                          <td>{{ date('d F Y', strtotime($jadwal->tanggal_selesai_pelaksanaan)) }}</td>
+                          <td>
+                            <div class="d-flex">
+                              <a href="{{ route('jadwal_sekolah.show', $jadwal) }}" class="btn btn-sm btn-primary me-2"> <i class="bi bi-eye"></i></a>
+                              <a href="{{ route('jadwal_sekolah.edit', $jadwal) }}" class="btn btn-sm btn-warning me-2"> <i class="bi bi-pencil-square"></i></a>
+                              <form id="jadwal-{{ $jadwal->id }}" action="{{ route('jadwal_sekolah.delete', $jadwal->id) }}" method="post">
+                                @csrf
+                                @method("DELETE")
+                              </form>
+                                <button onclick="confirmDelete( {{ $jadwal->id }} )" class="border-0 bg-danger text-white btn btn-sm"><i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                          </td>
+                        </tr>
+                        
+                    @endforeach
+                  </tbody>
+              </thead>
+          </table>
         </div>
         </div>
         {{-- @else
