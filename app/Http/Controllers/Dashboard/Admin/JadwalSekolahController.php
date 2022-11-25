@@ -97,14 +97,6 @@ class JadwalSekolahController extends Controller
      */
     public function update(Request $request, JadwalSekolah $jadwalSekolah)
     {
-        // dd($request->all());
-        $validatedData = $request->validate([
-            'pamflet' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
-            'judul' => 'required',
-            'tanggal_pelaksanaan' => 'required',
-            'tanggal_selesai_pelaksanaan' => 'required',
-            'deskripsi' => 'required'
-        ]);
         if($request->file('pamflet')){
             if($jadwalSekolah->pamflet){
                 Storage::delete($request->pamflet);
