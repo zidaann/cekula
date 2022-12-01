@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard\Admin;
 
+use App\Traits\Notif;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\JadwalSekolah;
 use App\Http\Controllers\Controller;
+use App\Models\Status;
 use Illuminate\Support\Facades\Storage;
-// use RealRashid\SweetAlert\Facades\Alert;
-use App\Traits\Notif;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class JadwalSekolahController extends Controller
 {
@@ -18,13 +19,12 @@ class JadwalSekolahController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard.akademik.jadwal_sekolah.index',[
-            'jadwals' => JadwalSekolah::all()->sortByDesc('created_at')
-        ]); 
+        $jadwals = JadwalSekolah::latest()->get();
+        return view('dashboard.akademik.jadwal_sekolah.index', compact('jadwals')); 
+        // 'jadwals' => JadwalSekolah::all()->sortByDesc('created_at')
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -124,7 +124,8 @@ class JadwalSekolahController extends Controller
         $valida['slug'] = Str::slug($request->judul, '-');
         $jadwalSekolah->update($validatedData);
         $this->alertUpdate('Jadwal Sekolah', 'jadwal sekolah'); // base ada di trait notif
-        return redirect(route('jadwal_sekolah.index'));
+        // return redirect(route('jadwal_sekolah.index'));
+        return redirect()->to(route('jadwal_sekolah.index'));
 
     }
 

@@ -1,3 +1,4 @@
+
 const password = document.getElementById('password'); // id dari input password
 const showHide = document.getElementById('showHide'); // id span showHide dalam input group password
 
@@ -100,11 +101,6 @@ function previewImage() {
 
 // }
 
-// =======================  HIDE ILUSTRATION =======================
-$(".toggle-kelas").click(function (e) {
-    e.preventDefault();
-    $(".ilustration_class").slideToggle("show");
-});
 
 // =======================  FORM INPUT DATEPICKER =======================
 // $(document).ready(function(){
@@ -144,3 +140,5 @@ $(document).ready(function () {
 document.addEventListener("trix-file-accept", function (e) {
     e.preventDefault();
 });
+
+

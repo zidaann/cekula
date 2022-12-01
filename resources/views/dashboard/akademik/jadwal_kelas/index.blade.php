@@ -1,4 +1,13 @@
 @extends('dashboard.main')
+@push('script')
+    <script>
+      // =======================  HIDE ILUSTRATION =======================
+      $(".toggleClass").click(function(e) {
+          e.preventDefault();
+          $(".ilustration_class").slideToggle("hide");
+      });
+    </script>
+@endpush
 @section('content')
 <div class="header-schedule">
     <div class="d-flex align-items-center justify-content-center">
@@ -9,7 +18,7 @@
   <main id="jadwal_kelas" class=" py-4">
     <div class="container">
         <div class="row  mx-3">
-            <div class="col-md-4 mb-3 px-3"  data-bs-toggle="collapse" href="#detail_kelas-7" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+            <div class="col-md-4 mb-3 px-3 toggleClass"  data-bs-toggle="collapse" href="#detail_kelas-7" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                 <div class="card border-0 py-3 bg-white">
                     <img src="/assets/img/dashboard/jadwal_kelas/kelas7.png" class="card-img-top img-fluid" width="50">
                     <div class="card-body">
@@ -22,7 +31,7 @@
                   </div>
                   
             </div>
-            <div class="col-md-4 mb-3 px-3" data-bs-toggle="collapse" href="#detail_kelas-8" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+            <div class="col-md-4 mb-3 px-3 toggleClass" data-bs-toggle="collapse" href="#detail_kelas-8" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
                 <div class="card border-0 py-3 bg-white">
                     <img src="/assets/img/dashboard/jadwal_kelas/kelas8.png" class="card-img-top img-fluid" width="50">
                     <div class="card-body">
@@ -34,7 +43,7 @@
                     </div>
                   </div>
             </div>
-            <div class="col-md-4 mb-3 px-3" data-bs-toggle="collapse" href="#detail_kelas-9" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
+            <div class="col-md-4 mb-3 px-3 toggleClass" data-bs-toggle="collapse" href="#detail_kelas-9" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >
                 <div class="card border-0 py-3 bg-white">
                     <img src="/assets/img/dashboard/jadwal_kelas/kelas9.png" class="card-img-top img-fluid" width="50">
                     <div class="card-body">
@@ -52,24 +61,16 @@
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-7">
+                    @foreach ($kelas as $item)
+                    @if ($item->tingkat_kelas == '7')
                     <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 7 A</span>
+                      <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
+                        <span>Kelas {{ $item->tingkat_kelas }}{{ $item->nama_kelas }}</span>
                         <span><i class="bi bi-chevron-right"></i></span>
                       </a>
-                    </div>
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 7 B</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 7 C</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
+                    </div>      
+                    @endif
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -78,24 +79,16 @@
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-8">
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 8 A</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 8 B</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 8 C</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
+                    @foreach ($kelas as $item)
+                        @if ($item->tingkat_kelas == '8')
+                        <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
+                          <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
+                            <span>Kelas {{ $item->tingkat_kelas }}{{ $item->nama_kelas }}</span>
+                            <span><i class="bi bi-chevron-right"></i></span>
+                          </a>
+                        </div>
+                        @endif
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -104,24 +97,17 @@
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-9">
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="{{ route('jadwal_kelas.show') }}" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 9 A</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white" >
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 9 B</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas 9 C</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>
+                    @foreach ($kelas as $item)
+                        @if ($item->tingkat_kelas == '9')
+                        <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
+                          <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
+                            <span>Kelas {{ $item->tingkat_kelas }}{{ $item->nama_kelas }}</span>
+                            <span><i class="bi bi-chevron-right"></i></span>
+                          </a>
+                        </div>
+                        @endif
+                    @endforeach
+
                   </div>
                 </div>
               </div>

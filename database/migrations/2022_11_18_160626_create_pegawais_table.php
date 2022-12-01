@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jadwal_sekolahs', function (Blueprint $table) {
+        Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
-            $table->string('pamflet')->nullable();
-            $table->string('judul');
-            $table->string('slug')->unique();
-            $table->date('tanggal_pelaksanaan');
-            $table->date('tanggal_selesai_pelaksanaan');
-            $table->text('deskripsi');
+            $table->string('nama');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal_sekolahs');
+        Schema::dropIfExists('pegawais');
     }
 };
