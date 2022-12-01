@@ -9,11 +9,9 @@ trix-toolbar [data-trix-button-group="file-tools"] {
 
 .header-schedule {
     background: rgb(159, 195, 249);
-    background: linear-gradient(
-        180deg,
-        rgba(159, 195, 249, 1) 0%,
-        rgba(131, 219, 224, 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
     border-radius: 15px;
     padding: 10px 0;
     width: 90%;
@@ -40,6 +38,7 @@ trix-toolbar [data-trix-button-group="file-tools"] {
 .card {
     background-color: #edf1f7;
 }
+
 .card img {
     margin: 0 auto;
     width: 300px;
@@ -58,6 +57,7 @@ trix-toolbar [data-trix-button-group="file-tools"] {
     font-size: 12px;
     color: #4d5569;
 }
+
 .card .card-action {
     position: absolute;
     bottom: 0;
@@ -77,6 +77,7 @@ trix-toolbar [data-trix-button-group="file-tools"] {
     right: 75px;
     z-index: 99;
 }
+
 .btn-add img {
     width: 20px;
     height: 20px;
@@ -86,11 +87,9 @@ trix-toolbar [data-trix-button-group="file-tools"] {
     width: 40px;
     height: 40px;
     background: rgb(159, 195, 249);
-    background: linear-gradient(
-        180deg,
-        rgba(159, 195, 249, 1) 0%,
-        rgba(131, 219, 224, 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -126,11 +125,9 @@ form textarea {
     width: 100%;
     /* border: 1px solid red; */
     background: rgb(159, 195, 249);
-    background: linear-gradient(
-        76deg,
-        rgba(159, 195, 249, 1) 0%,
-        rgba(131, 219, 224, 1) 100%
-    );
+    background: linear-gradient(76deg,
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
     padding: 10px;
     /* border: 1px solid #eee; */
     border-radius: 5px;
@@ -157,11 +154,9 @@ form .label-image {
 
 form .btn-post {
     background: rgb(159, 195, 249);
-    background: linear-gradient(
-        180deg,
-        rgba(159, 195, 249, 1) 0%,
-        rgba(131, 219, 224, 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(159, 195, 249, 1) 0%,
+            rgba(131, 219, 224, 1) 100%);
     color: white !important;
     font-family: "Noto Sans", sans-serif !important;
     font-weight: 600 !important;
@@ -214,6 +209,7 @@ form .btn-post {
 #presensi-murid .card-description i {
     color: #9fc3f9;
 }
+
 #jadwal_kelas .card-description span,
 #presensi-murid .card-description span {
     color: #4d5569;
@@ -240,6 +236,7 @@ form .btn-post {
     box-shadow: 0px 5px 16px -2px rgba(230, 223, 223, 1);
     border-radius: 15px;
 }
+
 #jadwal_kelas .card-kelas a span,
 #presensi-murid .card-kelas a span {
     font-family: "Noto Sans", sans-serif;
@@ -249,7 +246,8 @@ form .btn-post {
 
 /* #presensi-murid .is-active {
     display: none;
-} */
+} 
+*/
 /* ======================================== End Jadwal kelas ============================*/
 
 /* ======================================== Fasilitas Peminjaman ====================== */
@@ -258,12 +256,15 @@ form .btn-post {
     display: flex;
     align-items: stretch;
 }
+
 input[type="search"]::-webkit-search-cancel-button {
     display: none;
 }
+
 .fasilitas-search {
     margin: 30px 0;
 }
+
 .fasilitas-toggle {
     display: flex;
     width: 50%;
@@ -276,34 +277,41 @@ input[type="search"]::-webkit-search-cancel-button {
     transition: all 0.2s ease-in-out;
     overflow-x: hidden !important;
 }
+
 .fasilitas-toggle.is-active {
     background-color: #fff;
     border-bottom: 4px solid #83dbe0;
 }
+
 .fasilitas-content {
     padding: 30px;
     display: none;
 }
+
 .fasilitas-content.is-active {
     display: block;
 }
+
 .fasilitas-title {
     font-size: 18px;
     color: #000;
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 .fasilitas .bi-search {
     margin-left: -40px;
 }
+
 .select2 {
     width: 100% !important;
     border: none;
 }
+
 /* .select2-search {
     padding: 10px 0;
 } */
-.select2-selection{
+.select2-selection {
     -webkit-box-shadow: 0;
     box-shadow: 0;
     background-color: #edf1f7 !important;
