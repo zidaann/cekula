@@ -15,19 +15,12 @@
   </div>
   <div class="mb-3">
       <label for ="judul"> Judul Jadwal </label>
-      <input type ="text" name="judul" id="judul" class="form-control @error('judul') is-invalid @enderror" placeholder="Masukkan judul jadwal" value="{{ old('judul', $jadwalSekolah->judul) }}">
+      <input type ="text" name="judul" id="judul" class="form-control @error('judul') is-invalid @enderror" placeholder="Masukkan judul jadwal" value="{{ old('judul', $jadwalSekolah->judul) }}" autocomplete="off">
       @error('judul')
         <div class="text-danger mb-5"> {{ $message }}</div>
       @enderror
   </div>
-  <div class="mb-3">
-      <label for ="status_id"> Status </label>
-      <input type="checkbox" name="status_id" id="status" value="1" checked> Calon Murid
-      <input type="checkbox" name="status_id" id="status" value="2"> Murid
-      @error('judul')
-        <div class="text-danger mb-5"> {{ $message }}</div>
-      @enderror
-  </div>
+
   <div class="mb-3">
       <label for ="tanggal_pelaksanaan"> Tanggal pelaksanaan </label>
       <input type ="date" name="tanggal_pelaksanaan" id="tanggal_pelaksanaan" class="form-control  @error('tanggal_pelaksanaan') is-invalid @enderror" placeholder="HH/BB/TT" value="{{ old('tanggal_pelaksanaan', $jadwalSekolah->tanggal_pelaksanaan) }}">

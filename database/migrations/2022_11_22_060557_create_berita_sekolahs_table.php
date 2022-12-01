@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jadwal_sekolahs', function (Blueprint $table) {
+        Schema::create('berita_sekolahs', function (Blueprint $table) {
             $table->id();
             $table->string('pamflet')->nullable();
             $table->string('judul');
             $table->string('slug')->unique();
-            $table->date('tanggal_pelaksanaan');
-            $table->date('tanggal_selesai_pelaksanaan');
+            $table->date('tgl_mulai');
+            $table->date('tgl_selesai');
             $table->string('deskripsi',100);
             $table->timestamps();
             $table->softDeletes();
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal_sekolahs');
+        Schema::dropIfExists('berita_sekolahs');
     }
 };

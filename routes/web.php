@@ -121,23 +121,32 @@ Route::prefix("presensi")->group(function () {
 
 Route::prefix("berita")->group(function () {
     Route::prefix("sekolah")->group(function () {
-        Route::get("", [BeritaSekolahController::class, "index"])->name("berita.sekolah.index"
+        Route::get("", [BeritaSekolahController::class, "index"])->name(
+            "berita_sekolah.index"
         );
-        Route::get("create", [BeritaSekolahController::class, "create"])->name("berita.sekolah.create"
+        Route::get("create", [BeritaSekolahController::class, "create"])->name(
+            "berita_sekolah.create"
         );
-        Route::get("edit", [BeritaSekolahController::class, "edit"])->name("berita.sekolah.edit"
+        Route::post("create", [BeritaSekolahController::class, "store"]);
+        Route::get("{beritaSekolah}/edit", [BeritaSekolahController::class, "edit"])->name(
+            "berita_sekolah.edit"
         );
-        Route::get("show", [BeritaSekolahController::class, "show"])->name("berita.sekolah.show"
+        Route::put("{beritaSekolah}/edit", [BeritaSekolahController::class, "update"]);
+        Route::get("{beritaSekolah}/show", [BeritaSekolahController::class, "show"])->name(
+            "berita_sekolah.show"
         );
-        // Route::get('sekolah', [BeritaSekolahController::class, 'index'])->name('berita.sekolah.index');
+        Route::delete("{beritaSekolah}", [BeritaSekolahController::class, "destroy"])->name(
+            "berita_sekolah.delete"
+        );
     });
-    Route::prefix("kelas")->group(function () {
-        Route::get("", [BeritaKelasController::class, "index"])->name("berita.kelas.index"
-        );
-        Route::get("create", [BeritaKelasController::class, "create"])->name("berita.kelas.create"
-        );
-        Route::get("edit", [BeritaKelasController::class, "edit"])->name("berita.kelas.edit"
-        );
+    Route::prefix('kelas')->group(function(){
+        Route::get('', [BeritaKelasController::class, 'index'])->name('berita_kelas.index');
+        Route::get('create', [BeritaKelasController::class, 'create'])->name('berita_kelas.create');
+        Route::post('create', [BeritaKelasController::class, 'store']);
+        Route::get('{beritaKelas}/edit', [BeritaKelasController::class, 'edit'])->name('berita_kelas.edit');
+        Route::put('{beritaKelas}/edit', [BeritaKelasController::class, 'update']);
+        Route::get('{beritaKelas}/show', [BeritaKelasController::class, 'show'])->name('berita_kelas.show');
+        Route::delete('{beritaKelas}', [BeritaKelasController::class, 'destroy'])->name('berita_kelas.delete');
     });
 });
 
