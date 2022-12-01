@@ -8,6 +8,7 @@
     color: #202a44; */
 }
 
+/* Font Size */
 .font-48 {
     font-size: 48px;
 }
@@ -67,6 +68,10 @@
 
 .color-blue {
     color: #90d1ec;
+}
+
+.color-grey {
+    color: #A6AAB4;
 }
 
 .text-grey-600 {
