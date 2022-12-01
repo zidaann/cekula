@@ -18,40 +18,49 @@ class KelasSeeder extends Seeder
         $kelass = ([
             [
                 'tingkat_kelas' => "7",
-                'nama_kelas' => "A",
+                'kode_kelas' => "A",
+                'nama_kelas' => "7A",
             ],
             [
                 'tingkat_kelas' => "7",
-                'nama_kelas' => "B",
+                'kode_kelas' => "B",
+                'nama_kelas' => "7B",
                 
             ],
             [
                 'tingkat_kelas' => "7",
-                'nama_kelas' => "C",
+                'kode_kelas' => "C",
+                'nama_kelas' => "7C",
             ],
             [
                 'tingkat_kelas' => "8",
-                'nama_kelas' => "A",
+                'kode_kelas' => "A",
+                'nama_kelas' => "8A",
             ],
             [
                 'tingkat_kelas' => "8",
-                'nama_kelas' => "B",
+                'kode_kelas' => "B",
+                'nama_kelas' => "8B",
             ],
             [
                 'tingkat_kelas' => "8",
-                'nama_kelas' => "C",
+                'kode_kelas' => "C",
+                'nama_kelas' => "8C",
             ],
             [
                 'tingkat_kelas' => "9",
-                'nama_kelas' => "A",
+                'kode_kelas' => "A",
+                'nama_kelas' => "9A",
             ],
             [
                 'tingkat_kelas' => "9",
-                'nama_kelas' => "B",
+                'kode_kelas' => "B",
+                'nama_kelas' => "9B",
             ],
             [
                 'tingkat_kelas' => "9",
-                'nama_kelas' => "C",
+                'kode_kelas' => "C",
+                'nama_kelas' => "9C",
             ],
         ]);
         foreach($kelass as $kelas){

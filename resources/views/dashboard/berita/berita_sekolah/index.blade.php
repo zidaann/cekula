@@ -86,7 +86,11 @@
                       @foreach ($beritas as $index => $berita)
                           <tr>
                             <td>{{ $index +1 }}</td>
-                            <td> <img src="{{ asset('storage/'.$berita->pamflet) }}" class="card-img-top img-fluid mx-auto" style="width: 100px;"></td>
+                            <td> @if (!$berita->pamflet)
+                              <img src="/assets/img/no_image.png" class="card-img-top img-fluid mx-auto" style="width: 100px;">    
+                              @else 
+                              <img src="{{ asset('storage/'.$berita->pamflet) }}" class="card-img-top img-fluid mx-auto" style="width: 100px;">
+                              @endif</td>
                             <td>{{ $berita->judul }}</td>
                             <td>{{ date('d F Y', strtotime($berita->tgl_mulai)) }}</td>
                             <td>{{ date('d F Y', strtotime($berita->tgl_selesai)) }}</td>
@@ -107,8 +111,8 @@
                       @endforeach
                     </tbody>
                 </thead>
-            </table>
-          </div>
+              </table>
+            </div>
         </div>
       </div>
       <div class="btn-add">

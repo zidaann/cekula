@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password' => bcrypt('password')
         ]);
-       $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class ]);
+    //    $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class ]);
         
 
         

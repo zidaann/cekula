@@ -42,7 +42,6 @@ class JadwalSekolahController extends Controller
      */
     public function store(JadwalSekolahRequest $request)
     {
-
     //   if($request->file('pamflet')){
     //     $validateData['pamflet'] = $request->file('pamflet')->store('pamflets');
     //   }

@@ -308,7 +308,7 @@ nav ul .nav-login a:hover {
     background-image: url(/assets/svg/ilustrasi_home.svg);
     background-size: 100vh;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: right;
 }
 
@@ -351,10 +351,10 @@ nav ul .nav-login a:hover {
     }
 }
 
-#tentang {
+/* #tentang {
     height: 100vh;
     max-height: 100vh;
-}
+} */
 
 #wave {
     width: 100vw;

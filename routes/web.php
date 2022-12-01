@@ -173,9 +173,13 @@ Route::prefix("berita")->group(function () {
         );
     });
     Route::prefix('kelas')->group(function(){
-        Route::get('', [BeritaKelasController::class, 'index'])->name('berita.kelas.index');
-        Route::get('create', [BeritaKelasController::class, 'create'])->name('berita.kelas.create');
-        Route::get('edit', [BeritaKelasController::class, 'edit'])->name('berita.kelas.edit');
+        Route::get('', [BeritaKelasController::class, 'index'])->name('berita_kelas.index');
+        Route::get('create', [BeritaKelasController::class, 'create'])->name('berita_kelas.create');
+        Route::post('create', [BeritaKelasController::class, 'store']);
+        Route::get('{beritaKelas}/edit', [BeritaKelasController::class, 'edit'])->name('berita_kelas.edit');
+        Route::put('{beritaKelas}/edit', [BeritaKelasController::class, 'update']);
+        Route::get('{beritaKelas}/show', [BeritaKelasController::class, 'show'])->name('berita_kelas.show');
+        Route::delete('{beritaKelas}', [BeritaKelasController::class, 'destroy'])->name('berita_kelas.delete');
     });
 });
 

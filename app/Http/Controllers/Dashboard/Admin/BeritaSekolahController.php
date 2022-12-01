@@ -21,7 +21,7 @@ class BeritaSekolahController extends Controller
     }
 
     public function create (){
-        $submit = "Posting Berita";
+        $submit = "Unggah Berita";
         return view('dashboard.berita.berita_sekolah.create', compact('submit')); 
     }
 
@@ -46,7 +46,7 @@ class BeritaSekolahController extends Controller
         
     }
     public function edit (BeritaSekolah $beritaSekolah){
-        $submit = "Update Berita";
+        $submit = "Simpan Perubahan";
         return view('dashboard.berita.berita_sekolah.edit', compact('submit', 'beritaSekolah')); 
     }
     public function show (BeritaSekolah $beritaSekolah){
