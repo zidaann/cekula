@@ -16,10 +16,7 @@ return new class extends Migration
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('icon')->nullable();
-            $table->time('jam_masuk');
-            $table->time('jam_keluar');
-            $table->foreignId('pegawai_id');
+            // $table->string('icon')->nullable();
             $table->timestamps();
         });
     }

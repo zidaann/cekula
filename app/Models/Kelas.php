@@ -9,8 +9,10 @@ class Kelas extends Model
 {
     use HasFactory;
 
-
     public function pegawai (){
-        return $this->hasOne(Pegawai::class);
+        return $this->hasMany(Pegawai::class);
+    }
+    public function jadwal_kelas (){
+        return $this->hasMany(JadwalKelas::class);
     }
 }

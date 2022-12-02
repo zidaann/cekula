@@ -9,13 +9,17 @@ class Pegawai extends Model
 {
     use HasFactory;
 
-
-    public function mapel (){
-        return $this->hasMany(Mapel::class);
+    public function jabatan (){
+        return $this->hasOne(Jabatan::class);
     }
-
+    public function mapel (){
+       return $this->hasMany(Mapel::class); 
+    }
     public function kelas (){
-       return $this->hasOne(Kelas::class); 
+       return $this->belongsTo(Kelas::class); 
+    }
+    public function jadwal_kelas (){
+        return $this->belongsTo(JadwalKelas::class);
     }
 
 }

@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('jadwal_kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_hari');
+            $table->foreignId('hari_id');
             $table->foreignId('mapel_id');
+            $table->time('jam_masuk');
+            $table->time('jam_keluar');
             $table->foreignId('kelas_id');
-            // $table->foreignId('pegawai_id');
+            $table->foreignId('pegawai_id');
             $table->timestamps();
         });
     }

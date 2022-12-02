@@ -61,16 +61,25 @@
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-7">
-                    @foreach ($kelas as $item)
-                    @if ($item->tingkat_kelas == '7')
-                    <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                      <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
-                        <span>Kelas {{ $item->tingkat_kelas }}{{ $item->nama_kelas }}</span>
-                        <span><i class="bi bi-chevron-right"></i></span>
-                      </a>
-                    </div>      
-                    @endif
-                    @endforeach
+                    {{-- @foreach ($jadwals as $item) --}}
+                    {{-- @foreach ($jadwals as $jadwal) --}}
+                        {{-- @if ($item->kelas->tingkat_kelas == '7') --}}
+                        {{-- @if ($jadwals->kelas->nama_kelas == $item->nama_kelas) --}}
+                        @foreach ($kelas as $item)
+                            @if ($item->tingkat_kelas == '7')
+                            <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
+                              <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
+                                <span>Kelas {{ $item->nama_kelas }}</span>
+                                <span><i class="bi bi-chevron-right"></i></span>
+                              </a>
+                            </div>
+                            @endif
+                        @endforeach
+                        
+                        {{-- @endif --}}
+                        {{-- @endif --}}
+                    {{-- @endforeach --}}
+                    {{-- @endforeach --}}
                   </div>
                 </div>
               </div>
@@ -79,16 +88,16 @@
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-8">
-                    @foreach ($kelas as $item)
+                    {{-- @foreach ($kelas as $item)
                         @if ($item->tingkat_kelas == '8')
                         <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
                           <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
-                            <span>Kelas {{ $item->tingkat_kelas }}{{ $item->nama_kelas }}</span>
+                            <span>Kelas {{ $item->nama_kelas }}</span>
                             <span><i class="bi bi-chevron-right"></i></span>
                           </a>
                         </div>
                         @endif
-                    @endforeach
+                    @endforeach --}}
                   </div>
                 </div>
               </div>
@@ -97,16 +106,16 @@
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row mt-5 px-4" id="detail_kelas-9">
-                    @foreach ($kelas as $item)
+                    {{-- @foreach ($kelas as $item)
                         @if ($item->tingkat_kelas == '9')
                         <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
                           <a href="{{ route('jadwal_kelas.show', $item) }}" class="d-flex justify-content-between text-decoration-none text-dark">
-                            <span>Kelas {{ $item->tingkat_kelas }}{{ $item->nama_kelas }}</span>
+                            <span>Kelas {{ $item->nama_kelas }}</span>
                             <span><i class="bi bi-chevron-right"></i></span>
                           </a>
                         </div>
                         @endif
-                    @endforeach
+                    @endforeach --}}
 
                   </div>
                 </div>

@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers\Dashboard\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\JadwalKelas;
+use App\Models\Hari;
 use App\Models\Kelas;
+use App\Models\Mapel;
+use App\Models\Pegawai;
+use App\Models\JadwalKelas;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class JadwalKelasController extends Controller
 {
     public function index (){
-        $kelas = Kelas::all();
+      $jadwals = JadwalKelas::get();
+      $kelas = Kelas::get();
       //   dd($kelas);
-        return view('dashboard.akademik.jadwal_kelas.index', compact('kelas')); 
+        return view('dashboard.akademik.jadwal_kelas.index', compact('kelas', 'jadwals')); 
      }
  
      public function create (){
@@ -20,9 +24,13 @@ class JadwalKelasController extends Controller
      }
  
      public function show (JadwalKelas $jadwalKelas){
-         // $jadwalKelas = JadwalKelas::where('kelas_id', $id);
-         // $jadwal = $jadwalKelas->where('kelas_id', );
-         // dd($jadwalKelas);
-        return view('dashboard.akademik.jadwal_kelas.show', compact('jadwalKelas')); 
+         // $jadwalKelas->where('kelas_id' , $jadwalKelas->kelas_id)->first();
+         $kelas = $jadwalKelas->get();
+         $jadwals = $jadwalKelas->first();
+         // $jadwals = $jadwalKelas->get();
+         $hari = Hari::get();
+         // dd($jadwals);
+         $mapels = $jadwalKelas->get();
+        return view('dashboard.akademik.jadwal_kelas.show', compact( 'jadwals', 'mapels', 'kelas', 'hari')); 
      }
 }

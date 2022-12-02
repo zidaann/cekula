@@ -111,21 +111,21 @@ function previewImage() {
 // })
 
 // =======================  Tab Bar Fasilitas =======================
-let fasilitas = document.querySelectorAll(".fasilitas-toggle"),
-    contents = document.querySelectorAll(".fasilitas-content");
-fasilitas.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-        contents.forEach((content) => {
-            content.classList.remove("is-active");
-        });
-        fasilitas.forEach((tab) => {
-            tab.classList.remove("is-active");
-        });
+// let fasilitas = document.querySelectorAll(".fasilitas-toggle"),
+//     contents = document.querySelectorAll(".fasilitas-content");
+// fasilitas.forEach((tab, index) => {
+//     tab.addEventListener("click", () => {
+//         contents.forEach((content) => {
+//             content.classList.remove("is-active");
+//         });
+//         fasilitas.forEach((tab) => {
+//             tab.classList.remove("is-active");
+//         });
 
-        contents[index].classList.add("is-active");
-        fasilitas[index].classList.add("is-active");
-    });
-});
+//         contents[index].classList.add("is-active");
+//         fasilitas[index].classList.add("is-active");
+//     });
+// });
 
 // =======================  Select2 =======================
 
