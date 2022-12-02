@@ -88,7 +88,7 @@
           <div class="collapse" id="berita-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
               <li><a href="{{ route('berita_sekolah.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Berita Sekolah</a></li>
-              <li><a href="{{ route('berita.kelas.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Berita Kelas</a></li>
+              <li><a href="{{ route('berita_kelas.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Berita Kelas</a></li>
             </ul>
           </div>
         </li>
