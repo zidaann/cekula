@@ -5,6 +5,10 @@ body {
     overflow-x: hidden;
 }
 
+.align-text-center {
+    text-align: center;
+}
+
 nav {
     box-shadow: 0px 10px 14px -7px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: 0px 10px 14px -7px rgba(0, 0, 0, 0.15);
@@ -22,12 +26,17 @@ nav ul li a {
 }
 
 nav ul .nav-login {
-    border-radius: 30px;
+    border-radius: 5px;
     padding: 0 20px;
     background-color: #d2d4da;
+    box-shadow: 0px 4px 4px #E4E9F2;
 }
 
-@media screen and (max-width: 600px) {
+#tentang-cekula {
+    padding: 5.8rem;
+}
+
+@media screen and (max-width: 576px) {
     nav {
         position: relative;
         z-index: 2;
@@ -44,6 +53,22 @@ nav ul .nav-login {
     nav ul .nav-login {
         margin-top: 2px;
         text-align: center;
+    }
+
+    #tentang-cekula {
+        padding: 2rem;
+    }
+
+    #teks_visi {
+        font-size: 14.3px;
+    }
+
+    #teks_misi {
+        font-size: 14.3px;
+    }
+
+    #teks_cekula {
+        font-size: 16.5px;
     }
 }
 
@@ -82,22 +107,24 @@ nav ul .nav-login a:hover {
 
 .hero-login {
     padding: 8px 75px;
-    background-color: #d2d4da;
-    color: white;
+    background: #FBFBFB;
+    box-shadow: 0px 4px 4px #E4E9F2;
     border-radius: 5px;
+    color: #83DBE0;
 }
 
 .hero-login:hover {
-    background: rgb(159, 195, 249);
-    background: linear-gradient(171deg,
-            rgba(159, 195, 249, 1) 0%,
-            rgba(131, 219, 224, 1) 100%);
+    padding: 8px 75px;
+    background: rgba(247, 247, 247, 0.933);
+    box-shadow: 0px 4px 4px #E4E9F2;
+    border-radius: 5px;
+    color: #83DBE0;
 }
 
 .hero-image {
     height: 100vh;
     background: url(/assets/img/ilustrasi_home.png);
-    background-size: 48% 100vh;
+    background-size: 100% 100vh;
     background-repeat: no-repeat;
     background-position: right;
     position: absolute;
@@ -302,52 +329,68 @@ nav ul .nav-login a:hover {
 }
 
 /* landing page */
+:root {
+    --linier_blue: linear-gradient(180deg, #9FC3F9 -46.62%, #83DBE0 125.68%);
+}
+
 #beranda {
     height: 100vh;
     max-height: 100vh;
     background-image: url(/assets/svg/ilustrasi_home.svg);
-    background-size: 100vh;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-position: right;
+    background-position: bottom right;
+    background-size: 62%;
 }
 
+
+#bg_beranda {
+    background: var(--linier_blue) !important;
+}
+
+/* #grup_tulisan_beranda {
+    margin-top: 4%;
+} */
+
 #tulisan_beranda {
-    margin-top: -10%;
-    font-size: 48px;
+    font-size: 24px;
 }
 
 @media screen and (max-width:992px) {
     #beranda {
         height: 100vh;
         max-height: 100vh;
-        background-image: url(/assets/img/home_mobile.png);
-        background-size: 100%;
+        background-image: url(/assets/svg/ilustrasi_home.svg);
+        background-size: 70%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom;
+        background-position: bottom right;
+    }
+
+    #grup_tulisan_beranda {
+        margin-top: -10%;
     }
 
     #tulisan_beranda {
-        margin-top: -40%;
-        font-size: 40px;
+        font-size: 20px;
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:576px) {
     #beranda {
         width: 100%;
         max-width: 100%;
         background-image: url(/assets/img/home_mobile.png);
         background-size: 100%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
         background-position: bottom;
     }
 
+    #grup_tulisan_beranda {
+        margin-top: -25%;
+    }
+
     #tulisan_beranda {
-        margin-top: -75%;
-        font-size: 38px;
+        font-size: 16px;
+        padding: 5px 25px;
     }
 }
 
@@ -356,18 +399,27 @@ nav ul .nav-login a:hover {
     max-height: 100vh;
 } */
 
-#wave {
+#visi {
     width: 100vw;
-    background-image: url(/assets/svg/wave.svg);
-    background-size: 100%;
+    background-image: url(/assets/img/visi_bot_left.png);
+    background-size: 46%;
     background-repeat: no-repeat;
-    background-position: top;
-    z-index: -100;
+    background-position: bottom left;
+    overflow-y: scroll;
+}
+
+#misi {
+    width: 100vw;
+    background-image: url(/assets/img/misi_top_left.png), url(/assets/svg/misi_bot_right.svg);
+    background-size: 46%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    overflow-y: scroll;
 }
 
 #berita_beranda {
-    height: 100vh;
-    max-height: 100vh;
+    overflow-y: scroll;
+    margin-bottom: 50px;
 }
 
 #footer_landingPage {
@@ -396,4 +448,9 @@ nav ul .nav-login a:hover {
     background: linear-gradient(171deg,
             rgba(159, 195, 249, 1) 0%,
             rgba(131, 219, 224, 1) 100%);
+}
+
+.badge-berhasil {
+    background-color: #E9FFE1;
+    color: #73D552;
 }
