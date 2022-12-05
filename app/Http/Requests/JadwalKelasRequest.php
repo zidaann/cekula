@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class JadwalSekolahRequest extends FormRequest
+class JadwalKelasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,12 @@ class JadwalSekolahRequest extends FormRequest
     public function rules()
     {
         return [
-            'pamflet' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
-            'judul' => 'required',
-            'tgl_mulai' => 'required',
-            'tgl_selesai' => 'required',
-            'deskripsi' => 'required'
+            'hari_id' => 'required',
+            'mapel_id' => 'required',
+            'jam_masuk' => 'required',
+            'jam_selesai' => 'required',
+            'kelas_id' => 'required',
+            'pegawai_id' => 'required'
         ];
     }
 }

@@ -17,13 +17,16 @@ class PegawaiSeeder extends Seeder
     {
         $pegawais = [
             [
-                'nama' => "Sudirman S.Pd"
+                'nama' => "Sudirman S.Pd",
+                'jabatan_id' => mt_rand(1,2)
             ],
             [
-                'nama' => "Supiatun S.Pd"
+                'nama' => "Supiatun S.Pd",
+                'jabatan_id' => mt_rand(1,2)
             ],
             [
-                'nama' => "Sudrajat S.Pd"
+                'nama' => "Sudrajat S.Pd",
+                'jabatan_id' => mt_rand(1,2)
             ],
         ];
         foreach($pegawais as $pegawai){

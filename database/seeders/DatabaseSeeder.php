@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Jabatan;
 use Carbon\Carbon;
 use App\Models\Kelas;
 use App\Models\Mapel;
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password' => bcrypt('password')
         ]);
-    //    $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class ]);
+       $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class, JabatanSeeder::class, HariSeeder::class ]);
         
 
         

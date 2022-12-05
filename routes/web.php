@@ -48,10 +48,11 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
     Route::prefix("jadwal-kelas")->group(function () {
         Route::get("", [JadwalKelasController::class, "index"])->name("jadwal_kelas.index");
         Route::get("create", [JadwalKelasController::class, "create"])->name("jadwal_kelas.create");
-        // Route::get('create', [JadwalKelasController::class, 'store'])->name('jadwal_kelas.store');
-        Route::get("edit", [JadwalKelasController::class, "edit"])->name("jadwal_kelas.edit");
-        // Route::put('edit', [JadwalKelasController::class, 'update']);
-        Route::get("{jadwalKelas}/show", [JadwalKelasController::class,"show"])->name("jadwal_kelas.show");
+        Route::post('create', [JadwalKelasController::class, 'store']);
+        Route::get("{jadwalKelas}/edit", [JadwalKelasController::class, "edit"])->name("jadwal_kelas.edit");
+        Route::put("{id}/edit", [JadwalKelasController::class, "update"]);
+        Route::get("{kelas}/show", [JadwalKelasController::class,"show"])->name("jadwal_kelas.show");
+        Route::delete("{id}", [JadwalKelasController::class,"destroy"])->name("jadwal_kelas.delete");
     });
 
     Route::prefix("raport-murid")->group(function () {
@@ -60,48 +61,6 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
     });
 });
 
-// Route::prefix("akademik")->group(function () {
-//     Route::prefix("jadwal-sekolah")->group(function () {
-//         Route::get("", [JadwalSekolahController::class, "index"])->name(
-//             "jadwal_sekolah.index"
-//         );
-//         Route::get("create", [JadwalSekolahController::class, "create"])->name(
-//             "jadwal_sekolah.create"
-//         );
-//         Route::post("create", [JadwalSekolahController::class, "store"])->name(
-//             "jadwal_sekolah.create"
-//         );
-//         Route::get("{jadwalSekolah}/edit", [JadwalSekolahController::class, "edit"])->name(
-//             "jadwal_sekolah.edit"
-//         );
-//         Route::put("{jadwalSekolah}/edit", [JadwalSekolahController::class, "update"]);
-//         Route::get("{jadwalSekolah}/show", [JadwalSekolahController::class, "show"])->name('jadwal_sekolah.show');
-//         Route::delete("{jadwalSekolah}", [JadwalSekolahController::class, "destroy"])->name('jadwal_sekolah.delete');
-//     });
-
-//     Route::prefix("jadwal-kelas")->group(function () {
-//         Route::get("", [JadwalKelasController::class, "index"])->name(
-//             "jadwal_kelas.index"
-//         );
-//         Route::get("create", [JadwalKelasController::class, "create"])->name(
-//             "jadwal_kelas.create"
-//         );
-//         // Route::get('create', [JadwalKelasController::class, 'store'])->name('jadwal_kelas.store');
-//         Route::get("edit", [JadwalKelasController::class, "edit"])->name(
-//             "jadwal_kelas.edit"
-//         );
-//         // Route::put('edit', [JadwalKelasController::class, 'update']);
-//         Route::get("detail-jadwal", [
-//             JadwalKelasController::class,
-//             "show",
-//         ])->name("jadwal_kelas.show");
-//     });
-
-//     Route::prefix('raport-murid')->group(function(){
-//         Route::get('', [RaporMuridController::class,'index'])->name('rapor.index');
-//         Route::get('detail-rapor', [RaporMuridController::class,'detailRapor'])->name('rapor.detailRapor');
-//     });
-// });
 
 Route::prefix("presensi")->group(function () {
     Route::prefix("pegawai")->group(function () {

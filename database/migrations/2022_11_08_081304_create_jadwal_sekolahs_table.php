@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('pamflet')->nullable();
             $table->string('judul');
             $table->string('slug')->unique();
-            $table->date('tanggal_pelaksanaan');
-            $table->date('tanggal_selesai_pelaksanaan');
+            $table->dateTime('tgl_mulai');
+            $table->dateTime('tgl_selesai');
             $table->string('deskripsi',100);
             $table->timestamps();
             $table->softDeletes();
