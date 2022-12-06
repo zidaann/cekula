@@ -88,8 +88,8 @@
                           <td>{{ $index +1 }}</td>
                           <td> <img src="{{ asset('storage/'.$jadwal->pamflet) }}" class="card-img-top img-fluid mx-auto" style="width: 100px;"></td>
                           <td>{{ $jadwal->judul }}</td>
-                          <td>{{ date('d F Y', strtotime($jadwal->tanggal_pelaksanaan)) }}</td>
-                          <td>{{ date('d F Y', strtotime($jadwal->tanggal_selesai_pelaksanaan)) }}</td>
+                          <td>{{ date('d F Y', strtotime($jadwal->tgl_mulai)) }}</td>
+                          <td>{{ date('d F Y', strtotime($jadwal->tgl_selesai)) }}</td>
                           <td>
                             <div class="d-flex">
                               <a href="{{ route('jadwal_sekolah.show', $jadwal) }}" class="btn btn-sm btn-primary me-2"> <i class="bi bi-eye"></i></a>
