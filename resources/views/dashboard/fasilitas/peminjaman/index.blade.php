@@ -50,7 +50,7 @@
                         </th>
                         <th class="border-0" width="15%">
                           <div class="bg-color-content rounded py-2 shadow-1">
-                            Fasilitas
+                            FASILITAS
                           </div>
                         </th>
                         <th class="border-0">
@@ -221,7 +221,7 @@
                         </th>
                         <th class="border-0" width="15%">
                           <div class="bg-color-content rounded py-2 shadow-1">
-                            Fasilitas
+                            FASILITAS
                           </div>
                         </th>
                         <th class="border-0">
