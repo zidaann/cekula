@@ -12,7 +12,7 @@
       <!-- tulisan -->
       <div class="container row ps-0 ms-0 ps-lg-5 ms-lg-5 justify-content-center justify-content-md-start" id="grup_tulisan_beranda">
         <div class="font-rubik text-uppercase text-center text-sm-start text-md-start col-12 col-sm-12 col-md-8 font-48 text-white">Cekula</div>
-        <div class="font-noto text-center text-sm-start text-md-start col-12 col-sm-12 col-md-8" id="tulisan_beranda">
+        <div class="font-noto text-center text-sm-start text-md-start col-12 col-sm-12 col-md-7" id="tulisan_beranda">
           Aplikasi Smart School berbasis mobile dan website untuk sekolah tingkat SMP/MTs/sederajat untuk memudahkan manajemen sarana dan prasarana sekolah.
         </div>
         <div class="font-noto col-12 col-md-8 d-flex justify-content-center justify-content-sm-start justify-content-md-start mt-2">
