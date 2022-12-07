@@ -11,7 +11,7 @@
         <div class="container py-4">
           <div class="row justify-content-center ">
               <div class="col-md-9">
-                  <form action="#" method="" enctype="multipart/form-data">
+                  <form action="{{ route('jadwal_kelas.create') }}" method="post" enctype="multipart/form-data">
                     @csrf
                       @include('dashboard.akademik.jadwal_kelas._form.form')
                   </form>

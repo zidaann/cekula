@@ -55,8 +55,8 @@ class JadwalSekolahController extends Controller
         'pamflet' => $pamflet,
         'judul' => $request->judul,
         'slug' => Str::slug($request->judul, '-'),
-        'tanggal_pelaksanaan' => $request->tanggal_pelaksanaan,
-        'tanggal_selesai_pelaksanaan' => $request->tanggal_selesai_pelaksanaan,
+        'tgl_mulai' => $request->tgl_mulai,
+        'tgl_selesai' => $request->tgl_selesai,
         'deskripsi' => $request->deskripsi
       ]);
         Alert::image('Posting Jadwal Berhasil', 'Silahkan kembali ke halaman jadwal sekolah' ,'/assets/img/alert/alert_berhasil.png', '120px','200px');

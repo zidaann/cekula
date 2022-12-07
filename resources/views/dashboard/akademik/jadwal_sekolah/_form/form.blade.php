@@ -22,16 +22,16 @@
   </div>
 
   <div class="mb-3">
-      <label for ="tanggal_pelaksanaan"> Tanggal pelaksanaan </label>
-      <input type ="date" name="tanggal_pelaksanaan" id="tanggal_pelaksanaan" class="form-control  @error('tanggal_pelaksanaan') is-invalid @enderror" placeholder="HH/BB/TT" value="{{ old('tanggal_pelaksanaan', $jadwalSekolah->tanggal_pelaksanaan) }}">
-      @error('tanggal_pelaksanaan')
+      <label for ="tgl_mulai"> Tanggal pelaksanaan </label>
+      <input type ="date" name="tgl_mulai" id="tgl_mulai" class="form-control  @error('tgl_mulai') is-invalid @enderror" placeholder="HH/BB/TT" value="{{ old('tgl_mulai', $jadwalSekolah->tgl_mulai) }}">
+      @error('tgl_mulai')
         <p class="text-danger">{{ $message }}</p>
       @enderror
   </div>
   <div class="mb-3">
-      <label for ="tanggal_selesai_pelaksanaan"> Selesai pelaksanaan </label>
-      <input type ="date" name="tanggal_selesai_pelaksanaan" id="tanggal_selesai_pelaksanaan" class="form-control @error('tanggal_selesai_pelaksanaan') is-invalid @enderror" placeholder="HH/BB/TT" value="{{ old('tanggal_selesai_pelaksanaan', $jadwalSekolah->tanggal_selesai_pelaksanaan) }}">
-      @error('tanggal_selesai_pelaksanaan')
+      <label for ="tgl_selesai"> Selesai pelaksanaan </label>
+      <input type ="date" name="tgl_selesai" id="tgl_selesai" class="form-control @error('tgl_selesai') is-invalid @enderror" placeholder="HH/BB/TT" value="{{ old('tgl_selesai', $jadwalSekolah->tgl_selesai) }}">
+      @error('tgl_selesai')
         <p class="text-danger">{{ $message }}</p>
       @enderror
   </div>

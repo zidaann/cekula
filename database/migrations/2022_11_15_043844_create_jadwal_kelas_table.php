@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('hari_id');
             $table->foreignId('mapel_id');
-            $table->time('jam_masuk');
-            $table->time('jam_keluar');
+            $table->time('jam_masuk')->nullable();
+            $table->time('jam_selesai')->nullable();
             $table->foreignId('kelas_id');
             $table->foreignId('pegawai_id');
             $table->timestamps();

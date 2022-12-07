@@ -8,6 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="/assets/js/jquery.min.js"></script>
     
+    {{-- timepicker --}}
+    <link rel="stylesheet" href="/assets/css/jquery.timepicker.min.css">
+    <script src="/assets/js/jquery.timepicker.min.js"></script>
     {{-- datatable --}}
     <link rel="stylesheet" href="/assets/css/datatables.min.css">
     {{-- datepicker --}}

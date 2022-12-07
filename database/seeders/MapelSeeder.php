@@ -18,27 +18,19 @@ class MapelSeeder extends Seeder
     public function run()
     {
         $mapels = [
-            ['nama' => 'Bahasa Indonesia',
-            // 'icon' => null,
-            'kode_mapel' => Str::random(4),
-            'jam_masuk' => Carbon::now(),
-            'jam_keluar' => Carbon::now(),
-            'pegawai_id' => mt_rand(1,2)
+            [
+                'nama' => 'Bahasa Indonesia',
             ],
-            ['nama' => 'Matematika',
-            // 'icon' => null,
-            'kode_mapel' => Str::random(4),
-            'jam_masuk' => Carbon::now(),
-            'jam_keluar' => Carbon::now(),
-            'pegawai_id' => mt_rand(1,2)
-        ],
-            ['nama' => 'Ilmu Pengetahuan Alam',
-            // 'icon' => null,
-            'kode_mapel' => Str::random(4),
-            'jam_masuk' => Carbon::now(),
-            'jam_keluar' => Carbon::now(),
-            'pegawai_id' => mt_rand(1,2)
-            ]
+            [
+                'nama' => 'Matematika',
+            ],
+            [
+                'nama' => 'IPA',
+            ],
+            [
+                'nama' => 'IPS',
+            ],
+            
     ];
     foreach($mapels as $mapel){
         Mapel::create($mapel);

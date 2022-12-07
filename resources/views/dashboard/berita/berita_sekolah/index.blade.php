@@ -19,6 +19,7 @@
             showCloseButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
+            cancelButtonText: 'Tidak',
             confirmButtonText: 'Ya'
           }).then((result) => {
             if (result.isConfirmed) {

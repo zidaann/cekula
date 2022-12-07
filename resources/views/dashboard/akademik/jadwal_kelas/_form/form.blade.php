@@ -1,37 +1,49 @@
-<div class="mb-2">
-    <p class="font-noto fw-bold">Tingkat Kelas</p>
-    <input type="radio" class="btn-check" name="kelas" id="kelas_7" value="Kelas 7">
-    <label for="kelas_7" class="btn btn-outline-primary">Kelas 7</label>
-    <input type="radio" class="btn-check" name="kelas" id="kelas_8" value="Kelas 8">
-    <label for="kelas_8" class="btn btn-outline-primary">Kelas 8</label>
-    <input type="radio" class="btn-check" name="kelas" id="kelas_9" value="Kelas 9">
-    <label for="kelas_9" class="btn btn-outline-primary">Kelas 9</label>
-  </div>
-  <div class="mb-2">
-    <p class="font-noto fw-bold">Nama Kelas</p>
-    <input type="radio" class="btn-check" name="jenis_kelas" id="kelas_a" value="Kelas A">
-    <label for="kelas_a" class="btn btn-outline-primary">Kelas A</label>
-    <input type="radio" class="btn-check" name="jenis_kelas" id="kelas_b" value="Kelas B">
-    <label for="kelas_b" class="btn btn-outline-primary">Kelas B</label>
-    <input type="radio" class="btn-check" name="jenis_kelas" id="kelas_c" value="Kelas C">
-    <label for="kelas_c" class="btn btn-outline-primary">Kelas C</label>
+  <div class="mb-3">
+    <label for ="kelas_id" class="form-label"> Nama Kelas </label>
+    <select class="form-select" aria-label="Default select example" name="kelas_id" required>
+      <option selected disabled >Pilih Kelas</option>
+      @foreach ($kelas as $item)
+      <option value="{{ $item->id }}">{{ $item->nama_kelas }}</option>
+      @endforeach
+    </select>
   </div>
 
   <div class="mb-3">
-    <label for ="nama_hari" class="form-label"> Nama Hari </label>
-    <input type ="text" name="nama_hari" id="nama_hari" class="form-control" placeholder="Masukkan jadwal hari" >
+    <label for ="hari_id" class="form-label"> Nama Hari </label>
+    <select class="form-select" aria-label="Default select example" name="hari_id" required>
+      <option selected disabled >Pilih Hari</option>
+      @foreach ($haris as $hari)
+        <option value="{{ $hari->id }}">{{ $hari->nama }}</option>
+      @endforeach
+    </select>
   </div>
   <div class="mb-3">
-    <label for ="mata_pelajaran" class="form-label"> Nama Mata Pelajaran </label>
-    <input type ="text" name="nama_pelajaran" id="nama_pelajaran" class="form-control" placeholder="Masukkan nama mapel">
+    <label for ="mapel_id" class="form-label"> Nama Mapel </label>
+    <select class="form-select" aria-label="Default select example" name="mapel_id" required>
+      <option selected disabled >Pilih Mapel</option>
+      @foreach ($mapels as $mapel)
+      <option value="{{ $mapel->id }}">{{ $mapel->nama }}</option>
+      @endforeach
+    </select>
   </div>
   <div class="mb-3">
-    <label for ="jam_pelajaran" class="form-label"> Jam Mata Pelajaran </label>
-    <input type="text" name="jam_pelajaran" id="jam_pelajaran" class="form-control" placeholder="Masukkan jam mapel">
+    <label for ="jam_masuk" class="form-label"> Jam Mata Pelajaran </label>
+    <div class="row">
+      <div class="col-4 d-flex">
+        <input type="time" name="jam_masuk" id="jam_masuk" class="form-control" name="jam_masuk" required placeholder="{{ Date('H:i') }}">
+        <div class="mx-3 d-flex align-items-center">-</div>
+        <input type="time" name="jam_selesai" id="jam_selesai" class="form-control" name="jam_keluar" required placeholder="{{ Date('H:i') }}">
+      </div>
+    </div>
   </div>
   <div class="mb-3">
-    <label for ="guru_mapel" class="form-label"> Nama Guru Mata Pelajaran </label>
-    <input type ="text" name="guru_mapel" id="guru_mapel" class="form-control" placeholder="Masukkan nama guru mapel">
+    <label for ="pegawai_id" class="form-label">Nama Guru Mata pelajaran </label>
+    <select class="form-select" aria-label="Default select example" name="pegawai_id" required>
+      <option selected disabled >Pilih Guru Mapel</option>
+      @foreach ($pegawais as $pegawai)
+        <option value="{{ $pegawai->id }}">{{ $pegawai->nama }}</option>
+      @endforeach
+    </select>
   </div>
   <div class="mb-3">
     <div class="row">
@@ -41,5 +53,5 @@
     </div>
   </div>
   <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn-post border-0 btn" type="button">Buat jadwal</button>
+      <button class="btn-post border-0 btn" type="submit">Buat jadwal</button>
   </div>

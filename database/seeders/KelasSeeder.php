@@ -18,49 +18,49 @@ class KelasSeeder extends Seeder
         $kelass = ([
             [
                 'tingkat_kelas' => "7",
-                'kode_kelas' => "A",
                 'nama_kelas' => "7A",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "7",
-                'kode_kelas' => "B",
                 'nama_kelas' => "7B",
+                'pegawai_id' => mt_rand(1,2)
                 
             ],
             [
                 'tingkat_kelas' => "7",
-                'kode_kelas' => "C",
                 'nama_kelas' => "7C",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "8",
-                'kode_kelas' => "A",
                 'nama_kelas' => "8A",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "8",
-                'kode_kelas' => "B",
                 'nama_kelas' => "8B",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "8",
-                'kode_kelas' => "C",
                 'nama_kelas' => "8C",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "9",
-                'kode_kelas' => "A",
                 'nama_kelas' => "9A",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "9",
-                'kode_kelas' => "B",
                 'nama_kelas' => "9B",
+                'pegawai_id' => mt_rand(1,2)
             ],
             [
                 'tingkat_kelas' => "9",
-                'kode_kelas' => "C",
                 'nama_kelas' => "9C",
+                'pegawai_id' => mt_rand(1,2)
             ],
         ]);
         foreach($kelass as $kelas){
