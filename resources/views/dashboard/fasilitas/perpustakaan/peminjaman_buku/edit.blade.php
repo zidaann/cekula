@@ -21,9 +21,4 @@
       </div>
     </div>
   </main>
-  <div class="btn-add">
-    <a href="#">
-      <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
-    </a>
-  </div>
 @endsection
