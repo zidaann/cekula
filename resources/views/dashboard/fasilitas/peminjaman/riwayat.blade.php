@@ -26,7 +26,7 @@
                 <div class="tabs-content is-active">
                   <div class="row d-flex justify-content-between">
                     <div class="col-12 col-md-6 g-0 mb-3">
-                      <div class="me-4 rounded shadow-1 px-3 py-2">
+                      <div class="rounded shadow-1 px-3 py-2 mx-2">
                         <div class="d-flex justify-content-between align-items-center font-noto mb-2">
                           <span class="font-14 fw-semibold">Augusta Satrianto</span>
                           <span class="font-12">03 Aug 2022</span>
@@ -43,7 +43,7 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-6 g-0 mb-3">
-                      <div class="ms-4 rounded shadow-1 px-3 py-2">
+                      <div class="rounded shadow-1 px-3 py-2 mx-2"">
                         <div class="d-flex justify-content-between align-items-center font-noto mb-2">
                           <span class="font-14 fw-semibold">Edwin Fatkhur Rozi</span>
                           <span class="font-12">02 Aug 2022</span>
@@ -64,7 +64,7 @@
                 <div class="tabs-content">
                   <div class="row d-flex justify-content-between">
                     <div class="col-12 col-md-6 g-0 mb-3">
-                      <div class="me-4 rounded shadow-1 px-3 py-2">
+                      <div class="rounded shadow-1 px-3 py-2 mx-2"">
                         <div class="d-flex justify-content-between align-items-center font-noto mb-2">
                           <span class="font-14 fw-semibold">Yuni Hidayati, S.pd </span>
                           <span class="font-12">03 Aug 2022</span>
@@ -81,7 +81,7 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-6 g-0 mb-3">
-                      <div class="ms-4 rounded shadow-1 px-3 py-2">
+                      <div class="rounded shadow-1 px-3 py-2 mx-2"">
                         <div class="d-flex justify-content-between align-items-center font-noto mb-2">
                           <span class="font-14 fw-semibold">M Faisal Yusuf, S.pd</span>
                           <span class="font-12">02 Aug 2022</span>
@@ -106,11 +106,6 @@
       </div>
     </div>
   </main>
-  <div class="btn-add">
-    <a href="#">
-      <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
-    </a>
-  </div>
 @endsection
 @push('script')
   <script src="/assets/js/tab-bar.js"></script>

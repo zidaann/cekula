@@ -297,10 +297,7 @@ nav ul .nav-login a:hover {
 }
 
 .btn-blue {
-    background: rgb(159, 195, 249);
-    background: linear-gradient(171deg,
-            rgba(159, 195, 249, 1) 0%,
-            rgba(131, 219, 224, 1) 100%);
+    background: #A6AAB4;
     border: 2px solid;
     border-color: white;
     color: white;
@@ -314,8 +311,6 @@ nav ul .nav-login a:hover {
             rgba(159, 195, 249, 1) 0%,
             rgba(131, 219, 224, 1) 100%);
     color: white;
-    border: 2px solid;
-    border-color: black;
     border-radius: 5px;
 }
 
@@ -325,8 +320,6 @@ nav ul .nav-login a:hover {
             rgba(159, 195, 249, 1) 0%,
             rgba(131, 219, 224, 1) 100%);
     color: white;
-    border: 2px solid;
-    border-color: black;
     border-radius: 5px;
 }
 
