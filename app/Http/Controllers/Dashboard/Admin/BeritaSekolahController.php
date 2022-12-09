@@ -20,9 +20,9 @@ class BeritaSekolahController extends Controller
        return view('dashboard.berita.berita_sekolah.index', compact('beritas')); 
     }
 
-    public function create (){
+    public function create (BeritaSekolah $beritaSekolah){
         $submit = "Unggah Berita";
-        return view('dashboard.berita.berita_sekolah.create', compact('submit')); 
+        return view('dashboard.berita.berita_sekolah.create', compact('submit', 'beritaSekolah')); 
     }
 
     public function store (BeritaSekolahRequest $request){

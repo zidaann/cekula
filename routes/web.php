@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\Admin\BeritaKelasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
 use App\Http\Controllers\Dashboard\Admin\PerpustakaanController;
 use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
+use App\Http\Controllers\Dashboard\Admin\DaftarFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
@@ -121,6 +122,20 @@ Route::prefix("fasilitas")->group(function () {
         Route::get("", [PerpustakaanController::class, "index"])->name("perpustakaan.index");
         Route::prefix("peminjaman")->group(function () {
             Route::get("create", [PeminjamanPerpustakaanController::class,"create",])->name("perpustakaan.pinjam.create");
+        });
+    });
+    Route::prefix("daftar-fasilitas")->group(function () {
+        Route::get("", [DaftarFasilitasController::class, "index"])->name('daftar_fasilitas.index');
+        Route::get("create", [DaftarFasilitasController::class, "create"])->name('daftar_fasilitas.create');
+        Route::post("create", [DaftarFasilitasController::class, "store"]);
+        Route::delete("{id}", [DaftarFasilitasController::class, "destory"])->name('daftar_fasilitas.delete');
+        Route::prefix('barang')->group(function(){
+            Route::get("{id}/edit", [DaftarFasilitasController::class, "editBarang"])->name('barang.edit');
+            Route::put("{id}/edit", [DaftarFasilitasController::class, "updateBarang"]);
+        });
+        Route::prefix('ruangan')->group(function(){
+            Route::get("{id}/edit", [DaftarFasilitasController::class, "editRuangan"])->name('ruangan.edit');
+            Route::put("{id}/update", [DaftarFasilitasController::class, "updateRuangan"]);
         });
     });
 });
