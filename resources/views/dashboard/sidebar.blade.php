@@ -118,7 +118,7 @@
           <div class="collapse" id="fasilitas-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
               <li><a href="{{ route('perpustakaan.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Perpustakaan</a></li>
-              <li><a href="" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Fasilitas</a></li>
+              <li><a href="{{ route('daftar_fasilitas.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Daftar Fasilitas</a></li>
               <li><a href="{{ route('fasilitas.peminjaman.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Peminjaman Fasilitas</a></li>
               <li><a href="" class="link-dark d-inline-flex text-decoration-none rounded">Kantin</a></li>
               <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Koperasi</a></li>

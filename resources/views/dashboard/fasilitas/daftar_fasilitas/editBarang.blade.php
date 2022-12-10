@@ -61,16 +61,16 @@
             jumlahBarang.value = parseInt(jumlahBarang.value) - 1
          }
       });
-      plusRuangan.addEventListener('click', () => {
-         jumlahRuangan.value = parseInt(jumlahRuangan.value) + 1
-      });
-      minusRuangan.addEventListener('click', () => {
-         if (jumlahRuangan.value <= 0) {
-            jumlahRuangan.value = 0;
-         } else {
-            jumlahRuangan.value = parseInt(jumlahRuangan.value) - 1
-         }
-      });
+      // plusRuangan.addEventListener('click', () => {
+      //    jumlahRuangan.value = parseInt(jumlahRuangan.value) + 1
+      // });
+      // minusRuangan.addEventListener('click', () => {
+      //    if (jumlahRuangan.value <= 0) {
+      //       jumlahRuangan.value = 0;
+      //    } else {
+      //       jumlahRuangan.value = parseInt(jumlahRuangan.value) - 1
+      //    }
+      // });
    </script>
 @endpush
 @section('content')
@@ -85,32 +85,12 @@
       <div class="container">
          <div class="row justify-content-center ">
             <div class="col-md-11">
-               <div class="tabs-bar">
-                  <div class="fasilitas">
-                     <div class="tabs-head">
-                        <span class="tabs-toggle is-active">Barang</span>
-                        <span class="tabs-toggle">Ruangan</span>
-                     </div>
-                     <div class="tabs-body">
-                        <div class="tabs-content is-active">
-                           <div class="row d-flex justify-content-evenly">
-                              <form action="{{ route('daftar_fasilitas.create') }}" method="post"
-                                 enctype="multipart/form-data">
-                                 @csrf
-                                 @include('dashboard.fasilitas.daftar_fasilitas._form.barang')
-                              </form>
-                           </div>
-                        </div>
-                        <div class="tabs-content">
-                           <div class="row d-flex justify-content-evenly">
-                              <form action="" method="post" enctype="multipart/form-data">
-                                 @csrf
-                                 @include('dashboard.fasilitas.daftar_fasilitas._form.ruangan')
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+               <div class="row d-flex justify-content-evenly">
+                  <form action="{{ route('barang.edit', $fasilitas->id) }}" method="POST" enctype="multipart/form-data">
+                     @csrf
+                     @method('PUT')
+                     @include('dashboard.fasilitas.daftar_fasilitas._form.barang')
+                  </form>
                </div>
             </div>
          </div>
