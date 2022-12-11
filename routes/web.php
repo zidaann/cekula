@@ -14,6 +14,7 @@ use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanPerpustakaanController;
+use App\Http\Controllers\Dashboard\Admin\TambahSumbangBukuController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
 Route::get("/", function () {
@@ -123,6 +124,14 @@ Route::prefix("fasilitas")->group(function () {
         Route::prefix("peminjaman")->group(function () {
             Route::get("create", [PeminjamanPerpustakaanController::class,"create",])->name("perpustakaan.pinjam.create");
         });
+        Route::prefix('tambah-sumbang')->group(function(){
+            Route::get('', [TambahSumbangBukuController::class, 'index'])->name('tambah_sumbang.index');
+            Route::get('create', [TambahSumbangBukuController::class, 'create'])->name('tambah_sumbang.create');
+            Route::post('create', [TambahSumbangBukuController::class, 'store']);
+            Route::get('{slug}/edit', [TambahSumbangBukuController::class, 'edit'])->name('tambah_sumbang.edit');
+            Route::put('{slug}/edit', [TambahSumbangBukuController::class, 'update']);
+            Route::delete('{id}', [TambahSumbangBukuController::class, 'destroy'])->name('tambah_sumbang.delete');
+        });
     });
     Route::prefix("daftar-fasilitas")->group(function () {
         Route::get("", [DaftarFasilitasController::class, "index"])->name('daftar_fasilitas.index');
@@ -138,6 +147,7 @@ Route::prefix("fasilitas")->group(function () {
             Route::put("{id}/update", [DaftarFasilitasController::class, "updateRuangan"]);
         });
     });
+
 });
 
 Route::get("/dashboard", function () {
