@@ -24,7 +24,7 @@ Route::get("/beritasekolah", function () {
 });
 
 Route::get("/coba", function () {
-    return view("dashboard.administrasi.keuangan.pemasukan_pengeluaran.index");
+    return view("dashboard.fasilitas.daftar_kelas.edit");
 });
 
 Route::get("register", [RegisterController::class, "create"])->name("register")->middleware("guest");
