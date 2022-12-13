@@ -25,10 +25,10 @@ class TambahBukuRequest extends FormRequest
     {
         return [
             'id_buku' => 'required|numeric',
-            'pamflet' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
+            'cover' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
             'kategori_id' => 'required',
-            'judul_buku' => 'required',
-            'penulis' => 'required',
+            'judul' => 'required',
+            'pengarang' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required',
             'kota_terbit' => 'required',

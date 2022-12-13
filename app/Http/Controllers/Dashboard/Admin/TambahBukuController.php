@@ -14,7 +14,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class TambahBukuController extends Controller
 {
     public function index (){
-        $bukus = Buku::select('id', 'judul_buku', 'slug', 'pamflet')->get();
+        $bukus = Buku::select('id', 'judul', 'slug', 'cover')->get();
        return view('dashboard.fasilitas.perpustakaan.buku_perpustakaan.index', compact('bukus')); 
     }
 
@@ -26,23 +26,27 @@ class TambahBukuController extends Controller
 
     public function store (TambahBukuRequest $request){
         // dd($request->all());
-        if($request->pamflet == null){
-            $pamflet = "";
+        if($request->cover == null){
+            $cover = "";
         }
         else{
-            $pamflet = $request->file('pamflet')->store('pamflets');
+            $cover = $request->file('cover')->store('pamflets', 'public');
         }
         Buku::create([
             'id_buku' => $request->id_buku,
-            'pamflet' => $pamflet,
+            'cover' => $cover,
             'kategori_id' => $request->kategori_id,
-            'judul_buku' => $request->judul_buku,
-            'slug' => Str::slug($request->judul_buku, '-'),
-            'penulis' => $request->penulis,
+            'judul' => $request->judul,
+            'slug' => Str::slug($request->judul, '-'),
+            'pengarang' => $request->pengarang,
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit,
             'kota_terbit' => $request->kota_terbit,
             'status_buku' => $request->status_buku,
+            'id_penyumbang' => $request->id_penyumbang,
+            'nama_penyumbang' => $request->nama_penyumbang,
+            'tgl_sumbang' => $request->tgl_sumbang,
+
         ]);
         Alert::image('Data Buku Berhasil Disimpan', 'Silahkan kembali ke halaman buku perpustakaan ' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );
         return redirect(route('tambah_buku.index'));
@@ -61,10 +65,15 @@ class TambahBukuController extends Controller
             }
             $validatedData['pamflet'] = $request->file('pamflet')->store('pamflets');
         }
-        $request['slug'] = Str::slug($request->judul_buku, '-');
+    
         $buku->update($request->all());
         Alert::image('Data Buku Berhasil Diubah', 'Silahkan kembali ke halaman buku perpustakaan' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );
         return redirect(route('tambah_buku.index'));
 
+    }
+
+    public function destroy ($id){
+        Buku::find($id)->delete();
+        return back();
     }
 }

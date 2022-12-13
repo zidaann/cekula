@@ -32,9 +32,11 @@
         </div>
         <div class="col-12 col-md-8">
           <div class="row d-flex align-content-center">
-            <div class="col-12 font-rubik font-20 text-center text-md-start fw-semibold pt-4">Wildan</div>
-            <span href="#" class="col-12 font-noto font-14 text-center text-md-start pb-4 text-decoration-none text-black align-items-center" data-bs-toggle="modal" data-bs-target=".switchAccount">Administrator <i
-                class="bi bi-chevron-right"></i></span>
+            @php
+              //  $nama = Str::substr(auth()->user()->nama, 5, 4);
+            @endphp
+            <h6 class="col-12 font-rubik font-16 text-center text-md-start pt-3">{{ Auth()->user()->status }}</h6>
+            <p class="col-12 font-noto font-14 text-center text-md-start">{{ $nama }}</p>
           </div>
         </div>
       </div>
@@ -44,7 +46,7 @@
         <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="{{ route('home') }}">
           <i class="bi bi-house-door-fill"></i>
           <div class="d-flex w-100 ps-2">
-            <h6 class="pt-2 fs-6 font-rubik fw-semibold">Dashboard</h6>
+            <h6 class="pt-2 fs-6 font-rubik">Dashboard</h6>
           </div>
         </a>
       </li>
@@ -52,7 +54,7 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#akademik-collapse" aria-expanded="false">
           <i class="bi bi-mortarboard-fill"></i>
           <div class="d-flex w-100 px-2">
-            <h6 class="pt-2 fw-semibold">Akademik</h6>
+            <h6 class="pt-2">Akademik</h6>
           </div>
         </button>
         <div class="collapse" id="akademik-collapse">
@@ -60,8 +62,10 @@
             <li><a href="{{ route('jadwal_sekolah.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Sekolah</a></li>
             <li><a href="{{ route('jadwal_kelas.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Kelas</a></li>
             <li><a href="{{ route('rapor.index') }}" class="link-dark d-inline-flex text-decoration-none rounded">Raport Murid</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penilaian Pembelajaran</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kartu Pelajar Digital</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penilaian
+                Pembelajaran</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kartu Pelajar
+                Digital</a></li>
           </ul>
         </div>
       </li>
@@ -69,7 +73,7 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#presensi-collapse" aria-expanded="false">
           <i class="bi bi-check-circle-fill"></i>
           <div class="d-flex w-100 px-2">
-            <h6 class="pt-2 fw-semibold">Presensi</h6>
+            <h6 class="pt-2">Presensi</h6>
           </div>
         </button>
         <div class="collapse" id="presensi-collapse">
@@ -83,7 +87,7 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#berita-collapse" aria-expanded="false">
           <i class="bi bi-newspaper"></i>
           <div class="d-flex w-100 px-2">
-            <h6 class="pt-2 fw-semibold">Berita</h6>
+            <h6 class="pt-2">Berita</h6>
           </div>
         </button>
         <div class="collapse" id="berita-collapse">
@@ -97,15 +101,17 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#administrasi-collapse" aria-expanded="false">
           <i class="bi bi-front"></i>
           <div class="d-flex w-100 px-2">
-            <h6 class="pt-2 fw-semibold">Administrasi</h6>
+            <h6 class="pt-2">Administrasi</h6>
           </div>
         </button>
         <div class="collapse" id="administrasi-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Keuangan</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penerimaan Murid Baru</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penerimaan Murid
+                Baru</a></li>
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data Murid</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data Mutasi Murid</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data Mutasi
+                Murid</a></li>
           </ul>
         </div>
       </li>
@@ -113,7 +119,7 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#fasilitas-collapse" aria-expanded="false">
           <i class="bi bi-building"></i>
           <div class="d-flex w-100 px-2">
-            <h6 class="pt-2 fw-semibold">Fasilitas</h6>
+            <h6 class="pt-2">Fasilitas</h6>
           </div>
         </button>
         <div class="collapse" id="fasilitas-collapse">
@@ -130,13 +136,15 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#non_akademik-collapse" aria-expanded="false">
           <i class="bi bi-grid-1x2-fill" style="transform: rotate(90deg);"></i>
           <div class="d-flex w-100 px-2 ps-md-0 ps-lg-2">
-            <h6 class="pt-2 fw-semibold">Non-Akademik</h6>
+            <h6 class="pt-2">Non-Akademik</h6>
           </div>
         </button>
         <div class="collapse" id="non_akademik-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring Kegiatan Osis</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring Ekstrakulikuler</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
+                Kegiatan Osis</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
+                Ekstrakulikuler</a></li>
           </ul>
         </div>
       </li>
@@ -144,14 +152,17 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik" data-bs-toggle="collapse" data-bs-target="#laporan-collapse" aria-expanded="false">
           <i class="bi bi-file-earmark-bar-graph-fill"></i>
           <div class="d-flex w-100 px-2 ps-md-0 ps-lg-2">
-            <h6 class="pt-2 fw-semibold">Laporan</h6>
+            <h6 class="pt-2">Laporan</h6>
           </div>
         </button>
         <div class="collapse" id="laporan-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Presensi Pegawai</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Presensi Murid</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Keuangan</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Presensi
+                Pegawai</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan Presensi
+                Murid</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Laporan
+                Keuangan</a></li>
           </ul>
         </div>
       </li>
@@ -165,7 +176,7 @@
           <a class="nav-link w-100 d-flex align-items-center ps-lg-1 font-rubik" href="{{ route('logout') }}">
             <i class="bi bi-box-arrow-left fs-5 font-rubik"></i>
             <div class="d-flex w-100 ps-2">
-              <h6 class="pt-2 fs-6 font-rubik fw-semibold">Log Out</h6>
+              <h6 class="pt-2 fs-6 font-rubik">Log Out</h6>
             </div>
           </a>
         </form>

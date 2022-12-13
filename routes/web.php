@@ -130,6 +130,7 @@ Route::prefix("fasilitas")->group(function () {
             Route::post('create', [TambahBukuController::class, 'store']);
             Route::get('{buku}/edit', [TambahBukuController::class, 'edit'])->name('tambah_buku.edit');
             Route::put('{buku}/edit', [TambahBukuController::class, 'update']);
+            Route::delete('{id}', [TambahBukuController::class, 'destroy'])->name('tambah_buku.delete');
         });
     });
     Route::prefix("daftar-fasilitas")->group(function () {

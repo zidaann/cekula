@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class JadwalKelas extends Model
 {
     use HasFactory;
+
+    public $haris = [
+        'Senin', 
+        'Selasa', 
+        'Rabu', 
+        'Kamis',
+        'Jumat',
+        'Sabtu'
+    ];
+    
     protected $guarded = [];
     // public function getRouteKeyName (){
     //     return 'slug';

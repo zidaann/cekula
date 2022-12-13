@@ -30,15 +30,13 @@ class BeritaSekolahController extends Controller
             $pamflet = "";
         }
         else{
-            $pamflet = $request->file('pamflet')->store('pamflets');
+            $pamflet = $request->file('pamflet')->store('pamflets', 'public');
         }
 
         BeritaSekolah::create([
             'pamflet' => $pamflet,
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul, '-'),
-            'tgl_mulai' => $request->tgl_mulai,
-            'tgl_selesai' => $request->tgl_selesai,
             'deskripsi' => $request->deskripsi
         ]);
         Alert::image('Berita Berhasil Diposting', 'Silahkan kembali ke halaman berita' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );

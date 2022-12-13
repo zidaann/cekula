@@ -18,9 +18,7 @@ return new class extends Migration
             $table->string('pamflet')->nullable();
             $table->string('judul');
             $table->string('slug')->unique();
-            $table->date('tgl_mulai');
-            $table->date('tgl_selesai');
-            $table->string('deskripsi',100);
+            $table->string('deskripsi',1000);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -45,64 +45,58 @@
    <div class="header-schedule">
       <div class="d-flex align-items-center px-4">
          <a href="{{ route('jadwal_kelas.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
-         <span class="text-white mx-auto">Jadwal Kelas {{ $kelas->nama_kelas }}</span>
+         <span class="text-white mx-auto">Jadwal Kelas </span>
       </div>
    </div>
    <div>
       <div class="row p-4 justify-content-around">
-         @foreach ($hari as $h)
-            <div class="col-12 col-md-3 mx-1 mb-4">
-               <!-- hari -->
-               <div class="bg-color-content rounded-3 shadow mb-4">
-                  <h3 class="py-2 px-5 text-center font-noto font-24">
-                     {{ $h->nama }}
-                  </h3>
-               </div>
-               <!-- jadwal -->
-               <div>
-                  <div class="border-bottom pt-3">
-                     @foreach ($jadwalKelas as $jadwal)
-                        @if ($h->id == $jadwal->hari->id)
-                           <div class="py-2 border-bottom">
-                              <h5 class="font-noto fw-bold font-16">
-                                 {{ $jadwal->mapel->nama }}
-                              </h5>
-                              <div class="d-flex justify-content-between">
-                                 <h6 class="font-noto font-15">Jam Pelajaran:</h6>
-                                 <h6 class="font-noto font-15">
-                                    {{ \Carbon\Carbon::parse($jadwal->jam_masuk)->format('H:i') }}
-                                    - {{ \Carbon\Carbon::parse($jadwal->jam_selesai)->format('H:i') }}</h6>
-                              </div>
-                              <div class="d-flex justify-content-between">
-                                 <h6 class="font-noto font-15">Guru Mapel:</h6>
-                                 <h6 class="font-noto font-15">{{ $jadwal->pegawai->nama }}</h6>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center">
-                                 <a href="{{ route('jadwal_kelas.edit', $jadwal->id) }}" class="mx-3 text-dark"><i
-                                       class="bi bi-pencil"></i></a>
-                                 {{-- <form action="{{ route('jadwal_kelas.delete', $jadwal->id) }}" method="post">
+         {{-- @foreach ($hari as $h) --}}
+         <div class="col-12 col-md-3 mx-1 mb-4">
+            <!-- hari -->
+            <div class="bg-color-content rounded-3 shadow mb-4">
+               <h3 class="py-2 px-5 text-center font-noto font-24">
+                  Senin
+               </h3>
+            </div>
+            <!-- jadwal -->
+            <div>
+               <div class="border-bottom pt-3">
+
+                  <div class="py-2 border-bottom">
+                     <h5 class="font-noto fw-bold font-16">
+
+                     </h5>
+                     <div class="d-flex justify-content-between">
+                        <h6 class="font-noto font-15">Jam Pelajaran:</h6>
+                        <h6 class="font-noto font-15"> </h6>
+                     </div>
+                     <div class="d-flex justify-content-between">
+                        <h6 class="font-noto font-15">Guru Mapel:</h6>
+                        <h6 class="font-noto font-15"></h6>
+                     </div>
+                     <div class="d-flex justify-content-end align-items-center">
+                        <a href="" class="mx-3 text-dark"><i class="bi bi-pencil"></i></a>
+                        {{-- <form action="{{ route('jadwal_kelas.delete', $jadwal->id) }}" method="post">
                             @csrf
                             @method("DELETE")
                             <button type="submit" class="text-dark border-0 bg-transparent"><i class="bi bi-trash3"></i></button>
                         </form> --}}
-                                 <form id="jadwal-{{ $jadwal->id }}"
-                                    action="{{ route('jadwal_kelas.delete', $jadwal->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                 </form>
-                                 <button onclick="confirmDelete( {{ $jadwal->id }} )"
-                                    class="text-dark border-0 bg-transparent"><i class="bi bi-trash"></i>
-                                 </button>
-                              </div>
-                           </div>
-                        @endif
-                     @endforeach
-
-
+                        {{-- <form id="jadwal-{{ $jadwal->id }}" action="{{ route('jadwal_kelas.delete', $jadwal->id) }}"
+                           method="post">
+                           @csrf
+                           @method('DELETE')
+                        </form>
+                        <button onclick="confirmDelete( {{ $jadwal->id }} )" class="text-dark border-0 bg-transparent"><i
+                              class="bi bi-trash"></i>
+                        </button> --}}
+                     </div>
                   </div>
+
+
                </div>
             </div>
-         @endforeach
+         </div>
+         {{-- @endforeach --}}
 
 
 

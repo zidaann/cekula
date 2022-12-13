@@ -1,6 +1,39 @@
 @extends('dashboard.main')
 @section('styles')
    <link rel="stylesheet" href="/assets/css/tab-bar.css">
+   <script type="text/javascript" src="/assets/js/sweetalert2.js"></script>
+   <script>
+      $(document).ready(function() {
+         $('#myTable').DataTable();
+      });
+      // alert hapus 
+      function confirmDelete(id) {
+         Swal.fire({
+            title: 'Yakin Ingin Menghapus?',
+            imageUrl: '/assets/img/alert/alert_hapus.png',
+            imageWidth: 130,
+            imageHeight: 150,
+            imageAlt: 'Custom image',
+            showCancelButton: true,
+            showCloseButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Tidak',
+            confirmButtonText: 'Ya',
+            // cancelButtonText: 'No, cancel!'
+         }).then((result) => {
+            if (result.isConfirmed) {
+               Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+               )
+               // $('#berita-'+id).submit();
+               document.getElementById('buku-' + id).submit();
+            }
+         })
+      }
+   </script>
 @endsection
 @push('script')
    <script src="/assets/js/tab-bar.js"></script>
@@ -74,18 +107,23 @@
                         @foreach ($bukus as $buku)
                            <div class="col-4 px-5 font-noto font-12 " style="height: 180px;">
                               <div class="d-flex justify-content-center">
-                                 <img src="{{ asset('storage/' . $buku->pamflet) }}" alt="{{ $buku->judul_buku }}"
+                                 <img src="{{ asset('storage/' . $buku->cover) }}" alt="{{ $buku->judul }}"
                                     style="height: 85px;">
                               </div>
-                              <div class="text-center mt-2" style="height:35px; overflow: hidden">{{ $buku->judul_buku }}
+                              <div class="text-center mt-2" style="height:35px; overflow: hidden">{{ $buku->judul }}
                               </div>
                               <div class="d-flex justify-content-end">
                                  <a href="{{ route('tambah_buku.edit', $buku->slug) }}" class="text-black mx-1">
                                     <i class="bi bi-pencil-square"></i>
                                  </a>
-                                 <a href="#" class="text-black mx-1">
-                                    <i class="bi bi-trash"></i>
-                                 </a>
+                                 <form id="buku-{{ $buku->id }}" action="{{ route('tambah_buku.delete', $buku->id) }}"
+                                    method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                 </form>
+                                 <button onclick="confirmDelete( {{ $buku->id }} )" class="border-0 bg-transparent"><i
+                                       class="bi bi-trash"></i>
+                                 </button>
                               </div>
                            </div>
                         @endforeach
