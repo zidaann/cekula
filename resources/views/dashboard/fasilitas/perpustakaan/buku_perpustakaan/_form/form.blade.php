@@ -1,16 +1,16 @@
 <div class="mb-4 image-wrapper ">
    <label for="image" class="label-image"><i class="bi bi-camera fs-5"></i></label>
    {{-- <input type="hidden" name="oldPamflet" value="{{ $beritaSekolah->pamflet }}"> --}}
-   @if ($buku->pamflet)
+   @if ($buku->cover)
       <div class="text-center">
-         <img src="{{ asset('storage/' . $buku->pamflet) }}" class="img-preview img-fluid text-center rounded mx-auto">
+         <img src="{{ asset('storage/' . $buku->cover) }}" class="img-preview img-fluid text-center rounded mx-auto">
       </div>
    @else
       <img class="img-preview img-fluid text-center rounded mx-auto">
    @endif
-   <input type="file" class="form-control d-none @error('pamflet') is-invalid @enderror" id="image"
-      placeholder="Enter your image" name="pamflet" onchange="previewImage()">
-   @error('pamflet')
+   <input type="file" class="form-control d-none @error('cover') is-invalid @enderror" id="image"
+      placeholder="Enter your image" name="cover" onchange="previewImage()">
+   @error('cover')
       <div class="text-danger mb-1"> {{ $message }}</div>
    @enderror
 </div>
@@ -37,20 +37,20 @@
    @enderror
 </div>
 <div class="mb-3">
-   <label for="judul_buku" class="form-label"> Judul Buku</label>
-   <input type="text" name="judul_buku" id="judul_buku"
-      class="form-control input-bg @error('judul_buku') is-invalid @enderror" placeholder="Masukkan Judul Buku"
-      autocomplete="off" required value="{{ $buku->judul_buku }}">
-   @error('judul_buku')
+   <label for="judul" class="form-label"> Judul Buku</label>
+   <input type="text" name="judul" id="judul"
+      class="form-control input-bg @error('judul') is-invalid @enderror" placeholder="Masukkan Judul Buku"
+      autocomplete="off" required value="{{ $buku->judul }}">
+   @error('judul')
       <div class="text-danger mb-1"> {{ $message }}</div>
    @enderror
 </div>
 <div class="mb-3">
-   <label for="penulis" class="form-label"> Nama Penulis </label>
-   <input type="text" name="penulis" id="penulis"
-      class="form-control input-bg @error('penulis') is-invalid @enderror" placeholder="Masukkan Nama Penulis"
-      autocomplete="off" required value="{{ $buku->penulis }}">
-   @error('penulis')
+   <label for="pengarang" class="form-label"> Nama Penulis </label>
+   <input type="text" name="pengarang" id="pengarang"
+      class="form-control input-bg @error('pengarang') is-invalid @enderror" placeholder="Masukkan Nama Penulis"
+      autocomplete="off" required value="{{ $buku->pengarang }}">
+   @error('pengarang')
       <div class="text-danger mb-1"> {{ $message }}</div>
    @enderror
 </div>
@@ -89,6 +89,33 @@
       <option value="Sumbang Buku" {{ $buku->status_buku == 'Sumbang Buku' ? 'selected' : '' }}>Sumbang Buku</option>
    </select>
    @error('status_buku')
+      <div class="text-danger mb-1"> {{ $message }}</div>
+   @enderror
+</div>
+<div class="mb-3">
+   <label for="id_penyumbang" class="form-label"> ID Penyumbang </label>
+   <input type="text" name="id_penyumbang" id="id_penyumbang"
+      class="form-control input-bg @error('id_penyumbang') is-invalid @enderror" placeholder="Masukkan Nama Penerbit"
+      autocomplete="off" value="{{ $buku->id_penyumbang }}">
+   @error('id_penyumbang')
+      <div class="text-danger mb-1"> {{ $message }}</div>
+   @enderror
+</div>
+<div class="mb-3">
+   <label for="nama_penyumbang" class="form-label"> Nama Penyumbang </label>
+   <input type="text" name="nama_penyumbang" id="nama_penyumbang"
+      class="form-control input-bg @error('nama_penyumbang') is-invalid @enderror"
+      placeholder="Masukkan Nama Penerbit" autocomplete="off" value="{{ $buku->nama_penyumbang }}">
+   @error('nama_penyumbang')
+      <div class="text-danger mb-1"> {{ $message }}</div>
+   @enderror
+</div>
+<div class="mb-3">
+   <label for="tgl_sumbang" class="form-label"> Tanggal Sumbang </label>
+   <input type="date" name="tgl_sumbang" id="tgl_sumbang"
+      class="form-control input-bg @error('tgl_sumbang') is-invalid @enderror" placeholder="Masukkan Nama Penerbit"
+      autocomplete="off" value="{{ $buku->tgl_sumbang }}">
+   @error('tgl_sumbang')
       <div class="text-danger mb-1"> {{ $message }}</div>
    @enderror
 </div>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->dateTime('tgl_mulai');
             $table->dateTime('tgl_selesai');
-            $table->string('deskripsi',100);
+            $table->string('deskripsi',1000);
             $table->timestamps();
             $table->softDeletes();
         });

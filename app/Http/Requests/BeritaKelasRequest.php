@@ -24,11 +24,9 @@ class BeritaKelasRequest extends FormRequest
     public function rules()
     {
         return [
-            'pamflet' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
+            'pamflet' => 'nullable|image|max:2048|mimes:jpg,jpeg,png',
             'judul' => 'required|max:40',
-            'tgl_mulai' => 'required',
-            'tgl_selesai' => 'required',
-            'deskripsi' => 'required|max:500'
+            'deskripsi' => 'required|max:1000'
         ];
     }
 }
