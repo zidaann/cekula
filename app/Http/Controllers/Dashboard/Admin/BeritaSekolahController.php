@@ -30,7 +30,7 @@ class BeritaSekolahController extends Controller
             $pamflet = "";
         }
         else{
-            $pamflet = $request->file('pamflet')->store('pamflets');
+            $pamflet = $request->file('pamflet')->store('pamflets', 'public');
         }
 
         BeritaSekolah::create([
