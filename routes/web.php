@@ -5,16 +5,16 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\PresensiPegawaiController;
 use App\Http\Controllers\Dashboard\Admin\RaporMuridController;
+use App\Http\Controllers\Dashboard\Admin\TambahBukuController;
 use App\Http\Controllers\Dashboard\Admin\BeritaKelasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalKelasController;
 use App\Http\Controllers\Dashboard\Admin\PerpustakaanController;
 use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
-use App\Http\Controllers\Dashboard\Admin\DaftarFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
+use App\Http\Controllers\Dashboard\Admin\DaftarFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanPerpustakaanController;
-use App\Http\Controllers\Dashboard\Admin\TambahSumbangBukuController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
 Route::get("/", function () {
@@ -124,13 +124,12 @@ Route::prefix("fasilitas")->group(function () {
         Route::prefix("peminjaman")->group(function () {
             Route::get("create", [PeminjamanPerpustakaanController::class,"create",])->name("perpustakaan.pinjam.create");
         });
-        Route::prefix('tambah-sumbang')->group(function(){
-            Route::get('', [TambahSumbangBukuController::class, 'index'])->name('tambah_sumbang.index');
-            Route::get('create', [TambahSumbangBukuController::class, 'create'])->name('tambah_sumbang.create');
-            Route::post('create', [TambahSumbangBukuController::class, 'store']);
-            Route::get('{slug}/edit', [TambahSumbangBukuController::class, 'edit'])->name('tambah_sumbang.edit');
-            Route::put('{slug}/edit', [TambahSumbangBukuController::class, 'update']);
-            Route::delete('{id}', [TambahSumbangBukuController::class, 'destroy'])->name('tambah_sumbang.delete');
+        Route::prefix('tambah-buku')->group(function(){
+            Route::get('', [TambahBukuController::class, 'index'])->name('tambah_buku.index');
+            Route::get('create', [TambahBukuController::class, 'create'])->name('tambah_buku.create');
+            Route::post('create', [TambahBukuController::class, 'store']);
+            Route::get('{buku}/edit', [TambahBukuController::class, 'edit'])->name('tambah_buku.edit');
+            Route::put('{buku}/edit', [TambahBukuController::class, 'update']);
         });
     });
     Route::prefix("daftar-fasilitas")->group(function () {

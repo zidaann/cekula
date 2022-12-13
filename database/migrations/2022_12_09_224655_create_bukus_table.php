@@ -15,17 +15,19 @@ return new class extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_buku')->unique();
             $table->string('judul_buku');
+            $table->string('pamflet')->nullable();
             $table->string('slug')->unique();
             $table->foreignId('kategori_id');
-            $table->string('pengarang');
+            $table->string('penulis');
             $table->string('penerbit');
             $table->string('tahun_terbit');
             $table->string('kota_terbit');
             $table->string('status_buku');
-            $table->string('id_penyumbang')->nullable();
-            $table->string('nama_penyumbang')->nullable();
-            $table->date('tgl_sumbang')->nullable();
+            // $table->string('id_penyumbang')->nullable();
+            // $table->string('nama_penyumbang')->nullable();
+            // $table->date('tgl_sumbang')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

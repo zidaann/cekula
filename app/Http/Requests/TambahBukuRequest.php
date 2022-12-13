@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TambahSumbangBukuRequest extends FormRequest
+class TambahBukuRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,15 @@ class TambahSumbangBukuRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul_buku' => 'required',
+            'id_buku' => 'required|numeric',
+            'pamflet' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
             'kategori_id' => 'required',
-            'pengarang' => 'required',
+            'judul_buku' => 'required',
+            'penulis' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required',
             'kota_terbit' => 'required',
-            'status_buku' => 'required'
+            'status_buku' => 'required',
         ];
     }
 }

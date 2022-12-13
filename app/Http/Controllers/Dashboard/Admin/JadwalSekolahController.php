@@ -100,7 +100,7 @@ class JadwalSekolahController extends Controller
             if($jadwalSekolah->pamflet){
                 Storage::delete($request->pamflet);
             }
-            $validatedData['pamflet'] = $request->file('pamflet')->store('pamflets');
+            $validatedData['pamflet'] = $request->file('pamflet')->store('pamflets', 'public');
         }
         $validatedData['slug'] = Str::slug($request->judul, '-');
         $jadwalSekolah->update($validatedData);
