@@ -50,9 +50,10 @@ class JadwalKelasController extends Controller
          'haris', 'mapels', 'kelas', 'pegawais'));
      }
 
-     public function update ($id, Request $request){
+     public function update ($id, Request $request,){
           $kelas = Kelas::all()->first();
           $pilihanKelas = JadwalKelas::where('kelas_id', $kelas->id)->first();
+          // dd($id);
          JadwalKelas::where('id', $id)->update([
             'mapel_id' => $request->mapel_id,
             'jam_masuk' => $request->jam_masuk,

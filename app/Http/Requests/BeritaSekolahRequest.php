@@ -26,9 +26,7 @@ class BeritaSekolahRequest extends FormRequest
         return [
             'pamflet' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
             'judul' => 'required',
-            'tgl_mulai' => 'required',
-            'tgl_selesai' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required|max:1000'
         ];
     }
 }

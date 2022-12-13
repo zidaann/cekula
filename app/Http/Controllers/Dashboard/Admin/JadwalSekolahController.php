@@ -83,6 +83,7 @@ class JadwalSekolahController extends Controller
      */
     public function edit(JadwalSekolah $jadwalSekolah)
     {
+        // dd($jadwalSekolah);
         $submit = 'Update Jadwal';
         return view('dashboard.akademik.jadwal_sekolah.edit', compact('jadwalSekolah', 'submit'));
     }
@@ -94,7 +95,7 @@ class JadwalSekolahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, JadwalSekolah $jadwalSekolah)
+    public function update(JadwalSekolahRequest $request, JadwalSekolah $jadwalSekolah)
     {
         if($request->file('pamflet')){
             if($jadwalSekolah->pamflet){
@@ -102,8 +103,8 @@ class JadwalSekolahController extends Controller
             }
             $validatedData['pamflet'] = $request->file('pamflet')->store('pamflets', 'public');
         }
-        $validatedData['slug'] = Str::slug($request->judul, '-');
-        $jadwalSekolah->update($validatedData);
+        $request['slug'] = Str::slug($request->judul, '-');
+        $jadwalSekolah->update($request->all());
         Alert::image('Jadwal Sekolah Berhasil Diubah', 'Silahkan kembali ke halaman jadwal sekolah' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );
         return redirect(route('jadwal_sekolah.index'));
 
