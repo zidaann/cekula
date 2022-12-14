@@ -13,7 +13,7 @@
                <div class="row d-flex justify-content-evenly px-5">
                   <form action="{{ route('daftar_kelas.create') }}" method="post" enctype="multipart/form-data">
                      @csrf
-                     @include('dashboard.akademik.daftar_kelas._form.form')
+                     @include('dashboard.akademik.daftar_kelas._form._create')
                   </form>
                </div>
             </div>
