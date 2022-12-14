@@ -454,3 +454,10 @@ nav ul .nav-login a:hover {
     background-color: #FDE1D5;
     color: #ED6562;
 }
+
+/* kartu pelajar */
+.ktp {
+    background-image: url(/assets/img/kartu_digital/kartu_pelajar.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
