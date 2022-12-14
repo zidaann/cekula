@@ -30,4 +30,22 @@ class DaftarKelasController extends Controller
         Alert::image('Data Kelas Baru Berhasil Disimpan', 'Silahkan kembali ke halaman Daftar Kelas' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );
         return redirect(route('daftar_kelas.index'));
     }
+
+    public function edit ($id){
+        $waliKelas = User::where('status', 'Wali Kelas')->get();
+        $kelas = Kelas::where('id', $id)->first();
+        return view('dashboard.akademik.daftar_kelas.edit',compact('kelas',
+    'waliKelas'));
+    }
+
+    public function update (Request $request, Kelas $kelas){
+        $kelas->update($request->all());
+        Alert::image('Data Kelas Berhasil Diubah', 'Silahkan kembali ke halaman Daftar Kelas' ,'/assets/img/alert/alert_berhasil.png', '120px', '200px' );
+        return redirect(route('daftar_kelas.index'));
+    }
+
+    public function destroy ($id){
+        Kelas::find($id)->delete();
+        return back();
+    }
 }

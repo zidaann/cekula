@@ -78,6 +78,9 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
         Route::get('', [DaftarKelasController::class, 'index'])->name('daftar_kelas.index');
         Route::get('create', [DaftarKelasController::class, 'create'])->name('daftar_kelas.create');
         Route::post('create', [DaftarKelasController::class, 'store']);
+        Route::get('{id}/edit', [DaftarKelasController::class, 'edit'])->name('daftar_kelas.edit');
+        Route::put('{id}/edit', [DaftarKelasController::class, 'update']);
+        Route::delete('{id}', [DaftarKelasController::class, 'destroy'])->name('daftar_kelas.delete');
     });
 });
 

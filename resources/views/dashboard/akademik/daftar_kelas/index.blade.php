@@ -6,6 +6,33 @@
          e.preventDefault();
          $(".ilustration_class").slideToggle("hide");
       });
+
+      function confirmDelete(id) {
+         Swal.fire({
+            title: 'Yakin Ingin Menghapus?',
+            imageUrl: '/assets/img/alert/alert_hapus.png',
+            imageWidth: 130,
+            imageHeight: 150,
+            imageAlt: 'Custom image',
+            showCancelButton: true,
+            showCloseButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Tidak',
+            confirmButtonText: 'Ya',
+            // cancelButtonText: 'No, cancel!'
+         }).then((result) => {
+            if (result.isConfirmed) {
+               Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+               )
+               // $('#berita-'+id).submit();
+               document.getElementById('kelas-' + id).submit();
+            }
+         })
+      }
    </script>
 @endpush
 @section('content')
@@ -69,7 +96,24 @@
                               <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
                                  <span class="d-flex fw-semibold justify-content-between text-decoration-none text-dark">
                                     <span>Kelas {{ $item->nama_kelas }}</span>
-                                    <a href="" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
+                                    <div class="justify-content-end d-flex">
+                                       <a href="" class="text-dark me-2"><img src="/assets/img/icon_people.png"
+                                             width="20"></a>
+                                       <a href="{{ route('daftar_kelas.edit', $item->id) }}" class="text-dark me-2"><img
+                                             src="/assets/img/btn_edit.png" width="19"></a>
+                                       <div class="d-flex">
+                                          <form id="kelas-{{ $item->id }}"
+                                             action="{{ route('daftar_kelas.delete', $item->id) }}" method="post">
+                                             @csrf
+                                             @method('DELETE')
+                                          </form>
+                                          <button onclick="confirmDelete( {{ $item->id }} )"
+                                             class="border-0 bg-transparent "><img src="/assets/img/btn_delete.png"
+                                                width="19"></i>
+                                          </button>
+                                       </div>
+
+                                    </div>
                                  </span>
                               </div>
                            @endif
@@ -86,10 +130,27 @@
                         @foreach ($kelas as $item)
                            @if ($item->tingkat_kelas == '8')
                               <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                                 <a href="#" class="d-flex justify-content-between text-decoration-none text-dark">
+                                 <span class="d-flex fw-semibold justify-content-between text-decoration-none text-dark">
                                     <span>Kelas {{ $item->nama_kelas }}</span>
-                                    <span><i class="bi bi-chevron-right"></i></span>
-                                 </a>
+                                    <div class="justify-content-end d-flex">
+                                       <a href="" class="text-dark me-2"><img src="/assets/img/icon_people.png"
+                                             width="20"></a>
+                                       <a href="{{ route('daftar_kelas.edit', $item->id) }}" class="text-dark me-2"><img
+                                             src="/assets/img/btn_edit.png" width="19"></a>
+                                       <div class="d-flex">
+                                          <form id="kelas-{{ $item->id }}"
+                                             action="{{ route('daftar_kelas.delete', $item->id) }}" method="post">
+                                             @csrf
+                                             @method('DELETE')
+                                          </form>
+                                          <button onclick="confirmDelete( {{ $item->id }} )"
+                                             class="border-0 bg-transparent "><img src="/assets/img/btn_delete.png"
+                                                width="19"></i>
+                                          </button>
+                                       </div>
+
+                                    </div>
+                                 </span>
                               </div>
                            @endif
                         @endforeach
@@ -105,10 +166,27 @@
                         @foreach ($kelas as $item)
                            @if ($item->tingkat_kelas == '9')
                               <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
-                                 <a href="#" class="d-flex justify-content-between text-decoration-none text-dark">
-                                    <span>Kelas {{ $item->nama_kelas }} </span>
-                                    <span><i class="bi bi-chevron-right"></i></span>
-                                 </a>
+                                 <span class="d-flex fw-semibold justify-content-between text-decoration-none text-dark">
+                                    <span>Kelas {{ $item->nama_kelas }}</span>
+                                    <div class="justify-content-end d-flex">
+                                       <a href="" class="text-dark me-2"><img src="/assets/img/icon_people.png"
+                                             width="20"></a>
+                                       <a href="{{ route('daftar_kelas.edit', $item->id) }}" class="text-dark me-2"><img
+                                             src="/assets/img/btn_edit.png" width="19"></a>
+                                       <div class="d-flex">
+                                          <form id="kelas-{{ $item->id }}"
+                                             action="{{ route('daftar_kelas.delete', $item->id) }}" method="post">
+                                             @csrf
+                                             @method('DELETE')
+                                          </form>
+                                          <button onclick="confirmDelete( {{ $item->id }} )"
+                                             class="border-0 bg-transparent "><img src="/assets/img/btn_delete.png"
+                                                width="19"></i>
+                                          </button>
+                                       </div>
+
+                                    </div>
+                                 </span>
                               </div>
                            @endif
                         @endforeach
