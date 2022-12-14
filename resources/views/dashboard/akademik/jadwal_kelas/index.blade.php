@@ -84,10 +84,6 @@
                      data-bs-parent="#accordionExample">
                      <div class="accordion-body">
                         <div class="row mt-5 px-4" id="detail_kelas-7">
-                           {{-- @foreach ($jadwals as $item) --}}
-                           {{-- @foreach ($jadwals as $jadwal) --}}
-                           {{-- @if ($item->kelas->tingkat_kelas == '7') --}}
-                           {{-- @if ($jadwals->kelas->nama_kelas == $item->nama_kelas) --}}
                            @foreach ($kelas as $item)
                               @if ($item->tingkat_kelas == '7')
                                  <div class="card-kelas col-md-10 p-3 px-4 mb-3 btn btn-light bg-white">
@@ -99,11 +95,6 @@
                                  </div>
                               @endif
                            @endforeach
-
-                           {{-- @endif --}}
-                           {{-- @endif --}}
-                           {{-- @endforeach --}}
-                           {{-- @endforeach --}}
                         </div>
                      </div>
                   </div>

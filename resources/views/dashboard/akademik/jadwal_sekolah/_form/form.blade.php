@@ -21,7 +21,14 @@
    <input type="text" name="judul" id="judul" class="form-control @error('judul') is-invalid @enderror"
       placeholder="Masukkan judul jadwal" value="{{ old('judul', $jadwalSekolah->judul) }}" autocomplete="off">
    @error('judul')
-      <div class="text-danger mb-5"> {{ $message }}</div>
+      <div class="text-danger"> {{ $message }}</div>
+   @enderror
+</div>
+<div class="mb-3">
+   <input type="hidden" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror"
+      placeholder="Masukkan slug jadwal" value="{{ old('slug', $jadwalSekolah->slug) }}" autocomplete="off">
+   @error('slug')
+      <div class="text-danger "> {{ $message }}</div>
    @enderror
 </div>
 

@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Jabatan;
+use App\Models\KategoriBuku;
 use App\Models\Pegawai;
 use Illuminate\Database\Seeder;
 
@@ -62,12 +63,26 @@ class DatabaseSeeder extends Seeder
                 'username' => "hany",
                 'password' => bcrypt("123456"),
                 'password2' => "123456",    
+            ],
+            [
+                'nama' => "Rahadian Bisma",
+                'status' => "Wali kelas",
+                'username' => "bisma",
+                'password' => bcrypt("123456"),
+                'password2' => "123456",    
+            ],
+            [
+                'nama' => "Aries Dwi",
+                'status' => "Wali kelas",
+                'username' => "aries",
+                'password' => bcrypt("123456"),
+                'password2' => "123456",    
             ]
         ];
         foreach($users as $user){
             User::create($user);
         }
-       $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class, JabatanSeeder::class, HariSeeder::class ]);
+       $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class, JabatanSeeder::class, HariSeeder::class, KategoriBukuSeeder::class ]);
         
 
         
