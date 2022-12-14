@@ -49,21 +49,23 @@
       @include('dashboard.sidebar')
       <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 min-h-100">
         @yield('content')
-        <div class="modal fade switchAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade switchAccount" tabindex="-1" aria-labelledby="switch" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Ganti Akun</h1>
+                <div class="d-flex justify-content-center w-100">
+                  <h1 class="fs-5 text-center align-text-bottom font-rubik fw-semibold" id="switch">Ganti Akun</h1>
+                </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <form action="#">
-                <div class="px-5">
-                  <div class="d-flex justify-content-between">
-                    <label for="siswa">Siswa</label>
+                <div class="px-5 py-3 font-noto font-16">
+                  <div class="d-flex">
+                    <label for="siswa" class="w-100" style="cursor: pointer">Siswa</label>
                     <input type="radio" name="role" id="siswa" class="form-check-input ms-3">
                   </div>
                   <div class="d-flex justify-content-between">
-                    <label for="osis">Osis</label>
+                    <label for="osis" class="w-100" style="cursor: pointer">Osis</label>
                     <input type="radio" name="role" id="osis" class="form-check-input ms-3">
                   </div>
                 </div>
