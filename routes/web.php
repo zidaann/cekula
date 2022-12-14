@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\Admin\BeritaSekolahController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\Dashboard\Admin\DaftarFasilitasController;
+use App\Http\Controllers\Dashboard\Admin\KartuPelajarDigitalController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanPerpustakaanController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
@@ -36,7 +37,10 @@ Route::post("login", [LoginController::class, "store"]);
 Route::get("logout", [LoginController::class, "logout"])->name("logout");
 Route::post("logout", [LoginController::class, "logout"])->name("logout");
 
+
+// AKADEMIK
 Route::middleware('auth')->prefix('akademik')->group(function(){
+    // JADWAL SEKOLAH
     Route::prefix("jadwal-sekolah")->group(function () {
         Route::get("", [JadwalSekolahController::class, "index"])->name("jadwal_sekolah.index");
         Route::get("create", [JadwalSekolahController::class, "create"])->name("jadwal_sekolah.create");
@@ -47,6 +51,7 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
         Route::delete("{jadwalSekolah}", [JadwalSekolahController::class,"destroy",])->name("jadwal_sekolah.delete");
     });
 
+    // JADWAL KELAS
     Route::prefix("jadwal-kelas")->group(function () {
         Route::get("", [JadwalKelasController::class, "index"])->name("jadwal_kelas.index");
         Route::get("create", [JadwalKelasController::class, "create"])->name("jadwal_kelas.create");
@@ -55,11 +60,17 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
         Route::put("{id}/edit", [JadwalKelasController::class, "update"]);
         Route::get("{kelas}/show", [JadwalKelasController::class,"show"])->name("jadwal_kelas.show");
         Route::delete("{id}", [JadwalKelasController::class,"destroy"])->name("jadwal_kelas.delete");
+        Route::get("{kelas}", [JadwalKelasController::class, "index"]);
+        
     });
-
+    // RAPOT MURID
     Route::prefix("raport-murid")->group(function () {
         Route::get("", [RaporMuridController::class, "index"])->name("rapor.index");
         Route::get("detail-rapor", [RaporMuridController::class,"detailRapor",])->name("rapor.detailRapor");
+    });
+    // KARTU PELAJAR DIGITAL
+    Route::prefix('kartu-pelajar-digital')->group(function(){
+        Route::get("", [KartuPelajarDigitalController::class, 'index'] );
     });
 });
 

@@ -16,11 +16,16 @@ use Carbon\Carbon;
 class JadwalKelasController extends Controller
 {
     public function index (){
-
+      $hari = Hari::get();
+      $mapels = Mapel::get();
+      // $jadwalKelas = JadwalKelas::where('kelas_id',$kelas->id)->get();
+      $jadwalMurid = JadwalKelas::where('kelas_id', auth()->user()->kelas_id)->get();
+      $kelasMurid = JadwalKelas::where('kelas_id', auth()->user()->kelas_id)->first();
       $jadwals = JadwalKelas::get();
       $kelas = Kelas::get();
       //   dd($kelas);
-        return view('dashboard.akademik.jadwal_kelas.index', compact('kelas', 'jadwals')); 
+        return view('dashboard.akademik.jadwal_kelas.index', 
+        compact('kelas', 'jadwals', 'hari', 'mapels', 'jadwalMurid', 'kelasMurid')); 
      }
  
      public function create (){
@@ -64,13 +69,9 @@ class JadwalKelasController extends Controller
          return redirect(route('jadwal_kelas.show', $pilihanKelas));
      }
      public function show (Kelas $kelas){
-         // $kelas = $jadwalKelas->get();
-         // $jadwals = $jadwalKelas->first();
          $hari = Hari::get();
          $mapels = Mapel::get();
-         // $kelasTerpilih = Kelas::where('id', $kelas)->get();
          $jadwalKelas = JadwalKelas::where('kelas_id',$kelas->id)->get();
-         // $j = JadwalKelas::where('id', $kelas->id)->first();
       return view('dashboard.akademik.jadwal_kelas.show', compact( 'jadwalKelas', 'mapels', 'hari', 'kelas')); 
      }
 

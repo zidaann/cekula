@@ -49,7 +49,7 @@ class JadwalSekolahController extends Controller
         $pamflet = "";
     }
     else{
-        $pamflet = $request->file('pamflet')->store('pamflets', 'public');
+        $pamflet = $request->file('pamflet')->store('storage/pamflets', 'public');
     }
       JadwalSekolah::create([
         'pamflet' => $pamflet,

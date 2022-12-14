@@ -44,32 +44,47 @@
    <main>
       <div class="container">
          <div class="row p-4 ">
-            {{-- @if ($beritas->count()) --}}
-            {{-- @foreach ($beritas as $berita)
-          <div class="col-md-6 mb-3">
-            <a href="{{ route('berita_sekolah.show', $berita->slug) }}" class="text-decoration-none">
-               <div class="card border-0 py-3">
-                 <div class="text-center">
-                   <img src="{{ asset('storage/'.$berita->pamflet) }}" class="card-img-top img-fluid mx-auto" >
-                 </div>
-                 <div class="card-body">
-                   <div class="card-title fw-bold fs-5">{{ $berita->judul }}</div>
-                   <p>{{ date('d F Y', strtotime($berita->tanggal_pelaksanaan)) }} - {{ date('d F Y', strtotime($berita->tanggal_selesai_pelaksanaan)) }} </p>
-                 </div>
-                 <div class="card-action d-flex align-items-center float-end">
-                   <a href="{{ route('berita_sekolah.edit', $berita) }}" class="text-dark me-2"><i class="bi bi-pencil-square"></i></a>
-                      <form id="berita-{{ $berita->id }}" action="{{ route('berita_sekolah.delete', $berita->id) }}" method="post">
-                        @csrf
-                        @method("DELETE")
-                      </form>
-                        <button onclick="confirmDelete( {{ $berita->id }} )" class="border-0"><i class="bi bi-trash"></i>
-                        </button>
-                 </div>
+            @if ($beritas->count())
+               @foreach ($beritas as $berita)
+                  <div class="col-md-6 mb-3">
+                     <a href="{{ route('berita_kelas.show', $berita->slug) }}" class="text-decoration-none">
+                        <div class="card border-0 py-3">
+                           <div class="text-center">
+                              <img src="{{ asset('storage/' . $berita->pamflet) }}" class="card-img-top img-fluid mx-auto">
+                           </div>
+                           <div class="card-body">
+                              <div class="card-title fw-bold fs-5">{{ $berita->judul }}</div>
+                              <p>{{ $berita->created_at->diffForHumans() }}</p>
+                              {{-- <p>{{ date('d F Y', strtotime($berita->tgl_mulai)) }} -
+                              {{ date('d F Y', strtotime($berita->tgl_selesai)) }} </p> --}}
+                           </div>
+                           @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
+                              <div class="card-action d-flex align-items-center float-end">
+                                 <a href="{{ route('berita_kelas.edit', $berita) }}" class="text-dark me-2"><i
+                                       class="bi bi-pencil-square"></i></a>
+                                 <form id="berita-{{ $berita->id }}"
+                                    action="{{ route('berita_kelas.delete', $berita->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                 </form>
+                                 <button onclick="confirmDelete( {{ $berita->id }} )" class="border-0"><i
+                                       class="bi bi-trash"></i>
+                                 </button>
+                              </div>
+                           @endif
+
+                        </div>
+                     </a>
+                  </div>
+               @endforeach
+            @else
+               <div class="text-secondary text-center">
+                  Tidak ada berita kelas
                </div>
-            </a>
-           </div>
-          @endforeach --}}
-            <div class="justify-content-center ">
+            @endif
+
+            {{-- tabel --}}
+            {{-- <div class="justify-content-center ">
                <div class="col-12 col-md-12 p-2 justify-content-center ">
                   <table class="table table-striped table-bordered" id="myTable">
                      <thead>
@@ -119,7 +134,7 @@
                      </thead>
                   </table>
                </div>
-            </div>
+            </div> --}}
          </div>
          <div class="btn-add">
             <a href="{{ route('berita_kelas.create') }}">
