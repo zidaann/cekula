@@ -2,15 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Storage;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function saveImage($image, $path = 'public')
+    {
+        if (!$image) {
+            return null;
+        }
 
+        $filename = time() . '.png';
+        // save image
+        Storage::disk($path)->put($filename, base64_decode($image));
+
+        //return the path
+        // Url is the base url exp: localhost:8000
+        return URL::to('/') . '/storage/' . $path . '/' . $filename;
+    }
+
+    public function saveFile($image, $path = 'public')
+    {
+        $filename = time() . '.pdf';
+        // save image
+        Storage::disk($path)->put($filename, base64_decode($image));
+
+        //return the path
+        // Url is the base url exp: localhost:8000
+        return URL::to('/') . '/storage/' . $path . '/' . $filename;
+    }
 }

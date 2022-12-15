@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('jadwal_sekolahs', function (Blueprint $table) {
             $table->id();
             $table->string('pamflet')->nullable();
-            $table->string('judul');
+            $table->string('judul')->unique();;
             $table->string('slug')->unique();
             $table->dateTime('tgl_mulai');
             $table->dateTime('tgl_selesai');

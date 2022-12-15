@@ -34,11 +34,9 @@
             </div>
             <div class="col-12 col-md-8">
                <div class="row d-flex align-content-center">
-                  @php
-                     //  $nama = Str::substr(auth()->user()->nama, 5, 4);
-                  @endphp
+                  
                   <h6 class="col-12 font-rubik font-16 text-center text-md-start pt-3">{{ Auth()->user()->status }}</h6>
-                  <p class="col-12 font-noto font-14 text-center text-md-start">{{ $nama }}</p>
+                  <p class="col-12 font-noto font-14 text-center text-md-start">{{ auth()->user()->nama }}</p>
                </div>
             </div>
          </div>
