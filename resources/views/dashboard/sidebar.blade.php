@@ -33,10 +33,18 @@
             </div>
             <div class="col-12 col-md-8">
                <div class="row d-flex align-content-center">
-                  <span class="col-12 font-rubik fw-semibold font-16 text-center text-md-start pt-3 "
-                     data-bs-toggle="modal" data-bs-target=".switchAccount"
-                     style="cursor: pointer">{{ auth()->user()->status }} <i class="bi bi-chevron-right"></i></span>
-                  <p class="col-12 font-noto font-14 text-center text-md-start">{{ auth()->user()->nama }}</p>
+                  @if (auth()->user()->status == 'Administrator')
+                     <span
+                        class="col-12 font-rubik fw-semibold font-16 text-center text-md-start pt-3 ">{{ auth()->user()->status }}
+                     </span>
+                     <p class="col-12 font-noto font-14 text-center text-md-start">{{ auth()->user()->nama }}</p>
+                  @else
+                     <span class="col-12 font-rubik fw-semibold font-16 text-center text-md-start pt-3 "
+                        data-bs-toggle="modal" data-bs-target=".switchAccount"
+                        style="cursor: pointer">{{ auth()->user()->status }} <i class="bi bi-chevron-right"></i></span>
+                     <p class="col-12 font-noto font-14 text-center text-md-start">{{ auth()->user()->nama }}</p>
+                  @endif
+
                </div>
             </div>
          </div>
@@ -66,11 +74,13 @@
                         class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Sekolah</a></li>
                   <li><a href="{{ route('jadwal_kelas.index') }}"
                         class="link-dark d-inline-flex text-decoration-none rounded">Jadwal Kelas</a></li>
-                  <li><a href="{{ route('rapor.index') }}"
-                        class="link-dark d-inline-flex text-decoration-none rounded">Raport Murid</a></li>
-                  <li><a href="{{ route('kartu_pelajar.index') }}"
-                        class="link-dark d-inline-flex text-decoration-none rounded">Kartu Pelajar
-                        Digital</a></li>
+                  @if (!auth()->user()->is_osis == true)
+                     <li><a href="{{ route('rapor.index') }}"
+                           class="link-dark d-inline-flex text-decoration-none rounded">Raport Murid</a></li>
+                     <li><a href="{{ route('kartu_pelajar.index') }}"
+                           class="link-dark d-inline-flex text-decoration-none rounded">Kartu Pelajar
+                           Digital</a></li>
+                  @endif
                   @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
                      <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penilaian
                            Pembelajaran</a></li>
@@ -85,26 +95,28 @@
                </ul>
             </div>
          </li>
-         <li class="mb-1">
-            <button
-               class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik"
-               data-bs-toggle="collapse" data-bs-target="#presensi-collapse" aria-expanded="false">
-               <i class="bi bi-check-circle-fill"></i>
-               <div class="d-flex w-100 px-2">
-                  <h6 class="pt-2 fw-semibold">Presensi</h6>
+         @if (!auth()->user()->is_osis == true)
+            <li class="mb-1">
+               <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik"
+                  data-bs-toggle="collapse" data-bs-target="#presensi-collapse" aria-expanded="false">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <div class="d-flex w-100 px-2">
+                     <h6 class="pt-2 fw-semibold">Presensi</h6>
+                  </div>
+               </button>
+               <div class="collapse" id="presensi-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
+                     @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
+                        <li><a href="{{ route('presensi.pegawai.index') }}"
+                              class="link-dark d-inline-flex text-decoration-none rounded">Presensi Pegawai</a></li>
+                     @endif
+                     <li><a href="{{ route('presensi.murid.index') }}"
+                           class="link-dark d-inline-flex text-decoration-none rounded">Presensi Murid</a></li>
+                  </ul>
                </div>
-            </button>
-            <div class="collapse" id="presensi-collapse">
-               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-                  @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
-                     <li><a href="{{ route('presensi.pegawai.index') }}"
-                           class="link-dark d-inline-flex text-decoration-none rounded">Presensi Pegawai</a></li>
-                  @endif
-                  <li><a href="{{ route('presensi.murid.index') }}"
-                        class="link-dark d-inline-flex text-decoration-none rounded">Presensi Murid</a></li>
-               </ul>
-            </div>
-         </li>
+            </li>
+         @endif
          <li class="mb-1">
             <button
                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik"
@@ -123,30 +135,34 @@
                </ul>
             </div>
          </li>
-         <li class="mb-1">
-            <button
-               class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik"
-               data-bs-toggle="collapse" data-bs-target="#administrasi-collapse" aria-expanded="false">
-               <i class="bi bi-front"></i>
-               <div class="d-flex w-100 px-2">
-                  <h6 class="pt-2 fw-semibold">Administrasi</h6>
-               </div>
-            </button>
-            <div class="collapse" id="administrasi-collapse">
-               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-                  <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Keuangan</a></li>
-                  @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
-                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penerimaan
-                           Murid
-                           Baru</a></li>
-                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data Murid</a>
+         @if (!auth()->user()->is_osis == true && !auth()->user()->status == 'Murid')
+            <li class="mb-1">
+               <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik"
+                  data-bs-toggle="collapse" data-bs-target="#administrasi-collapse" aria-expanded="false">
+                  <i class="bi bi-front"></i>
+                  <div class="d-flex w-100 px-2">
+                     <h6 class="pt-2 fw-semibold">Administrasi</h6>
+                  </div>
+               </button>
+               <div class="collapse" id="administrasi-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
+                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Keuangan</a>
                      </li>
-                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data Mutasi
-                           Murid</a></li>
-                  @endif
-               </ul>
-            </div>
-         </li>
+                     @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Penerimaan
+                              Murid
+                              Baru</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data
+                              Murid</a>
+                        </li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Data Mutasi
+                              Murid</a></li>
+                     @endif
+                  </ul>
+               </div>
+            </li>
+         @endif
          <li class="mb-1">
             <button
                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ps-3 ps-lg-1 w-100 font-rubik"
@@ -158,14 +174,15 @@
             </button>
             <div class="collapse" id="fasilitas-collapse">
                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-                  @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
+                  @if (auth()->user()->status == 'Administrator' ||
+                      (!auth()->user()->status == 'Murid' && !auth()->user()->is_osis == true))
                      <li><a href="{{ route('daftar_fasilitas.index') }}"
                            class="link-dark d-inline-flex text-decoration-none rounded">Daftar Fasilitas</a></li>
-                     <li><a href="" class="link-dark d-inline-flex text-decoration-none rounded">Kantin</a>
-                     </li>
-                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Koperasi</a>
-                     </li>
                   @endif
+                  <li><a href="" class="link-dark d-inline-flex text-decoration-none rounded">Kantin</a>
+                  </li>
+                  <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Koperasi</a>
+                  </li>
                   <li><a href="{{ route('perpustakaan.index') }}"
                         class="link-dark d-inline-flex text-decoration-none rounded">Perpustakaan</a></li>
                   <li><a href="{{ route('fasilitas.peminjaman.index') }}"
@@ -184,12 +201,14 @@
             </button>
             <div class="collapse" id="non_akademik-collapse">
                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-                  @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
+
+                  <li><a href="{{ route('kegiatan_osis.index') }}"
+                        class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
+                        Kegiatan Osis</a></li>
+                  @if (!auth()->user()->is_osis == true)
                      <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
-                           Kegiatan Osis</a></li>
+                           Ekstrakulikuler</a></li>
                   @endif
-                  <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
-                        Ekstrakulikuler</a></li>
                </ul>
             </div>
          </li>

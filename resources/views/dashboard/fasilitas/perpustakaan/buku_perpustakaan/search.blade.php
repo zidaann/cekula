@@ -41,6 +41,7 @@
 @section('content')
    <div class="header-schedule shadow-1">
       <div class="d-flex align-items-center px-4">
+         <a href="{{ route('tambah_buku.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
          <span class="text-white mx-auto">Buku Perpustakaan</span>
       </div>
    </div>
@@ -52,7 +53,7 @@
                   <div class="col-12">
                      <form class="d-flex align-items-center" role="search">
                         <input class="form-control me-2 input-bg" type="search" placeholder="Masukkan Judul Buku"
-                           name="search" aria-label="Search" />
+                           aria-label="Search" />
                         <i class="bi bi-search" style="margin-left: -35px"></i>
                         <div class="ms-2">
                            <button type="button" class="btn d-flex font-noto font-16" data-bs-toggle="modal"
@@ -79,7 +80,6 @@
                               <div class="d-flex font-16 modal-header">
                                  <span class="fw-semibold me-auto">Filter</span>
                                  <form action="{{ route('tambah_buku.filter') }}" method="get">
-                                    {{-- @csrf --}}
                                     <button class="text-decoration-none color-grey btn btn-light"
                                        type="submit">SELESAI</button>
                               </div>
@@ -91,6 +91,9 @@
                                     <label for="{{ $kategori->nama }}"
                                        class="btn btn-outline-primary">{{ $kategori->nama }}</label>
                                  @endforeach
+
+                                 </form>
+
                               </div>
                               <div class="fw-semibold font-12 my-2 mx-3">Urutkan</div>
                               <div class="px-3">
@@ -100,9 +103,7 @@
                                     <label for="{{ $sort['id'] }}"
                                        class="btn btn-outline-primary">{{ $sort['nama'] }}</label>
                                  @endforeach
-
                               </div>
-                              </form>
                            </div>
                         </div>
                      </div>
@@ -110,8 +111,8 @@
                   {{-- Daftar Buku --}}
                   <div class="col-11 mt-5">
                      <div class="row">
-                        @if ($bukus->count())
-                           @foreach ($bukus as $buku)
+                        @if ($filterBuku->count())
+                           @foreach ($filterBuku as $buku)
                               <div class="col-4 px-5 font-noto font-12 " style="height: 180px;">
                                  <div class="d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . $buku->cover) }}" alt="{{ $buku->judul }}"

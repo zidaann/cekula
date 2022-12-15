@@ -13,9 +13,36 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class TambahBukuController extends Controller
 {
-    public function index (){
-        $bukus = Buku::select('id', 'judul', 'slug', 'cover')->get();
-       return view('dashboard.fasilitas.perpustakaan.buku_perpustakaan.index', compact('bukus')); 
+    public function index (Request $request){
+        $sorts = new Buku();
+        $sorts = $sorts->sortir;
+        $keyword = $request->search;
+        $kategoris = KategoriBuku::get();
+        return view('dashboard.fasilitas.perpustakaan.buku_perpustakaan.index',[
+            'kategoris' => $kategoris,
+            // 'bukus' => Buku::select('id', 'judul', 'slug', 'cover')->,
+            'bukus' => Buku::where('judul', 'like' ,'%' . $keyword . '%')->get(),
+            'sorts' => $sorts
+        ]);
+    //    return view('dashboard.fasilitas.perpustakaan.buku_perpustakaan.index', compact('bukus', 'kategoris', request(['search'])); 
+    }
+
+    public function filter (Request $request){
+        $sorts = new Buku();
+        $sorts = $sorts->sortir;
+        $filterBuku = Buku::where('kategori_id', $request->kategori)->get();
+        $kategoris = KategoriBuku::get();
+
+        if($request->sort == 1){
+            $filterBuku = Buku::latest()->get();
+        }elseif($request->sort == 2){
+            $filterBuku = Buku::orderBy('judul', 'asc')->get();
+        }
+        elseif($request->sort == 3){
+            $filterBuku = Buku::orderBy('judul', 'desc')->get();
+        }
+        return view('dashboard.fasilitas.perpustakaan.buku_perpustakaan.search', compact('filterBuku', 'kategoris', 'sorts'));
+       
     }
 
     public function create (Buku $buku){

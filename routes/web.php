@@ -18,18 +18,13 @@ use App\Http\Controllers\Dashboard\Admin\KartuPelajarDigitalController;
 use App\Http\Controllers\Dashboard\Admin\KegiatanOsisController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanPerpustakaanController;
+use App\Http\Controllers\Dashboard\Admin\SwitchRoleController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
 
 Route::get("/", function () {
     return view("home");
 })->name("home")->middleware("guest");
-Route::get("/beritasekolah", function () {
-    return view("dashboard.berita.berita_sekolah.index");
-});
 
-Route::get("/coba", function () {
-    return view("dashboard.fasilitas.daftar_kelas.edit");
-});
 
 Route::get("register", [RegisterController::class, "create"])->name("register")->middleware("guest");
 Route::post("register", [RegisterController::class, "store"]);
@@ -87,7 +82,7 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
 });
 
 
-Route::prefix("presensi")->group(function () {
+Route::middleware('auth')->prefix("presensi")->group(function () {
     Route::prefix("pegawai")->group(function () {
         Route::get("", [PresensiPegawaiController::class, "index"])->name("presensi.pegawai.index");
         Route::get("create", [PresensiPegawaiController::class,"create",])->name("presensi.pegawai.create");
@@ -103,7 +98,7 @@ Route::prefix("presensi")->group(function () {
     });
 });
 
-Route::prefix("berita")->group(function () {
+Route::middleware('auth')->prefix("berita")->group(function () {
     Route::prefix("sekolah")->group(function () {
         Route::get("", [BeritaSekolahController::class, "index"])->name(
             "berita_sekolah.index"
@@ -134,7 +129,7 @@ Route::prefix("berita")->group(function () {
     });
 });
 
-Route::prefix("fasilitas")->group(function () {
+Route::middleware('auth')->prefix("fasilitas")->group(function () {
     Route::prefix("peminjaman-fasilitas")->group(function () {
         Route::get("", [PeminjamanFasilitasController::class, "index"])->name("fasilitas.peminjaman.index"
         );
@@ -147,7 +142,9 @@ Route::prefix("fasilitas")->group(function () {
         Route::prefix("peminjaman")->group(function () {
             Route::get("create", [PeminjamanPerpustakaanController::class,"create",])->name("perpustakaan.pinjam.create");
         });
-        Route::prefix('tambah-buku')->group(function(){
+        Route::prefix('buku')->group(function(){
+            Route::get('filter', [TambahBukuController::class, 'filter'])->name('tambah_buku.filter');
+            Route::get('search', [TambahBukuController::class, 'index']);
             Route::get('', [TambahBukuController::class, 'index'])->name('tambah_buku.index');
             Route::get('create', [TambahBukuController::class, 'create'])->name('tambah_buku.create');
             Route::post('create', [TambahBukuController::class, 'store']);
@@ -184,6 +181,8 @@ Route::prefix("fasilitas")->group(function () {
     });
 
 });
+
+Route::post('switch-role', [SwitchRoleController::class, 'switch'])->name('switch.role')->middleware('auth');
 
 Route::get("/dashboard", function () {
     return view("dashboard.dashboard");

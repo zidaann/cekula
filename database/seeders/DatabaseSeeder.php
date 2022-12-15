@@ -5,13 +5,15 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use Carbon\Carbon;
+use App\Models\Buku;
 use App\Models\User;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Jabatan;
-use App\Models\KategoriBuku;
 use App\Models\Pegawai;
+use App\Models\KategoriBuku;
 use Illuminate\Database\Seeder;
+use Database\Factories\BukuFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +25,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
+        
         $users = [
                 [
                 'nama' => "Augusta Satrianto",
@@ -39,6 +41,16 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt("123456"),
                 'password2' => "123456",
                 'is_osis' => true,
+                'nis' => "109844322",
+                'kelas_id' => "1",    
+            ],
+            [
+                'nama' => "Wildan Setiagita",
+                'status' => "Murid",
+                'username' => "wildan",
+                'password' => bcrypt("123456"),
+                'password2' => "123456",
+                'is_osis' => false,
                 'nis' => "109844322",
                 'kelas_id' => "1",    
             ],
@@ -82,6 +94,7 @@ class DatabaseSeeder extends Seeder
         foreach($users as $user){
             User::create($user);
         }
+        Buku::factory(10)->create();
        $this->call([KelasSeeder::class, MapelSeeder::class,PegawaiSeeder::class, JabatanSeeder::class, HariSeeder::class, KategoriBukuSeeder::class ]);
         
 

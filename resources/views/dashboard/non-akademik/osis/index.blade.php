@@ -84,9 +84,11 @@
          </div>
       </div>
    </main>
-   <div class="btn-add">
-      <a href="{{ route('kegiatan_osis.create') }}">
-         <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
-      </a>
-   </div>
+   @if (!auth()->user()->status == 'Murid' || auth()->user()->status == 'Administrator')
+      <div class="btn-add">
+         <a href="{{ route('kegiatan_osis.create') }}">
+            <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
+         </a>
+      </div>
+   @endif
 @endsection

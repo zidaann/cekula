@@ -136,11 +136,14 @@
                </div>
             </div> --}}
          </div>
-         <div class="btn-add">
-            <a href="{{ route('berita_kelas.create') }}">
-               <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
-            </a>
-         </div>
+         @if (auth()->user()->status == 'Administrator' ||
+             (!auth()->user()->status == 'Murid' && !auth()->user()->status == 'Pengurus OSIS'))
+            <div class="btn-add">
+               <a href="{{ route('berita_kelas.create') }}">
+                  <img src="/assets/img/dashboard/btn_add.png" class="img-fluid">
+               </a>
+            </div>
+         @endif
       </div>
    </main>
 @endsection
