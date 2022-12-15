@@ -12,7 +12,7 @@ class JadwalKelasController extends Controller
     public function index()
     {
         return response([
-            'posts' => JadwalKelas::orderBy('created_at', 'desc')->with('hari:id,nama')->with('mapel:id,nama,icon')->with('pegawai:id,nama')->get()
+            'posts' => JadwalKelas::orderBy('created_at', 'desc')->with('hari:id,nama')->with('mapel:id,nama,icon')->with('pegawai:id,nama')->with('kelas:id,nama_kelas')->get()
         ], 200);
     }
 

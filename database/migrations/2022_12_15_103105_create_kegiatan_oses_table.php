@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->date('tgl_mulai');
             $table->date('tgl_selesai');
-            $table->string('lokasi');
             $table->foreignId('user_id');
             $table->string('deskripsi');
             $table->timestamps();

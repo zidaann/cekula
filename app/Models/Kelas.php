@@ -9,8 +9,8 @@ class Kelas extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function pegawai (){
-        return $this->hasMany(Pegawai::class);
+    public function pegawai(){
+        return $this->hasMany(User::class);
     }
     public function jadwal_kelas (){
         return $this->hasMany(JadwalKelas::class);

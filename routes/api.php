@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\HariController;
 use App\Http\Controllers\Api\JadwalKelasController;
 use App\Http\Controllers\Api\JadwalSekolahController;
 use App\Http\Controllers\Api\KategoriBukuController;
+use App\Http\Controllers\Api\KegiatanOsisController;
 use App\Http\Controllers\Api\KelasController;
 use App\Http\Controllers\Api\MapelController;
 use App\Http\Controllers\Api\PPDBController;
@@ -24,8 +25,10 @@ use App\Http\Controllers\Api\PPDBController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/beritasekolah', [BeritaSekolahController::class, 'index']); // all posts
 
 //Protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -43,7 +46,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     // Berita Sekolah
-    Route::get('/beritasekolah', [BeritaSekolahController::class, 'index']); // all posts
     Route::post('/beritasekolah', [BeritaSekolahController::class, 'store']); // create post
     Route::get('/beritasekolah/{id}', [BeritaSekolahController::class, 'show']); // get single post 
     Route::put('/beritasekolah/{id}', [BeritaSekolahController::class, 'update']); // update post
