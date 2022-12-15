@@ -26,6 +26,21 @@
             <p class="col-12 font-noto font-14 text-center text-md-start">Wildan</p>
           </div>
         </div> --}}
+<<<<<<< HEAD
+         <div class="d-flex row align-items-center justify-content-center">
+            <div class="col-12 col-md-4 d-flex justify-content-center ps-0 ps-md-4 pt-2 pt-md-0">
+               <img src="/assets/img/profil.png" class="card-img-top rounded-4" style="width: 60px; height: 60px;"
+                  alt="...">
+            </div>
+            <div class="col-12 col-md-8">
+               <div class="row d-flex align-content-center">
+                  
+                  <h6 class="col-12 font-rubik font-16 text-center text-md-start pt-3">{{ Auth()->user()->status }}</h6>
+                  <p class="col-12 font-noto font-14 text-center text-md-start">{{ auth()->user()->nama }}</p>
+               </div>
+            </div>
+         </div>
+=======
       <div class="d-flex row align-items-center justify-content-center">
         <div class="col-12 col-md-4 d-flex justify-content-center ps-0 ps-md-4 pt-2 pt-md-0">
           <img src="/assets/img/profil.png" class="card-img-top rounded-4" style="width: 60px; height: 60px;">
@@ -37,6 +52,7 @@
             <p class="col-12 font-noto font-14 text-center text-md-start">{{ auth()->user()->nama }}</p>
           </div>
         </div>
+>>>>>>> 65690070ad1c0abda79e50d900a6654abaacd805
       </div>
     </div>
     <ul class="nav flex-column bg-color-content shadow-1 mt-3 h-100 rounded-4">
