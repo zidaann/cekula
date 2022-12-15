@@ -11,7 +11,7 @@
     <div id="beranda" class="d-flex align-items-center">
       <!-- tulisan -->
       <div class="container row ps-0 ms-0 ps-lg-5 ms-lg-5 justify-content-center justify-content-md-start" id="grup_tulisan_beranda">
-        <div class="font-rubik text-uppercase text-center text-sm-start text-md-start col-12 col-sm-12 col-md-8 font-48 text-white">Cekula</div>
+        <div class="font-rubik fw-semibold text-uppercase text-center text-sm-start text-md-start col-12 col-sm-12 col-md-8 font-48 text-white">Cekula</div>
         <div class="font-noto text-center text-sm-start text-md-start col-12 col-sm-12 col-md-7" id="tulisan_beranda">
           Aplikasi Smart School berbasis mobile dan website untuk sekolah tingkat SMP/MTs/sederajat untuk memudahkan manajemen sarana dan prasarana sekolah.
         </div>
@@ -31,13 +31,13 @@
       </p>
     </div>
     <div style="height: 70%" id="visi">
-      <div class="font-40 font-rubik text-center text-uppercase pt-5 pb-3">Visi & Misi</div>
+      <div class="font-40 font-rubik fw-semibold text-center text-uppercase pt-5 pb-3">Visi & Misi</div>
       <div class="row justify-content-around mx-5">
         <div class="col-12 col-md-5">
           &nbsp;
         </div>
         <div class="col-12 col-md-5">
-          <div class="text-center font-rubik" style="font-size: 2rem">Visi</div>
+          <div class="text-center font-rubik fw-semibold" style="font-size: 2rem">Visi</div>
           <p class="font-noto text-center text-md-start font-20" id="teks_visi">Menjadi perusahaan IT yang unggul dan terpercaya dalam menyediakan layanan dan solusi IT yang kreatif, inovatif, dan terbaik bagi customer</p>
         </div>
       </div>
@@ -46,7 +46,7 @@
   <div style="height: 70%" id="misi">
     <div class="row justify-content-around mx-5">
       <div class="col-12 col-md-5 pt-5">
-        <div class="text-center font-rubik pt-0 pt-md-5" style="font-size: 2rem">Misi</div>
+        <div class="text-center font-rubik fw-semibold pt-0 pt-md-5" style="font-size: 2rem">Misi</div>
         <p class="font-noto text-center text-md-start font-20" id="teks_visi">Memberikan layanan dan solusi berbasis teknologi informasi yang inovatif dan berkualitas, mengembangkan aplikasi yang sesuai kebutuhan dan keinginan pelanggan,
           selalu menjaga
           amanah yang diberikan klien agar dapat saling menguntungkan dan mencapai tujuan masing-masing, serta menerapkan budaya kerja yang profesional, produktif, kompeten, dan terintegritas</p>
@@ -58,7 +58,7 @@
   </div>
   <div id="berita_beranda">
     <div class="container my-4 d-flex align-items-center justify-content-between" style="padding-top: 5rem">
-      <div class="font-rubik font-24 d-flex align-items-center">
+      <div class="font-rubik fw-semibold font-24 d-flex align-items-center">
         <i class="bi bi-card-text"></i>&nbsp;
         <div class="ms-2">Berita Terbaru</div>
       </div>
@@ -114,11 +114,11 @@
       <div class="row p-3" id="wave2">
         <div class="col-12 col-md-3 text-white my-2">
           <img src="/assets/img/cekula_putih.png" alt="Cekula" />
-          <h6 class="font-rubik font-24 mt-3">Alamat Kantor</h6>
+          <h6 class="font-rubik fw-semibold font-24 mt-3">Alamat Kantor</h6>
           <p class="font-noto fw-semibold font-16">Gedung A10, Jl. Ketintang Wiyata, Ketintang, Gayungan, Kota Surabaya, Jawa Timur (60231)</p>
         </div>
         <div class="col-12 col-md-3 text-white my-2">
-          <h6 class="font-rubik font-30 mb-4">Pelajari</h6>
+          <h6 class="font-rubik fw-semibold font-30 mb-4">Pelajari</h6>
           <div>
             <div class="my-1"><a href="#" class="text-decoration-none text-white font-noto fw-semibold font-16">Tentang</a></div>
             <div class="my-1"><a href="#" class="text-decoration-none text-white font-noto fw-semibold font-16">Berita</a></div>
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div class="col-12 col-md-3 text-white my-2">
-          <h6 class="font-rubik font-30 mb-4">Ikuti Kami</h6>
+          <h6 class="font-rubik fw-semibold font-30 mb-4">Ikuti Kami</h6>
           <div class="font-noto fw-semibold font-16">
             <div class="my-1">
               <a href="#" class="text-decoration-none text-white font-noto fw-semibold font-16"><img src="/assets/img/sosmed/ig.png" alt="Instagram" />&nbsp; @cekula.id</a>
@@ -144,7 +144,7 @@
           </div>
         </div>
         <div class="col-12 col-md-3 text-white my-2">
-          <h6 class="font-rubik font-30 mb-4">Hubungi Kami</h6>
+          <h6 class="font-rubik fw-semibold font-30 mb-4">Hubungi Kami</h6>
           <div class="font-noto fw-semibold font-16">
             <div class="my-1"><i class="bi bi-envelope"></i>&nbsp; cekula@gmail.com</div>
             <div class="my-1"><i class="bi bi-telephone-fill"></i>&nbsp; 082277770000</div>

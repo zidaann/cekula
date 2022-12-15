@@ -21,14 +21,22 @@
    <input type="text" name="judul" id="judul" class="form-control @error('judul') is-invalid @enderror"
       placeholder="Masukkan judul jadwal" value="{{ old('judul', $jadwalSekolah->judul) }}" autocomplete="off">
    @error('judul')
-      <div class="text-danger mb-5"> {{ $message }}</div>
+      <div class="text-danger"> {{ $message }}</div>
+   @enderror
+</div>
+<div class="mb-3">
+   <input type="hidden" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror"
+      placeholder="Masukkan slug jadwal" value="{{ old('slug', $jadwalSekolah->slug) }}" autocomplete="off">
+   @error('slug')
+      <div class="text-danger "> {{ $message }}</div>
    @enderror
 </div>
 
 <div class="mb-3">
    <label for="tgl_mulai"> Tanggal pelaksanaan </label>
    <input type="date" name="tgl_mulai" id="tgl_mulai" class="form-control  @error('tgl_mulai') is-invalid @enderror"
-      placeholder="HH/BB/TT" value="{{ old('tgl_mulai', date('Y-m-d')) }}">
+      placeholder="HH/BB/TT" value="{{ old('tgl_mulai', $jadwalSekolah->tgl_mulai) }}">
+   {{-- {{ old('tgl_mulai', date('Y-m-d')) }} --}}
    @error('tgl_mulai')
       <p class="text-danger">{{ $message }}</p>
    @enderror
@@ -37,7 +45,7 @@
    <label for="tgl_selesai"> Selesai pelaksanaan </label>
    <input type="date" name="tgl_selesai" id="tgl_selesai"
       class="form-control @error('tgl_selesai') is-invalid @enderror" placeholder="HH/BB/TT"
-      value="{{ old('tgl_selesai', date('Y-m-d')) }}">
+      value="{{ old('tgl_selesai', $jadwalSekolah->tgl_selesai) }}">
    @error('tgl_selesai')
       <p class="text-danger">{{ $message }}</p>
    @enderror

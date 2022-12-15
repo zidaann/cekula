@@ -23,7 +23,7 @@
   {{-- Link Font --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Rubik:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Link CSS-->
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
@@ -49,6 +49,33 @@
       @include('dashboard.sidebar')
       <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 min-h-100">
         @yield('content')
+        <div class="modal fade switchAccount" tabindex="-1" aria-labelledby="switch" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="d-flex justify-content-center w-100">
+                  <h1 class="fs-5 text-center align-text-bottom font-rubik fw-semibold" id="switch">Ganti Akun</h1>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form action="#">
+                <div class="px-5 py-3 font-noto font-16">
+                  <div class="d-flex">
+                    <label for="siswa" class="w-100" style="cursor: pointer">Siswa</label>
+                    <input type="radio" name="role" id="siswa" class="form-check-input ms-3">
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <label for="osis" class="w-100" style="cursor: pointer">Osis</label>
+                    <input type="radio" name="role" id="osis" class="form-check-input ms-3">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -25,10 +25,20 @@ class JadwalSekolahRequest extends FormRequest
     {
         return [
             'pamflet' => 'nullable|image|file|max:1024|mimes:jpg,jpeg,png',
-            'judul' => 'required',
+            'judul' => 'required|unique:jadwal_sekolahs',
             'tgl_mulai' => 'required',
             'tgl_selesai' => 'required',
             'deskripsi' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'pamflet' => 'Gambar tidak boleh kosong!',
+            'judul' => 'Judul sudah pernah digunakan!',
+            'tgl_mulai' => 'Tanggal pelaksanaan tidak boleh kosong!',
+            'tgl_selesai' => 'Tanggal selesai pelaksanaan tidak boleh kosong!',
+            'deskripsi' => 'Deskripsi tidak boleh kosong'
         ];
     }
 }

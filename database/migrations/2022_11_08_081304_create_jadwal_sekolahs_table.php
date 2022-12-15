@@ -16,10 +16,14 @@ return new class extends Migration
         Schema::create('jadwal_sekolahs', function (Blueprint $table) {
             $table->id();
             $table->string('pamflet')->nullable();
+<<<<<<< HEAD
             $table->string('judul')->unique();;
+=======
+            $table->string('judul')->unique();
+>>>>>>> 65690070ad1c0abda79e50d900a6654abaacd805
             $table->string('slug')->unique();
-            $table->dateTime('tgl_mulai');
-            $table->dateTime('tgl_selesai');
+            $table->date('tgl_mulai');
+            $table->date('tgl_selesai');
             $table->string('deskripsi',1000);
             $table->timestamps();
             $table->softDeletes();
