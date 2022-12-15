@@ -91,7 +91,7 @@ class AuthController extends Controller
     public function pegawai()
     {
         return response([
-            'user' => User::orderBy('nama', 'asc')->whereIn('status', ['Guru Kelas','Wali Kelas','Pembina OSIS', 'Guru Ekstrakurikuler', 'Administrator', 'Tata Usaha', 'Pegawai Perpustakaan', 'Pegawai Koperasi Sekolah', 'Kepala Sekokah'])->get()
+            'user' => User::orderBy('nama', 'asc')->whereIn('status', ['Guru Mata Pelajaran','Wali Kelas','Pembina OSIS', 'Guru Ekstrakurikuler', 'Administrator', 'Tata Usaha', 'Pegawai Perpustakaan', 'Pegawai Koperasi Sekolah', 'Kepala Sekokah'])->get()
         ], 200);
     }
 

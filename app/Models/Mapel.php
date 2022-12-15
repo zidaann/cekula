@@ -14,7 +14,4 @@ class Mapel extends Model
     public function pegawai (){
         return $this->belongsTo(Pegawai::class);
     }
-    public function jadwal_kelas (){
-       return $this->belongsTo(JadwalKelas::class); 
-    }
 }

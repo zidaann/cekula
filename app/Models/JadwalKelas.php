@@ -23,9 +23,9 @@ class JadwalKelas extends Model
     //     return 'slug';
     // }
     
-    public function pegawai (){
+    public function pegawai(){
         // return $this->hasMany(Pegawai::class);
-        return $this->belongsTo(Pegawai::class);
+        return $this->belongsTo(User::class);
     }
     public function hari (){
     //    return $this->hasMany(Hari::class); 
