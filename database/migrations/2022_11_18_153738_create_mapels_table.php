@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            // $table->string('icon')->nullable();
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }

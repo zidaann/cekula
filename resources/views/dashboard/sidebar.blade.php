@@ -184,9 +184,10 @@
             </button>
             <div class="collapse" id="non_akademik-collapse">
                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small font-noto">
-                  <li><a href="{{ route('kegiatan_osis.index') }}"
-                        class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
-                        Kegiatan Osis</a></li>
+                  @if (auth()->user()->status == 'Administrator' || !auth()->user()->status == 'Murid')
+                     <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
+                           Kegiatan Osis</a></li>
+                  @endif
                   <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitoring
                         Ekstrakulikuler</a></li>
                </ul>
