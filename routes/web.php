@@ -15,6 +15,7 @@ use App\Http\Controllers\Dashboard\Admin\DataFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\JadwalSekolahController;
 use App\Http\Controllers\Dashboard\Admin\PresensiMuridController;
 use App\Http\Controllers\Dashboard\Admin\KartuPelajarDigitalController;
+use App\Http\Controllers\Dashboard\Admin\KegiatanOsisController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanFasilitasController;
 use App\Http\Controllers\Dashboard\Admin\PeminjamanPerpustakaanController;
 use App\Http\Controllers\JadwalKelasController as ControllersJadwalKelasController;
@@ -82,6 +83,7 @@ Route::middleware('auth')->prefix('akademik')->group(function(){
         Route::put('{id}/edit', [DaftarKelasController::class, 'update']);
         Route::delete('{id}', [DaftarKelasController::class, 'destroy'])->name('daftar_kelas.delete');
     });
+
 });
 
 
@@ -166,6 +168,18 @@ Route::prefix("fasilitas")->group(function () {
         Route::prefix('ruangan')->group(function(){
             Route::get("{id}/edit", [DataFasilitasController::class, "editRuangan"])->name('ruangan.edit');
             Route::put("{id}/update", [DataFasilitasController::class, "updateRuangan"]);
+        });
+    });
+
+    Route::prefix('non-akademik')->group(function(){
+        Route::prefix('kegiatan-osis')->group(function(){
+            Route::get('', [KegiatanOsisController::class, 'index'])->name('kegiatan_osis.index');
+            Route::get('create', [KegiatanOsisController::class, 'create'])->name('kegiatan_osis.create');
+            Route::post('create', [KegiatanOsisController::class, 'store']);
+            Route::get('{kegiatan}/edit', [KegiatanOsisController::class, 'edit'])->name('kegiatan_osis.edit');
+            Route::put('{kegiatan}/edit', [KegiatanOsisController::class, 'update']);
+            Route::get('{kegiatan}/show', [KegiatanOsisController::class, 'show'])->name('kegiatan_osis.show');
+            Route::delete('{id}', [KegiatanOsisController::class, 'destroy'])->name('kegiatan_osis.delete');
         });
     });
 
