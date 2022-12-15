@@ -1,23 +1,24 @@
 @extends('dashboard.main')
 @section('content')
-<div class="header-schedule">
+  <div class="header-schedule shadow-1">
     <div class="d-flex align-items-center px-4">
-        <a href="{{ route('jadwal_sekolah.index') }}" class="text-white "><i class="bi bi-arrow-left"></i></a>
-        <span class="text-white mx-auto">Edit Presensi Murid</span>
+      <a href="#" class="text-white "><i class="bi bi-arrow-left"></i></a>
+      <span class="text-white mx-auto">Sunting Presensi Murid</span>
     </div>
   </div>
-
-<main id="presensi-murid" class=" py-4">
+  <main class="mb-4">
     <div class="container">
-        <div class="row justify-content-center mx-3">
-            <div class="col-md-9">
-                <form action="" method="">
-                    @csrf
-                    @method("PUT")
-                    @include('dashboard.presensi.murid._form.form')
-                </form>
-               </div>
+      <div class="row justify-content-center ">
+        <div class="col-md-11">
+          <div class="row d-flex justify-content-evenly px-5">
+            <form action="#" method="" enctype="multipart/form-data">
+              @csrf
+              @method('PUT')
+              @include('dashboard.presensi.murid._form.form')
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</main>
+  </main>
 @endsection
